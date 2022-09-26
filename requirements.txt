@@ -1,0 +1,5 @@
+loko-extensions
+requests
+sanic
+sanic-cors
+sanic-openapi

@@ -1,0 +1,65 @@
+[
+ {
+  "name": "Stacks Info",
+  "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks\n\nYou can then use a function efter this block to manipulate and filter all the data you need to use it.",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stacks",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {
+    "n": 1
+   }
+  }
+ },
+ {
+  "name": "Export Docker-compose",
+  "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack\nYou need to configure this block with the id of your stack\n(you can use \"Stack Info\" block to take it.",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "export",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": [
+    {
+     "name": "stack_id",
+     "type": "text",
+     "label": "id",
+     "helper": "ID of your stack",
+     "group": "",
+     "value": null,
+     "description": ""
+    }
+   ]
+  }
+ }
+]
