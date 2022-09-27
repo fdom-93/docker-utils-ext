@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "27/09/2022, 12:52:03",
+  "last_modify": "27/09/2022, 14:31:01",
   "graphs": {
     "main": {
       "nodes": [
@@ -841,7 +841,7 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 915.3789573075737,
+          "width": 1189.3789573075737,
           "height": 167.99999999999994,
           "selected": false,
           "dragging": false,
@@ -849,7 +849,7 @@
             "comment": "Download docker-compose.yml",
             "fill": "#F9C74F",
             "height": 167.99999999999994,
-            "width": 915.3789573075737
+            "width": 1189.3789573075737
           },
           "zIndex": -1,
           "selectable": false,
@@ -941,7 +941,7 @@
               "values": {
                 "comment": "",
                 "alias": "",
-                "debug": true,
+                "debug": false,
                 "propagate": true,
                 "notify_warnings": true,
                 "code": "from datetime import datetime\n\nnow_formatted = datetime.now().strftime(\"%Y-%m-%d--%H-%M\")\n\nfilename = \"data/data/docker-compose-\" + now_formatted + \".yml\"\n\nreturn Parameters(data = data, path = filename)"
@@ -1312,6 +1312,99 @@
             "y": 317
           },
           "__class__": "Node"
+        },
+        {
+          "id": "b28cfb80-f05e-4cac-a1ee-4159e9b83a0f",
+          "position": {
+            "x": 1303,
+            "y": 525
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "Information",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "s1 = \"Depending on the version of Docker installed on your system, you may have duplicate ports in the docker-compose export: \"\ns2 = \"this is not a bug, but a \\\"features\\\" introduced in the latests version of Docker (>= 20.10.6).\"\ns3 = \"But, if you run this docker-compose, you will NOT have any problems! For more informations, read here: https://github.com/moby/moby/issues/42313 \"\n\nreturn s1 + s2 + s3\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
         }
       ],
       "edges": [
@@ -1436,6 +1529,20 @@
           "data": {
             "startColor": "#D770AD",
             "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-9b806b99-36f3-4dda-9978-aaceafe06166output-b28cfb80-f05e-4cac-a1ee-4159e9b83a0finput",
+          "source": "9b806b99-36f3-4dda-9978-aaceafe06166",
+          "sourceHandle": "output",
+          "target": "b28cfb80-f05e-4cac-a1ee-4159e9b83a0f",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#56DCB9",
+            "stopColor": "#D770AD"
           },
           "selected": false,
           "dragging": false,
