@@ -32,14 +32,22 @@ async def f(value, args):
 async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    logger.debug("export")
+    # logger.debug("export")
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}/export"
-    logger.debug(url)
+    # logger.debug(url)
     content = requests.get(url).content.decode()
-    logger.debug(content)
+    # logger.debug(content)
     return sanic.json(content)
 
 
+@bp.post('/list-images')
+@extract_value_args()
+async def f(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
+
+    return sanic.json(requests.get(url).json())
 
 @app.exception(Exception)
 async def manage_exception(request, exception):
