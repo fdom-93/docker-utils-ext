@@ -1,7 +1,7 @@
 [
  {
   "name": "Stacks Info",
-  "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks\n\nYou can then use a function efter this block to manipulate and filter all the data you need to use it.",
+  "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
   "configured": true,
   "inputs": [
    {
@@ -21,14 +21,13 @@
    "group": "Custom",
    "icon": "RiTyphoonFill",
    "click": null,
-   "values": {
-    "n": 1
-   }
+   "values": {},
+   "args": []
   }
  },
  {
-  "name": "Export Docker-compose",
-  "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack\nYou need to configure this block with the id of your stack\n(you can use \"Stack Info\" block to take it.",
+  "name": "Export Docker-Compose",
+  "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
   "configured": false,
   "inputs": [
    {
@@ -53,10 +52,10 @@
     {
      "name": "stack_id",
      "type": "text",
-     "label": "id",
-     "helper": "Your stack's ID",
+     "label": "Stack ID",
+     "helper": "Your stack's id",
      "group": "",
-     "value": null,
+     "value": "",
      "description": ""
     }
    ]
@@ -64,7 +63,7 @@
  },
  {
   "name": "List images in Livetech Registry",
-  "description": "\n### List images in Livetech Registry\n\nWith this extension you can see all Docker images pushed on Private Livetech Registry\nYou need to configure this block with the name of the image you want to search.\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n(for example, you can search \"stor\" to search \"storage\"",
+  "description": "\n### List images in Livetech Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "configured": false,
   "inputs": [
    {
@@ -88,20 +87,23 @@
    "args": [
     {
      "name": "registry_name",
-     "type": "text",
+     "type": "select",
      "label": "Registry name",
-     "helper": "The name of Livetech Private Registry",
+     "helper": "",
      "group": "",
      "value": null,
-     "description": ""
+     "description": "",
+     "options": [
+      "registry.livetech.site"
+     ]
     },
-        {
+    {
      "name": "image_name",
      "type": "text",
-     "label": "Image name to search",
+     "label": "Image Name",
      "helper": "Image name to search",
      "group": "",
-     "value": null,
+     "value": "",
      "description": ""
     }
    ]

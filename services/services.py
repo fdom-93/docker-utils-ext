@@ -23,7 +23,7 @@ app.config["API_TITLE"] = name
 async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    n = int(args.get('n'))
+    # n = int(args.get('n'))
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json())
 
 
@@ -46,6 +46,7 @@ async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
+    logger.debug(url)
 
     return sanic.json(requests.get(url).json())
 
