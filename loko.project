@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "26/09/2022, 17:45:13",
+  "last_modify": "27/09/2022, 12:52:03",
   "graphs": {
     "main": {
       "nodes": [
@@ -846,7 +846,7 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Download docker-compose.yml (to fix)",
+            "comment": "Download docker-compose.yml",
             "fill": "#F9C74F",
             "height": 167.99999999999994,
             "width": 915.3789573075737
@@ -941,10 +941,10 @@
               "values": {
                 "comment": "",
                 "alias": "",
-                "debug": false,
+                "debug": true,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "import json\nfrom datetime import datetime\n\nnow = datetime.now()\nnow_formatted = now.strftime(\"%Y-%m-%d--%H-%M\")\n\nfilename = \"data/data/docker-compose-\" + now_formatted + \".yml\"\n\ndata = {\"data\": data, \"path\": filename}\n\n\nreturn data"
+                "code": "from datetime import datetime\n\nnow_formatted = datetime.now().strftime(\"%Y-%m-%d--%H-%M\")\n\nfilename = \"data/data/docker-compose-\" + now_formatted + \".yml\"\n\nreturn Parameters(data = data, path = filename)"
               }
             },
             "locked": null
