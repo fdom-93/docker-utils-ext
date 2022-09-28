@@ -1,15 +1,36 @@
 from loko_extensions.model.components import Arg, Component, save_extensions, Input, Output, Select, Dynamic
 
 
-########################## componente stacks
-input_stacks = Input(id='input', label='Input', service='stacks', to='output')
-output_stacks = Output(id='output', label='Output')
-doc_stacks = '''
+########################## componente stacks info
+input_stacks_info = Input(id='input', label='Input', service='stacks_info', to='output')
+output_stacks_info = Output(id='output', label='Output')
+doc_stacks_info = '''
 ### Stacks Info\n
 With this extension you can view all the info about your stacks.\n
 You can then use a function after this block to manipulate and filter all the data you need to use it.
 '''
-stacks = Component(name='Stacks Info', inputs=[input_stacks], outputs=[output_stacks], description=doc_stacks, configured=True)
+stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=[output_stacks_info], description=doc_stacks_info, configured=True)
+
+
+########################## componente stacks name
+input_stacks_name = Input(id='input', label='Input', service='stacks_name', to='output')
+output_stacks_name = Output(id='output', label='Output')
+doc_stacks_name = '''
+### Stacks Name\n
+'''
+stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, configured=True)
+
+
+########################## componente stack inspect
+name_stack_inspect = Arg(name='name_stack', label='Stack Name', type='text', helper='Stack name to inspect', value="")
+input_stack_inspect = Input(id='input', label='Input', service='stack_inspect', to='output')
+output_stack_inspect = Output(id='output', label='Output')
+doc_stack_inspect = '''
+### Stack Inspect\n
+With this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n
+You can use \"Stack Info\" extension to take stack's name.
+'''
+stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], inputs=[input_stack_inspect], outputs=[output_stack_inspect], description=doc_stack_inspect, configured=False)
 
 
 ########################## componente export
@@ -44,5 +65,26 @@ list_images = Component(name='List images in Livetech Registry', args=[select_li
 
 
 
+########################## componente Registries
+input_registries = Input(id='input', label='Input', service='registries', to='output')
+output_registries = Output(id='output', label='Output')
+doc_registries = '''
+### Registries List\n
+With this extension you can view all the registries you are logged in on your host.
+'''
+registries = Component(name='Registries List', inputs=[input_registries], outputs=[output_registries], description=doc_registries, configured=True)
+
+
+########################## componente Volumes
+input_volumes = Input(id='input', label='Input', service='volumes', to='output')
+output_volumes = Output(id='output', label='Output')
+doc_volumes = '''
+### Volumes List\n
+With this extension you can view all the volumes created on your host.
+'''
+volumes = Component(name='Volumes List', inputs=[input_volumes], outputs=[output_volumes], description=doc_volumes, configured=True)
+
+
+
 ########################## crea extension
-save_extensions([stacks, export, list_images])
+save_extensions([stacks_info, stacks_name, stack_inspect, export, list_images, registries, volumes])

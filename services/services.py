@@ -18,25 +18,48 @@ app = get_app(name)
 bp = Blueprint("default", url_prefix=f"/")
 app.config["API_TITLE"] = name
 
-@bp.post('/stacks')
+
+@bp.post('/stacks_name')
 @extract_value_args()
 async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    # n = int(args.get('n'))
+    response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
+    l = int(len(response))
+    names = []
+    if l == 1:
+        count = (f'There is {l} stack on your system: ')
+        names.append(response[l]['name'])
+    else:
+        count = (f'There are {l} stacks on your system: ')
+        for n in range(0, l):
+            names.append(response[n]['name'])
+    return sanic.json((f'{count} {names}'))
+
+
+@bp.post('/stacks_info')
+@extract_value_args()
+async def f(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json())
 
+
+@bp.post('/stack_inspect')
+@extract_value_args()
+async def f(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_stack')}/containers"
+    return sanic.json(requests.get(url).json())
 
 @bp.post('/export')
 @extract_value_args()
 async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    # logger.debug("export")
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}/export"
-    # logger.debug(url)
     content = requests.get(url).content.decode()
-    # logger.debug(content)
     return sanic.json(content)
 
 
@@ -46,9 +69,26 @@ async def f(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
-    logger.debug(url)
-
     return sanic.json(requests.get(url).json())
+
+
+
+@bp.post('/registries')
+@extract_value_args()
+async def f(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries").json())
+
+
+@bp.post('/volumes')
+@extract_value_args()
+async def f(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/volumes").json())
+
+
 
 @app.exception(Exception)
 async def manage_exception(request, exception):

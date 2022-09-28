@@ -7,7 +7,7 @@
    {
     "id": "input",
     "label": "Input",
-    "service": "stacks",
+    "service": "stacks_info",
     "to": "output"
    }
   ],
@@ -23,6 +23,68 @@
    "click": null,
    "values": {},
    "args": []
+  }
+ },
+ {
+  "name": "Stacks Name",
+  "description": "\n### Stacks Name\n\n",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stacks_name",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": []
+  }
+ },
+ {
+  "name": "Stack Inspect",
+  "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_inspect",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": [
+    {
+     "name": "name_stack",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "Stack name to inspect",
+     "group": "",
+     "value": "",
+     "description": ""
+    }
+   ]
   }
  },
  {
@@ -107,6 +169,58 @@
      "description": ""
     }
    ]
+  }
+ },
+ {
+  "name": "Registries List",
+  "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "registries",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": []
+  }
+ },
+ {
+  "name": "Volumes List",
+  "description": "\n### Volumes List\n\nWith this extension you can view all the volumes created on your host.\n",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "volumes",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": []
   }
  }
 ]
