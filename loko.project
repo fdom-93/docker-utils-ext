@@ -3,9 +3,211 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "29/09/2022, 16:39:42",
+  "last_modify": "30/09/2022, 15:05:09",
   "graphs": {
-    "main": {
+    "test": {
+      "nodes": [
+        {
+          "id": "5893648e-fdac-414a-8e7f-f34179082ee4",
+          "position": {
+            "x": 576,
+            "y": 404
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 156,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "File Reader",
+            "events": null,
+            "description": "### Description\nThe FILE READER component allows the reading of individual files.\n\n### Output\nSetting the **Read Content** parameter to **False**, the output provides the file path in PosixPath format. The component will then need to be connected to other components to read the content, for example *LineReader*.\n\nOn the contrary, setting the **Read Content** parameter to **True**, you can choose whether to read the content in *Binary* format. This format will be selected for reading non-text files.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Inputs",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "value",
+                  "type": "files",
+                  "label": "File",
+                  "fragment": "files",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "read_content",
+                  "type": "boolean",
+                  "label": "Read content"
+                },
+                {
+                  "name": "binary",
+                  "type": "dynamic",
+                  "label": "Binary",
+                  "dynamicType": {
+                    "true": "boolean"
+                  },
+                  "parent": "read_content"
+                }
+              ],
+              "click": "Send file",
+              "icon": "RiFileList3Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "read_content": false,
+                "value": {
+                  "name": "docker-compose-mongo.yml",
+                  "path": "data/data/docker-compose-mongo.yml",
+                  "parent": "data/data",
+                  "isDir": false,
+                  "hidden": false
+                }
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 576,
+            "y": 404
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f16c6786-03e4-4894-8edb-bbf3f96fef7a",
+          "position": {
+            "x": 863,
+            "y": 410.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Import Docker-Compose",
+            "events": null,
+            "description": "\n### Stack Import\n\nWith this extension you can import a docker-compose.yml and run on your host.\n\nTo add your docker-compose.yml file, use \"File Reader\" Input block.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "import_stack",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": null,
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "name_new_stack",
+                  "type": "text",
+                  "label": "Stack name",
+                  "helper": "Give a name to your new stack",
+                  "group": "",
+                  "value": "",
+                  "description": ""
+                }
+              ],
+              "click": null,
+              "icon": null,
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "name_new_stack": "prova-import"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-5893648e-fdac-414a-8e7f-f34179082ee4output-f16c6786-03e4-4894-8edb-bbf3f96fef7ainput",
+          "source": "5893648e-fdac-414a-8e7f-f34179082ee4",
+          "sourceHandle": "output",
+          "target": "f16c6786-03e4-4894-8edb-bbf3f96fef7a",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#F8637A",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "Info": {
       "nodes": [
         {
           "id": "c489fd92-f51b-4bb4-9378-1d1861a0f0cd",
@@ -220,109 +422,6 @@
           "positionAbsolute": {
             "x": 352.3812251410659,
             "y": 140.71298053842034
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "7c0fd743-dc76-45ae-a5aa-097c3ee07304",
-          "position": {
-            "x": 748.6222069953975,
-            "y": 156.67100437361657
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Selector",
-            "events": null,
-            "description": "### Description\nThe SELECTOR component is used to select the value of one or more object keys. The required key/s are defined using the parameter **Keys**.\n\nIn order to add other keys you need to click on the **\"Add field\"** buttons.\n \nIf the field **Ignore Error** is toggled, missing key values are ignored.\n\nIt's also possible to select nested key, just by writing them in a *key* field, and seperating them using a full stop. Let's consider the object in the example below: if you want to have access to the content of the \"key3\" object, you need to use the following notation \"key1.key2.key3\".\n\n\n```json\n {\"key1\":{\"key2\":{\"key3\":[\"val1\", \"val2\", \"val3\"]}}} \n```\n\n\n\n### Input\n\nThe input consists of a dictionary.\n\n\n\n### Output\n\nThe output is the value of the required key of the dictionary received as input, if only one key is selected; otherwise it's an object which contains the keys specified and their value.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input",
-                "closed": false
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "ignore_err",
-                  "label": "Ignor Error",
-                  "type": "boolean",
-                  "description": "Choose whether to ignore error in case of a missing key or not"
-                },
-                {
-                  "name": "keys",
-                  "label": "Keys",
-                  "type": "multiKeyValue",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "description": "the name of the key to select from the incoming message",
-                  "fields": [
-                    {
-                      "name": "k",
-                      "placeholder": "key",
-                      "validation": {
-                        "required": "Required field"
-                      }
-                    }
-                  ]
-                }
-              ],
-              "click": null,
-              "icon": "RiCursorFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "ignore_err": false,
-                "keys": [
-                  {
-                    "k": "name",
-                    "id": "85f51c00-ddbc-4ad5-8c89-4485a8adbf5e"
-                  }
-                ]
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 748.6222069953975,
-            "y": 156.67100437361657
           },
           "__class__": "Node"
         },
@@ -552,340 +651,10 @@
           "__class__": "Node"
         },
         {
-          "id": "7cbae37d-2882-4fe5-b63c-76258825a0d7",
-          "position": {
-            "x": 364.89713287164005,
-            "y": 505.3422346108006
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 364.89713287164005,
-            "y": 505.3422346108006
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "9b806b99-36f3-4dda-9978-aaceafe06166",
-          "position": {
-            "x": 1087.3789573075737,
-            "y": 529.1614876607921
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 156,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "File Writer",
-            "events": null,
-            "description": "### Description\nThe FILE WRITER component allows you to write files. The **Append** parameter allows you to write a file using multiple inputs. The destination path of the file can be defined when creating the block or passed as input in the previous block. In this way you have the possibility to write multiple files using one block.\n\n### Input\nUsing the parameter **Save as**, the format of the data to be received as input is defined. The available formats are: *text*, *bytes* and *json*. To define the destination path of the file instead, the input is defined as:\n```python\nParameters(data = data, path = filename)\n```\n\n### Output\nThe output confirms that the file has been written with the string: **Written to filename**.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input",
-                "closed": false
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Outputs",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "path",
-                  "type": "text",
-                  "label": "Path"
-                },
-                {
-                  "name": "type",
-                  "label": "Save as",
-                  "type": "select",
-                  "options": [
-                    "text",
-                    "bytes",
-                    "json"
-                  ],
-                  "validation": {
-                    "required": "Required field"
-                  }
-                },
-                {
-                  "name": "append",
-                  "label": "Append",
-                  "type": "dynamic",
-                  "dynamicType": "boolean",
-                  "condition": "[\"text\", \"bytes\"].includes({parent})",
-                  "parent": "type"
-                },
-                {
-                  "name": "overwrite",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "true": "boolean"
-                  },
-                  "parent": "append",
-                  "label": "Overwrite"
-                }
-              ],
-              "click": null,
-              "icon": "RiFileEditFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "path": "",
-                "type": "text",
-                "append": false
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1087.3789573075737,
-            "y": 529.1614876607921
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "2602e96e-76c3-4d07-96c7-4b9ae28664ab",
-          "position": {
-            "x": 332.336424826865,
-            "y": 465.78616380632315
-          },
-          "type": "comment",
-          "dragHandle": "#commentHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 1189.3789573075737,
-          "height": 167.99999999999994,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "comment": "Download docker-compose.yml",
-            "fill": "#F9C74F",
-            "height": 167.99999999999994,
-            "width": 1189.3789573075737
-          },
-          "zIndex": -1,
-          "selectable": false,
-          "connectable": false,
-          "positionAbsolute": {
-            "x": 332.336424826865,
-            "y": 465.78616380632315
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "df255d7f-828c-402f-aa1c-30f54b933b54",
-          "position": {
-            "x": 893.0249266746467,
-            "y": 527.6392408844065
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Function",
-            "events": null,
-            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "propagate",
-                  "type": "boolean",
-                  "label": "Flush at the end"
-                },
-                {
-                  "name": "notify_warnings",
-                  "type": "boolean",
-                  "label": "Notify warnings"
-                },
-                {
-                  "name": "code",
-                  "type": "code",
-                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
-                  "label": "Code",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": null,
-                  "value": null
-                }
-              ],
-              "click": null,
-              "icon": "RiCodeSSlashFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "propagate": true,
-                "notify_warnings": true,
-                "code": "from datetime import datetime\n\nnow_formatted = datetime.now().strftime(\"%Y-%m-%d--%H-%M\")\n\nfilename = \"data/data/docker-compose-\" + now_formatted + \".yml\"\n\nreturn Parameters(data = data, path = filename)"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 893.0249266746467,
-            "y": 527.6392408844065
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "d2ca7afd-b028-4d38-811f-0b348eaacb6f",
           "position": {
-            "x": 970.357513080196,
-            "y": 686.8259244714308
+            "x": 1012.357513080196,
+            "y": 513.8259244714308
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1007,116 +776,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 970.357513080196,
-            "y": 686.8259244714308
+            "x": 1012.357513080196,
+            "y": 513.8259244714308
           },
-          "__class__": "Node"
-        },
-        {
-          "id": "b28cfb80-f05e-4cac-a1ee-4159e9b83a0f",
-          "position": {
-            "x": 1303,
-            "y": 525
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Function",
-            "events": null,
-            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "propagate",
-                  "type": "boolean",
-                  "label": "Flush at the end"
-                },
-                {
-                  "name": "notify_warnings",
-                  "type": "boolean",
-                  "label": "Notify warnings"
-                },
-                {
-                  "name": "code",
-                  "type": "code",
-                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
-                  "label": "Code",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": null,
-                  "value": null
-                }
-              ],
-              "click": null,
-              "icon": "RiCodeSSlashFill",
-              "values": {
-                "comment": "",
-                "alias": "Information",
-                "debug": true,
-                "propagate": true,
-                "notify_warnings": true,
-                "code": "s1 = \"Depending on the version of Docker installed on your system, you may have duplicate ports in the docker-compose export: \"\ns2 = \"this is not a bug, but a \\\"features\\\" introduced in the latests version of Docker (>= 20.10.6).\"\ns3 = \"But, if you run this docker-compose, you will NOT have any problems! For more informations, read here: https://github.com/moby/moby/issues/42313 \"\n\nreturn s1 + s2 + s3\n"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
           "__class__": "Node"
         },
         {
           "id": "bc8da6ca-7df2-4b7d-8c45-c0bce2c552f1",
           "position": {
-            "x": 368.4302426202714,
-            "y": 685.8557722799839
+            "x": 357.4302426202714,
+            "y": 533.8557722799839
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 56,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1193,16 +869,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 368.4302426202714,
-            "y": 685.8557722799839
+            "x": 357.4302426202714,
+            "y": 533.8557722799839
           },
           "__class__": "Node"
         },
         {
           "id": "ce1b2709-0bcb-4798-b863-754d24b01fba",
           "position": {
-            "x": 565.3007901011712,
-            "y": 704.9463301959969
+            "x": 576.3007901011712,
+            "y": 542.9463301959969
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1289,99 +965,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 565.3007901011712,
-            "y": 704.9463301959969
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "c7225fce-d4f2-42c6-b0f0-511a5810b10d",
-          "position": {
-            "x": 596,
-            "y": 531
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 239,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Export Docker-Compose",
-            "events": null,
-            "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "export",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": null,
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_id",
-                  "type": "text",
-                  "label": "Stack ID",
-                  "helper": "Your stack's id",
-                  "group": "",
-                  "value": "",
-                  "description": ""
-                }
-              ],
-              "click": null,
-              "icon": null,
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "stack_id": "8f2d55a80b63d0b59832f911689fad881160ac0c79640d0824a3c128f3db592e"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 596,
-            "y": 531
+            "x": 576.3007901011712,
+            "y": 542.9463301959969
           },
           "__class__": "Node"
         },
         {
           "id": "61973914-0121-42db-b290-8e9596466c89",
           "position": {
-            "x": 332.7620302068388,
-            "y": 645.8557722799839
+            "x": 327.7620302068388,
+            "y": 484.85577227998385
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -1401,8 +994,8 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 332.7620302068388,
-            "y": 645.8557722799839
+            "x": 327.7620302068388,
+            "y": 484.85577227998385
           },
           "__class__": "Node"
         },
@@ -1615,8 +1208,8 @@
         {
           "id": "a776a02a-5137-494a-8b76-a531481b004e",
           "position": {
-            "x": 582.3858156526554,
-            "y": 873.6918119039034
+            "x": 564.3858156526554,
+            "y": 717.6918119039034
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1677,23 +1270,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 582.3858156526554,
-            "y": 873.6918119039034
+            "x": 564.3858156526554,
+            "y": 717.6918119039034
           },
           "__class__": "Node"
         },
         {
           "id": "51349ad7-6af9-4520-91c2-aaf447607c32",
           "position": {
-            "x": 363.35520010722894,
-            "y": 866.1096239159203
+            "x": 368.35520010722894,
+            "y": 699.1096239159203
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 56,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1770,16 +1363,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 363.35520010722894,
-            "y": 866.1096239159203
+            "x": 368.35520010722894,
+            "y": 699.1096239159203
           },
           "__class__": "Node"
         },
         {
           "id": "17e42903-106e-403b-9cb4-bbde13735f20",
           "position": {
-            "x": 333.7798577156401,
-            "y": 826.3945515780155
+            "x": 324.7798577156401,
+            "y": 663.3945515780155
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -1799,8 +1392,8 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 333.7798577156401,
-            "y": 826.3945515780155
+            "x": 324.7798577156401,
+            "y": 663.3945515780155
           },
           "__class__": "Node"
         },
@@ -1900,8 +1493,8 @@
         {
           "id": "4cc9c869-fee1-4c4a-8b77-c53732cb25c7",
           "position": {
-            "x": 544,
-            "y": 162.00580978393555
+            "x": 548,
+            "y": 157.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1963,8 +1556,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 544,
-            "y": 162.00580978393555
+            "x": 548,
+            "y": 157.00580978393555
           },
           "__class__": "Node"
         },
@@ -2039,8 +1632,8 @@
         {
           "id": "12f39ce9-b87f-4754-8096-44ef5aa86f02",
           "position": {
-            "x": 937,
-            "y": 150.00580978393555
+            "x": 938,
+            "y": 159.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2109,16 +1702,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 937,
-            "y": 150.00580978393555
+            "x": 938,
+            "y": 159.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "657b0c69-fb81-4025-b9c8-c5ff46d4acdb",
           "position": {
-            "x": 1312,
-            "y": 101.00580978393555
+            "x": 1313,
+            "y": 103.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -2138,16 +1731,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 1312,
-            "y": 101.00580978393555
+            "x": 1313,
+            "y": 103.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "b45472ee-eb08-4f1c-8551-c16fed2a78ed",
           "position": {
-            "x": 596,
-            "y": 1065.0058097839355
+            "x": 1071,
+            "y": 714.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2208,16 +1801,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 596,
-            "y": 1065.0058097839355
+            "x": 1071,
+            "y": 714.0058097839355
           },
           "__class__": "Node"
         },
         {
           "id": "397586ff-f490-4396-9fdd-6eb2045165e2",
           "position": {
-            "x": 387,
-            "y": 1042.0058097839355
+            "x": 874,
+            "y": 717.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2301,16 +1894,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 387,
-            "y": 1042.0058097839355
+            "x": 874,
+            "y": 717.0058097839355
           },
           "__class__": "Node"
         },
         {
           "id": "abfbb21d-51a7-48d1-98a3-448905c71569",
           "position": {
-            "x": 334,
-            "y": 1002.0058097839355
+            "x": 820,
+            "y": 664.0058097839355
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -2330,8 +1923,8 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 334,
-            "y": 1002.0058097839355
+            "x": 820,
+            "y": 664.0058097839355
           },
           "__class__": "Node"
         },
@@ -2407,24 +2000,29 @@
           "__class__": "Node"
         },
         {
-          "id": "22d43de9-62c9-4dfb-80fb-2eaa1e8a7c0a",
+          "id": "d5248626-9ca7-4c58-97c6-7dee9445f5d3",
           "position": {
-            "x": 1202,
-            "y": 686.0058097839355
+            "x": 744,
+            "y": 158.10125350952148
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 88,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "Trigger",
+            "name": "Selector",
             "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
+            "description": "### Description\nThe SELECTOR component is used to select the value of one or more object keys. The required key/s are defined using the parameter **Keys**.\n\nIn order to add other keys you need to click on the **\"Add field\"** button.\n\nIf the field **Ignore Error** is toggled, missing keys are ignored.\n\nIt's also possible to select nested key, just by writing them in a *key* field, and seperating them using a full stop. Let's consider the object in the example below: if you want to have access to the content of the \"key3\" object, you need to use the following notation \"key1.key2.key3\".\n\n\n```json\n {\"key1\":{\"key2\":{\"key3\":[\"val1\", \"val2\", \"val3\"]}}} \n```\n\n\n\n### Input\n\nThe input consists of a dictionary.\n\n\n\n### Output\n\nThe output is the value of the required key of the dictionary received as input, if only one key is selected; otherwise it's an object which contains the keys specified and their value.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
             "outputs": [
               {
                 "id": "output",
@@ -2454,138 +2052,50 @@
                   "divider": true
                 },
                 {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1202,
-            "y": 686.0058097839355
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "d89679ef-69ea-4c8c-b82a-66e4ebfa0688",
-          "position": {
-            "x": 1413,
-            "y": 701.0058097839355
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 239,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Import Docker-Compose",
-            "events": null,
-            "description": "\n### Stack Import\n\nWith this extension you can import a docker-compose.yml and run on your host.\n\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "import_stack",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": null,
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
+                  "name": "ignore_err",
+                  "label": "Ignor Error",
                   "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
+                  "description": "Choose whether to ignore error in case of a missing key or not"
                 },
                 {
-                  "name": "name_new_stack",
-                  "type": "text",
-                  "label": "Stack name",
-                  "helper": "Give a name to your new stack",
-                  "group": "",
-                  "value": "",
-                  "description": ""
+                  "name": "exclude",
+                  "label": "Exclude Keys",
+                  "type": "boolean",
+                  "description": "If enabled, the output contains the whole input object excluding the specified keys; otherwise, only the specified keys are returned"
                 },
                 {
-                  "name": "file_import",
-                  "type": "files",
-                  "label": "File Import",
-                  "helper": "Import your .yml file",
-                  "group": "",
-                  "value": "",
-                  "description": ""
+                  "name": "keys",
+                  "label": "Keys",
+                  "type": "multiKeyValue",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "description": "Name of the key/s to select from the incoming message",
+                  "fields": [
+                    {
+                      "name": "k",
+                      "placeholder": "key",
+                      "validation": {
+                        "required": "Required field"
+                      }
+                    }
+                  ]
                 }
               ],
               "click": null,
-              "icon": null,
+              "icon": "RiCursorFill",
               "values": {
                 "comment": "",
                 "alias": "",
-                "debug": true,
-                "name_new_stack": "mongo-fede-import",
-                "file_import": {
-                  "name": "docker-compose-mongo.yml",
-                  "path": "data/data/docker-compose-mongo.yml",
-                  "parent": "data/data",
-                  "isDir": false,
-                  "hidden": false
-                }
+                "debug": false,
+                "ignore_err": false,
+                "exclude": false,
+                "keys": [
+                  {
+                    "k": "name",
+                    "id": "a819095b-fef5-42c6-aad8-057fdfd633b3"
+                  }
+                ]
               }
             },
             "locked": null
@@ -2593,127 +2103,13 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1413,
-            "y": 701.0058097839355
+            "x": 744,
+            "y": 158.10125350952148
           },
-          "__class__": "Node"
-        },
-        {
-          "id": "c385790f-22d5-4635-889e-5a113f38c7ca",
-          "position": {
-            "x": 1143,
-            "y": 842.0058097839355
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": null,
-          "dragging": null,
-          "data": {
-            "name": "File Reader",
-            "events": null,
-            "description": "### Description\nThe FILE READER component allows the reading of individual files.\n\n### Output\nSetting the **Read Content** parameter to **False**, the output provides the file path in PosixPath format. The component will then need to be connected to other components to read the content, for example *LineReader*.\n\nOn the contrary, setting the **Read Content** parameter to **True**, you can choose whether to read the content in *Binary* format. This format will be selected for reading non-text files.",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "input"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": false,
-            "options": {
-              "group": "Inputs",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "value",
-                  "type": "files",
-                  "label": "File",
-                  "fragment": "files",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                },
-                {
-                  "name": "read_content",
-                  "type": "boolean",
-                  "label": "Read content"
-                },
-                {
-                  "name": "binary",
-                  "type": "dynamic",
-                  "label": "Binary",
-                  "dynamicType": {
-                    "true": "boolean"
-                  },
-                  "parent": "read_content"
-                }
-              ],
-              "click": "Send file",
-              "icon": "RiFileList3Fill",
-              "values": {}
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
           "__class__": "Node"
         }
       ],
       "edges": [
-        {
-          "id": "reactflow__edge-df255d7f-828c-402f-aa1c-30f54b933b54output-9b806b99-36f3-4dda-9978-aaceafe06166input",
-          "source": "df255d7f-828c-402f-aa1c-30f54b933b54",
-          "sourceHandle": "output",
-          "target": "9b806b99-36f3-4dda-9978-aaceafe06166",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#56DCB9"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-9b806b99-36f3-4dda-9978-aaceafe06166output-b28cfb80-f05e-4cac-a1ee-4159e9b83a0finput",
-          "source": "9b806b99-36f3-4dda-9978-aaceafe06166",
-          "sourceHandle": "output",
-          "target": "b28cfb80-f05e-4cac-a1ee-4159e9b83a0f",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#56DCB9",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
         {
           "id": "reactflow__edge-bc8da6ca-7df2-4b7d-8c45-c0bce2c552f1output-ce1b2709-0bcb-4798-b863-754d24b01fbainput",
           "source": "bc8da6ca-7df2-4b7d-8c45-c0bce2c552f1",
@@ -2723,34 +2119,6 @@
           "data": {
             "startColor": "#D770AD",
             "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-7cbae37d-2882-4fe5-b63c-76258825a0d7output-c7225fce-d4f2-42c6-b0f0-511a5810b10dinput",
-          "source": "7cbae37d-2882-4fe5-b63c-76258825a0d7",
-          "sourceHandle": "output",
-          "target": "c7225fce-d4f2-42c6-b0f0-511a5810b10d",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-c7225fce-d4f2-42c6-b0f0-511a5810b10doutput-df255d7f-828c-402f-aa1c-30f54b933b54input",
-          "source": "c7225fce-d4f2-42c6-b0f0-511a5810b10d",
-          "sourceHandle": "output",
-          "target": "df255d7f-828c-402f-aa1c-30f54b933b54",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#D770AD"
           },
           "selected": false,
           "dragging": false,
@@ -2799,20 +2167,6 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-4cc9c869-fee1-4c4a-8b77-c53732cb25c7output-7c0fd743-dc76-45ae-a5aa-097c3ee07304input",
-          "source": "4cc9c869-fee1-4c4a-8b77-c53732cb25c7",
-          "sourceHandle": "output",
-          "target": "7c0fd743-dc76-45ae-a5aa-097c3ee07304",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
           "id": "reactflow__edge-c489fd92-f51b-4bb4-9378-1d1861a0f0cdoutput-c99b986f-c6e2-4b59-9d1b-aa30836fa8e2input",
           "source": "c489fd92-f51b-4bb4-9378-1d1861a0f0cd",
           "sourceHandle": "output",
@@ -2834,20 +2188,6 @@
           "targetHandle": "input",
           "data": {
             "startColor": "#888",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-7c0fd743-dc76-45ae-a5aa-097c3ee07304output-12f39ce9-b87f-4754-8096-44ef5aa86f02input",
-          "source": "7c0fd743-dc76-45ae-a5aa-097c3ee07304",
-          "sourceHandle": "output",
-          "target": "12f39ce9-b87f-4754-8096-44ef5aa86f02",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
             "stopColor": "#D770AD"
           },
           "selected": false,
@@ -2897,14 +2237,28 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-22d43de9-62c9-4dfb-80fb-2eaa1e8a7c0aoutput-d89679ef-69ea-4c8c-b82a-66e4ebfa0688input",
-          "source": "22d43de9-62c9-4dfb-80fb-2eaa1e8a7c0a",
+          "id": "reactflow__edge-4cc9c869-fee1-4c4a-8b77-c53732cb25c7output-d5248626-9ca7-4c58-97c6-7dee9445f5d3input",
+          "source": "4cc9c869-fee1-4c4a-8b77-c53732cb25c7",
           "sourceHandle": "output",
-          "target": "d89679ef-69ea-4c8c-b82a-66e4ebfa0688",
+          "target": "d5248626-9ca7-4c58-97c6-7dee9445f5d3",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-d5248626-9ca7-4c58-97c6-7dee9445f5d3output-12f39ce9-b87f-4754-8096-44ef5aa86f02input",
+          "source": "d5248626-9ca7-4c58-97c6-7dee9445f5d3",
+          "sourceHandle": "output",
+          "target": "12f39ce9-b87f-4754-8096-44ef5aa86f02",
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
-            "stopColor": "#888"
+            "stopColor": "#D770AD"
           },
           "selected": false,
           "dragging": false,
@@ -2913,20 +2267,20 @@
       ],
       "__class__": "Graph"
     },
-    "test": {
+    "Import/Export": {
       "nodes": [
         {
-          "id": "25f5bdfc-d399-4944-b1fd-390cdcbe9fba",
+          "id": "4b8b87f2-719b-4d38-ac89-16d4a4aa2306",
           "position": {
-            "x": 530,
-            "y": 207
+            "x": 359.89713287164005,
+            "y": 124.34223461080057
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 56,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2937,8 +2291,7 @@
             "outputs": [
               {
                 "id": "output",
-                "label": "output",
-                "closed": true
+                "label": "output"
               }
             ],
             "configured": true,
@@ -2999,28 +2352,445 @@
                 "type": "String",
                 "value": "Hello world!"
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 530,
-            "y": 207
+            "x": 359.89713287164005,
+            "y": 124.34223461080057
           },
           "__class__": "Node"
         },
         {
-          "id": "5893648e-fdac-414a-8e7f-f34179082ee4",
+          "id": "e128d5b8-ef0e-4d9e-9b5d-855609fb74be",
           "position": {
-            "x": 576,
-            "y": 404
+            "x": 1082.3789573075737,
+            "y": 148.1614876607921
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 156,
-          "height": 88,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "File Writer",
+            "events": null,
+            "description": "### Description\nThe FILE WRITER component allows you to write files. The **Append** parameter allows you to write a file using multiple inputs. The destination path of the file can be defined when creating the block or passed as input in the previous block. In this way you have the possibility to write multiple files using one block.\n\n### Input\nUsing the parameter **Save as**, the format of the data to be received as input is defined. The available formats are: *text*, *bytes* and *json*. To define the destination path of the file instead, the input is defined as:\n```python\nParameters(data = data, path = filename)\n```\n\n### Output\nThe output confirms that the file has been written with the string: **Written to filename**.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input",
+                "closed": false
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Outputs",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "path",
+                  "type": "text",
+                  "label": "Path"
+                },
+                {
+                  "name": "type",
+                  "label": "Save as",
+                  "type": "select",
+                  "options": [
+                    "text",
+                    "bytes",
+                    "json"
+                  ],
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "append",
+                  "label": "Append",
+                  "type": "dynamic",
+                  "dynamicType": "boolean",
+                  "condition": "[\"text\", \"bytes\"].includes({parent})",
+                  "parent": "type"
+                },
+                {
+                  "name": "overwrite",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "true": "boolean"
+                  },
+                  "parent": "append",
+                  "label": "Overwrite"
+                }
+              ],
+              "click": null,
+              "icon": "RiFileEditFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "path": "",
+                "type": "text",
+                "append": false
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1082.3789573075737,
+            "y": 148.1614876607921
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "d6535c83-d479-4b69-aea5-b68481863058",
+          "position": {
+            "x": 888.0249266746467,
+            "y": 146.6392408844065
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "from datetime import datetime\n\nnow_formatted = datetime.now().strftime(\"%Y-%m-%d--%H-%M\")\n\nfilename = \"data/data/docker-compose-\" + now_formatted + \".yml\"\n\nreturn Parameters(data = data, path = filename)"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 888.0249266746467,
+            "y": 146.6392408844065
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "96b2f7b0-ab2b-4071-a182-b06fe423ad9b",
+          "position": {
+            "x": 1298,
+            "y": 144
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 156,
+          "height": 72,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "Information",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "s1 = \"Depending on the version of Docker installed on your system, you may have duplicate ports in the docker-compose export: \"\ns2 = \"this is not a bug, but a \\\"features\\\" introduced in the latests version of Docker (>= 20.10.6).\"\ns3 = \"But, if you run this docker-compose, you will NOT have any problems! For more informations, read here: https://github.com/moby/moby/issues/42313 \"\n\nreturn s1 + s2 + s3\n"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1298,
+            "y": 144
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "cf546d1d-6b56-42ab-aafa-e356f2a206ba",
+          "position": {
+            "x": 591,
+            "y": 150
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 239,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Export Docker-Compose",
+            "events": null,
+            "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "export",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": null,
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_id",
+                  "type": "text",
+                  "label": "Stack ID",
+                  "helper": "Your stack's id",
+                  "group": "",
+                  "value": "",
+                  "description": ""
+                }
+              ],
+              "click": null,
+              "icon": null,
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "stack_id": "8f2d55a80b63d0b59832f911689fad881160ac0c79640d0824a3c128f3db592e"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 591,
+            "y": 150
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "1bf99800-42d3-4ee0-adb1-0e8b7a51bade",
+          "position": {
+            "x": 333.89713287164005,
+            "y": 86.34223461080057
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 1174,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Generate docker-compose.yml from your stack ",
+            "fill": "#F9C74F",
+            "height": 168,
+            "width": 1174.10286712836
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 333.89713287164005,
+            "y": 86.34223461080057
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "24e4d627-6a23-42f5-9918-38903e48d25f",
+          "position": {
+            "x": 376,
+            "y": 375.1012535095215
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -3106,16 +2876,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 576,
-            "y": 404
+            "x": 376,
+            "y": 375.1012535095215
           },
           "__class__": "Node"
         },
         {
-          "id": "f16c6786-03e4-4894-8edb-bbf3f96fef7a",
+          "id": "ac948d2c-5870-4f25-909e-0bb1f7b2f459",
           "position": {
-            "x": 863,
-            "y": 410.20974349975586
+            "x": 680,
+            "y": 386.1012535095215
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3181,114 +2951,86 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "name_new_stack": "prova-import"
+                "name_new_stack": "import-stack-from-loko"
               }
             },
             "locked": null
           },
           "selectable": true,
           "draggable": true,
+          "positionAbsolute": {
+            "x": 680,
+            "y": 386.1012535095215
+          },
           "__class__": "Node"
         },
         {
-          "id": "9b75c199-2cf5-4dc0-887d-3b16b565cf35",
+          "id": "d5c59240-88b5-4cf0-b1ba-3c552849f87d",
           "position": {
-            "x": 354,
-            "y": 409.00580978393555
+            "x": 333,
+            "y": 307.1012535095215
           },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
+          "type": "comment",
+          "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 633,
+          "height": 200,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            }
+            "comment": "Create Stack from a docker-compose.yml file",
+            "fill": "#FC8930",
+            "height": 200,
+            "width": 633
           },
-          "selectable": true,
-          "draggable": true,
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 333,
+            "y": 307.1012535095215
+          },
           "__class__": "Node"
         }
       ],
       "edges": [
         {
-          "id": "reactflow__edge-5893648e-fdac-414a-8e7f-f34179082ee4output-f16c6786-03e4-4894-8edb-bbf3f96fef7ainput",
-          "source": "5893648e-fdac-414a-8e7f-f34179082ee4",
+          "id": "8159b19c-b25d-4841-a9c0-85ebbac9d74d",
+          "source": "d6535c83-d479-4b69-aea5-b68481863058",
           "sourceHandle": "output",
-          "target": "f16c6786-03e4-4894-8edb-bbf3f96fef7a",
+          "target": "e128d5b8-ef0e-4d9e-9b5d-855609fb74be",
           "targetHandle": "input",
           "data": {
-            "startColor": "#F8637A",
+            "startColor": "#D770AD",
+            "stopColor": "#56DCB9"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "67d47936-9879-4cfb-aaf5-ab1377a3a0ae",
+          "source": "e128d5b8-ef0e-4d9e-9b5d-855609fb74be",
+          "sourceHandle": "output",
+          "target": "96b2f7b0-ab2b-4071-a182-b06fe423ad9b",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#56DCB9",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "7d4ddc87-150d-4e16-8176-db938d7fc910",
+          "source": "4b8b87f2-719b-4d38-ac89-16d4a4aa2306",
+          "sourceHandle": "output",
+          "target": "cf546d1d-6b56-42ab-aafa-e356f2a206ba",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
             "stopColor": "#888"
           },
           "selected": false,
@@ -3296,14 +3038,28 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-9b75c199-2cf5-4dc0-887d-3b16b565cf35output-5893648e-fdac-414a-8e7f-f34179082ee4input",
-          "source": "9b75c199-2cf5-4dc0-887d-3b16b565cf35",
+          "id": "ac2ebfa5-9909-4909-bea1-fa873e7dcc4b",
+          "source": "cf546d1d-6b56-42ab-aafa-e356f2a206ba",
           "sourceHandle": "output",
-          "target": "5893648e-fdac-414a-8e7f-f34179082ee4",
+          "target": "d6535c83-d479-4b69-aea5-b68481863058",
           "targetHandle": "input",
           "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#F8637A"
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-24e4d627-6a23-42f5-9918-38903e48d25foutput-ac948d2c-5870-4f25-909e-0bb1f7b2f459input",
+          "source": "24e4d627-6a23-42f5-9918-38903e48d25f",
+          "sourceHandle": "output",
+          "target": "ac948d2c-5870-4f25-909e-0bb1f7b2f459",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#F8637A",
+            "stopColor": "#888"
           },
           "selected": false,
           "dragging": false,

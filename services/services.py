@@ -2,12 +2,14 @@ import requests
 import traceback
 import json
 import sanic
+from io import BytesIO
 from sanic import Sanic, Blueprint
 from sanic.exceptions import NotFound
 from sanic_openapi import swagger_blueprint
 from loko_extensions.business.decorators import extract_value_args
 from utils.logger_utils import stream_logger
 logger = stream_logger(__name__)
+
 def get_app(name):
     app = Sanic(name)
     swagger_blueprint.url_prefix = "/api"
@@ -27,10 +29,11 @@ async def f1(value, args):
     logger.debug(f'JSON: {value}')
     response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
     l = int(len(response))
+    logger.debug(f'ELLE= {l}')
     names = []
     if l == 1:
         count = (f'There is {l} stack on your system: ')
-        names.append(response[l]['name'])
+        names.append(response[0]['name'])
     else:
         count = (f'There are {l} stacks on your system: ')
         for n in range(0, l):
@@ -69,11 +72,14 @@ async def f4(value, args):
 async def f5(file, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'File Name: {file[0].name}')
-    args = json.loads(args)
-    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload "
-    content = requests.post(url,files={'file': file[0]})
+    # args = json.loads(args)
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload"
+
+    f = BytesIO(file[0].body)
+    f.name = file[0].name
+    content = requests.post(url, files={'file':f})
     logger.debug(content.text)
-    return sanic.json('Upload OK')
+    return sanic.json('New stack created! You can use \'Stack Name\' components to verify.')
 
 
 
