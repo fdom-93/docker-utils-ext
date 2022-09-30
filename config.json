@@ -1,11 +1,14 @@
 {
   "side_containers": {
+    "hermes": {
+      "image": "hermes:0.0.1"
+    },
     "docker-utils": {
       "image": "docker-utils:0.0.1",
       "volumes": [
         "/var/run/docker.sock:/var/run/docker.sock",
         "/home/federico/.docker/config.json:/root/.docker/config.json",
-        "/home/federico/loko/projects/docker-utils-ext/mount/templates:/templates"
+        "/var/opt/loko/volumes/docker-utils-ext/mount/templates:/templates"
         ],
       "environment": {
         "ENGINE": "docker",
@@ -23,9 +26,6 @@
         "path": "/",
         "gw": false
       }
-    },
-    "hermes": {
-      "image": "hermes:0.0.1"
     }
   }
 }

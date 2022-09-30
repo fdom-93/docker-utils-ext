@@ -27,7 +27,7 @@
  },
  {
   "name": "Stacks Name",
-  "description": "\n### Stacks Name\n\n",
+  "description": "\n### Stacks Name\n\nWith this extension you can view all the stacks available on your host.\n",
   "configured": true,
   "inputs": [
    {
@@ -116,6 +116,42 @@
      "type": "text",
      "label": "Stack ID",
      "helper": "Your stack's id",
+     "group": "",
+     "value": "",
+     "description": ""
+    }
+   ]
+  }
+ },
+ {
+  "name": "Import Docker-Compose",
+  "description": "\n### Stack Import\n\nWith this extension you can import a docker-compose.yml and run on your host.\n\nTo add your docker-compose.yml file, use \"File Reader\" Input block.\n",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "import_stack",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "group": "Custom",
+   "icon": "RiTyphoonFill",
+   "click": null,
+   "values": {},
+   "args": [
+    {
+     "name": "name_new_stack",
+     "type": "text",
+     "label": "Stack name",
+     "helper": "Give a name to your new stack",
      "group": "",
      "value": "",
      "description": ""

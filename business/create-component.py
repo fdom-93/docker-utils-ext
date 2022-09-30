@@ -17,6 +17,7 @@ input_stacks_name = Input(id='input', label='Input', service='stacks_name', to='
 output_stacks_name = Output(id='output', label='Output')
 doc_stacks_name = '''
 ### Stacks Name\n
+With this extension you can view all the stacks available on your host.
 '''
 stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, configured=True)
 
@@ -33,7 +34,7 @@ You can use \"Stack Info\" extension to take stack's name.
 stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], inputs=[input_stack_inspect], outputs=[output_stack_inspect], description=doc_stack_inspect, configured=False)
 
 
-########################## componente export
+########################## componente export_stack
 id_export = Arg(name='stack_id', label='Stack ID', type='text', helper='Your stack\'s id', value="")
 
 input_export = Input(id='input', label='Input', service='export', to='output')
@@ -43,11 +44,26 @@ doc_export = '''
 With this extension you can export the docker-compose.yml of your stack.\n
 You need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).
 '''
-export = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, configured=False)
+export_stack = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, configured=False)
+
+
+########################## componente import_stack
+name_import = Arg(name='name_new_stack', label='Stack name', type='text', helper='Give a name to your new stack', value="")
+# file_import = Arg(name='file_import', label='File Import', type='files', helper='Import your .yml file', value="")
+
+input_import = Input(id='input', label='Input', service='import_stack', to='output')
+output_import = Output(id='output', label='Output')
+doc_import = '''
+### Stack Import\n
+With this extension you can import a docker-compose.yml and run on your host.\n
+To add your docker-compose.yml file, use \"File Reader\" Input block.
+'''
+# import_stack = Component(name='Import Docker-Compose', args=[name_import, file_import], inputs=[input_import], outputs=[output_import], description=doc_import, configured=False)
+import_stack = Component(name='Import Docker-Compose', args=[name_import], inputs=[input_import], outputs=[output_import], description=doc_import, configured=False)
+
 
 
 ########################## componente list-images
-
 select_list_images = Select(name="registry_name", label="Registry name", options=[ "registry.livetech.site" ])
 search_list_images = Arg(name='image_name', label='Image Name', type='text', helper='Image name to search', value="")
 
@@ -61,7 +77,6 @@ You don't need to insert the full name of the image, but you can use also search
 *(for example, you can insert \"stor\" to searching \"storage\")*
 '''
 list_images = Component(name='List images in Livetech Registry', args=[select_list_images, search_list_images], inputs=[input_list_images], outputs=[output_list_images], description=doc_list_images, configured=False)
-
 
 
 
@@ -87,4 +102,4 @@ volumes = Component(name='Volumes List', inputs=[input_volumes], outputs=[output
 
 
 ########################## crea extension
-save_extensions([stacks_info, stacks_name, stack_inspect, export, list_images, registries, volumes])
+save_extensions([stacks_info, stacks_name, stack_inspect, export_stack, import_stack, list_images, registries, volumes])

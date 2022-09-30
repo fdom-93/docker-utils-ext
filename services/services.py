@@ -1,5 +1,6 @@
 import requests
 import traceback
+import json
 import sanic
 from sanic import Sanic, Blueprint
 from sanic.exceptions import NotFound
@@ -21,7 +22,7 @@ app.config["API_TITLE"] = name
 
 @bp.post('/stacks_name')
 @extract_value_args()
-async def f(value, args):
+async def f1(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
@@ -39,7 +40,7 @@ async def f(value, args):
 
 @bp.post('/stacks_info')
 @extract_value_args()
-async def f(value, args):
+async def f2(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json())
@@ -47,15 +48,15 @@ async def f(value, args):
 
 @bp.post('/stack_inspect')
 @extract_value_args()
-async def f(value, args):
+async def f3(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_stack')}/containers"
     return sanic.json(requests.get(url).json())
 
-@bp.post('/export')
+@bp.post('/export_stack')
 @extract_value_args()
-async def f(value, args):
+async def f4(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}/export"
@@ -63,9 +64,22 @@ async def f(value, args):
     return sanic.json(content)
 
 
+@bp.post('/import_stack')
+@extract_value_args(file=True)
+async def f5(file, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'File Name: {file[0].name}')
+    args = json.loads(args)
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload "
+    content = requests.post(url,files={'file': file[0]})
+    logger.debug(content.text)
+    return sanic.json('Upload OK')
+
+
+
 @bp.post('/list-images')
 @extract_value_args()
-async def f(value, args):
+async def f6(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
@@ -75,7 +89,7 @@ async def f(value, args):
 
 @bp.post('/registries')
 @extract_value_args()
-async def f(value, args):
+async def f7(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries").json())
@@ -83,7 +97,7 @@ async def f(value, args):
 
 @bp.post('/volumes')
 @extract_value_args()
-async def f(value, args):
+async def f8(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/volumes").json())
