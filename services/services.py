@@ -2,12 +2,15 @@ import requests
 import traceback
 import json
 import sanic
+from bs4 import BeautifulSoup
 from io import BytesIO
 from sanic import Sanic, Blueprint
 from sanic.exceptions import NotFound
 from sanic_openapi import swagger_blueprint
 from loko_extensions.business.decorators import extract_value_args
 from utils.logger_utils import stream_logger
+
+
 logger = stream_logger(__name__)
 
 def get_app(name):
@@ -29,7 +32,6 @@ async def f1(value, args):
     logger.debug(f'JSON: {value}')
     response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
     l = int(len(response))
-    logger.debug(f'ELLE= {l}')
     names = []
     if l == 1:
         count = (f'There is {l} stack on your system: ')
@@ -60,37 +62,52 @@ async def f3(value, args):
 @bp.post('/export_stack')
 @extract_value_args()
 async def f4(value, args):
-    logger.debug(f'ARGS: {args}')
-    logger.debug(f'JSON: {value}')
+    # logger.debug(f'ARGS: {args}')
+    # logger.debug(f'JSON: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}/export"
     content = requests.get(url).content.decode()
+    stack_name = (requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}").json())['name']
+    logger.debug((f"Stack \'{stack_name}\' Exported Successfully"))
     return sanic.json(content)
 
+###### import stack using file reader
+# @bp.post('/import_stack')
+# @extract_value_args(file=True)
+# async def f5(file, args):
+#     logger.debug(f'ARGS: {args}')
+#     logger.debug(f'File Name: {file[0].name}')
+#     # args = json.loads(args)
+#     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload"
+#     f = BytesIO(file[0].body)
+#     f.name = file[0].name
+#     content = requests.post(url, files={'file':f})
+#     logger.debug(content.text)
+#     return sanic.json('New stack created! You can use \'Stack Name\' components to verify.')
 
 @bp.post('/import_stack')
-@extract_value_args(file=True)
-async def f5(file, args):
-    logger.debug(f'ARGS: {args}')
-    logger.debug(f'File Name: {file[0].name}')
-    # args = json.loads(args)
+@extract_value_args()
+async def f5(value, args):
+    # logger.debug(f'ARGS: {args}')
+    # logger.debug(f'File Name: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload"
-
-    f = BytesIO(file[0].body)
-    f.name = file[0].name
+    path = args.get('file_import').get('path')
+    file_path = f"http://gateway:8080/routes/orchestrator/files/{path}"
+    # logger.debug(f'FILE URL: {file_path}')
+    contenuto_file = requests.get(file_path).content
+    # logger.debug(contenuto_file.decode())
+    f = BytesIO(contenuto_file)
+    f.name = args.get('file_import').get('name')
     content = requests.post(url, files={'file':f})
     logger.debug(content.text)
-    return sanic.json('New stack created! You can use \'Stack Name\' components to verify.')
+    return sanic.json(f"New stack \'{args.get('name_new_stack')}\' created! You can use \'Stack Name\' components or \'Docker Utils Dashboard\' to verify it.")
 
 
-
-@bp.post('/list-images')
+@bp.post('/volumes')
 @extract_value_args()
 async def f6(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
-    return sanic.json(requests.get(url).json())
-
+    return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/volumes").json())
 
 
 @bp.post('/registries')
@@ -101,13 +118,33 @@ async def f7(value, args):
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries").json())
 
 
-@bp.post('/volumes')
+@bp.post('/list-docker-images')
 @extract_value_args()
 async def f8(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/volumes").json())
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}"
+    return sanic.json(requests.get(url).json())
 
+
+@bp.post('/list-python-lib')
+@extract_value_args()
+async def f9(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    url = f"https://{args.get('pypiserver')}/{args.get('python_lib')}"
+    resp = requests.get(url).content.decode()
+    soup = BeautifulSoup(resp, features="html.parser")
+    list = soup.text.split()
+    output = []
+    l = int(len(list))
+    if l == 0:
+        output = (f'No libraries found. Check if the name you are searching for is correct')
+    else:
+        for count in range(0, l):
+            output.append(list[count])
+        output.sort(reverse=True)
+    return sanic.json(output)
 
 
 @app.exception(Exception)

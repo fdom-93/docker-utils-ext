@@ -2,6 +2,9 @@
  {
   "name": "Stacks Info",
   "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": true,
   "inputs": [
    {
@@ -18,9 +21,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": []
   }
@@ -28,6 +28,9 @@
  {
   "name": "Stacks Name",
   "description": "\n### Stacks Name\n\nWith this extension you can view all the stacks available on your host.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": true,
   "inputs": [
    {
@@ -44,9 +47,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": []
   }
@@ -54,6 +54,9 @@
  {
   "name": "Stack Inspect",
   "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": false,
   "inputs": [
    {
@@ -70,9 +73,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": [
     {
@@ -82,20 +82,24 @@
      "helper": "Stack name to inspect",
      "group": "",
      "value": "",
-     "description": ""
+     "description": "",
+     "validation": null
     }
    ]
   }
  },
  {
   "name": "Export Docker-Compose",
-  "description": "\n### Stack Export\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
+  "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": false,
   "inputs": [
    {
     "id": "input",
     "label": "Input",
-    "service": "export",
+    "service": "export_stack",
     "to": "output"
    }
   ],
@@ -106,9 +110,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": [
     {
@@ -118,14 +119,18 @@
      "helper": "Your stack's id",
      "group": "",
      "value": "",
-     "description": ""
+     "description": "",
+     "validation": null
     }
    ]
   }
  },
  {
   "name": "Import Docker-Compose",
-  "description": "\n### Stack Import\n\nWith this extension you can import a docker-compose.yml and run on your host.\n\nTo add your docker-compose.yml file, use \"File Reader\" Input block.\n",
+  "description": "\n### Import Docker-Compose\n\nWith this extension you can run a docker-compose.yml on your host.\n\nGive a name to the new stack and select .yml file to import.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": false,
   "inputs": [
    {
@@ -142,9 +147,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": [
     {
@@ -154,55 +156,18 @@
      "helper": "Give a name to your new stack",
      "group": "",
      "value": "",
-     "description": ""
-    }
-   ]
-  }
- },
- {
-  "name": "List images in Livetech Registry",
-  "description": "\n### List images in Livetech Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "list-images",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
-   "values": {},
-   "args": [
-    {
-     "name": "registry_name",
-     "type": "select",
-     "label": "Registry name",
-     "helper": "",
-     "group": "",
-     "value": null,
      "description": "",
-     "options": [
-      "registry.livetech.site"
-     ]
+     "validation": null
     },
     {
-     "name": "image_name",
-     "type": "text",
-     "label": "Image Name",
-     "helper": "Image name to search",
+     "name": "file_import",
+     "type": "files",
+     "label": "File Import",
+     "helper": "Import your .yml file",
      "group": "",
      "value": "",
-     "description": ""
+     "description": "",
+     "validation": null
     }
    ]
   }
@@ -210,6 +175,9 @@
  {
   "name": "Registries List",
   "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": true,
   "inputs": [
    {
@@ -226,9 +194,6 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": []
   }
@@ -236,6 +201,9 @@
  {
   "name": "Volumes List",
   "description": "\n### Volumes List\n\nWith this extension you can view all the volumes created on your host.\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
   "configured": true,
   "inputs": [
    {
@@ -252,11 +220,108 @@
    }
   ],
   "options": {
-   "group": "Custom",
-   "icon": "RiTyphoonFill",
-   "click": null,
    "values": {},
    "args": []
+  }
+ },
+ {
+  "name": "List images in Livetech Registry",
+  "description": "\n### List images in Livetech Docker Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "list-docker-images",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "registry_name",
+     "type": "select",
+     "label": "Registry name",
+     "helper": "",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": null,
+     "options": [
+      "registry.livetech.site"
+     ]
+    },
+    {
+     "name": "image_name",
+     "type": "text",
+     "label": "Docker Image Name",
+     "helper": "Docker Image name to search",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "List libraries in Livetech Pypiserver",
+  "description": "\n### List python libraries in Livetech Pypiserver\nWith this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+  "group": "Custom",
+  "icon": "RiCheckboxBlankCircleFill",
+  "click": null,
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "list-python-lib",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "pypiserver",
+     "type": "select",
+     "label": "Pypiserver name",
+     "helper": "",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": null,
+     "options": [
+      "distribution.livetech.site"
+     ]
+    },
+    {
+     "name": "python_lib",
+     "type": "text",
+     "label": "Python Library Name",
+     "helper": "Image name to search. IMPORTANT: insert the EXACT name of the library",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
   }
  }
 ]

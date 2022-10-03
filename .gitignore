@@ -5,4 +5,5 @@ venv
 *.pyc
 dist
 __pycache__
+services/test.py
 mount

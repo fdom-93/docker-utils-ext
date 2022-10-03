@@ -1,5 +1,6 @@
+beautifulsoup4
 loko-extensions
 requests
-sanic
+sanic == 22.6.2
 sanic-cors
 sanic-openapi
