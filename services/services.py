@@ -147,6 +147,37 @@ async def f9(value, args):
     return sanic.json(output)
 
 
+@bp.post('/stack_pause')
+@extract_value_args()
+async def f10(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+
+    check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_pause')}").json()
+    name = check['name']
+    if name == "loko":
+        output = (f"You can't pause \'{name}\' stack. In this stack run the fundamental containers for LokoAI!")
+    else:
+        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_pause')}/pause"
+        requests.put(url).json()
+        output = (f"Stack \'{name}\' paused")
+    return sanic.json(output)
+
+
+@bp.post('/stack_unpause')
+@extract_value_args()
+async def f11(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_unpause')}").json()
+    name = check['name']
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_unpause')}/unpause"
+    requests.put(url).json()
+    output = (f"Stack \'{name}\' unpaused")
+    return sanic.json(output)
+
+
+
 @app.exception(Exception)
 async def manage_exception(request, exception):
     e = dict(error=str(exception))

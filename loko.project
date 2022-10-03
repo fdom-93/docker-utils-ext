@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "03/10/2022, 18:44:02",
+  "last_modify": "03/10/2022, 22:34:09",
   "graphs": {
     "test": {
       "nodes": [
@@ -1879,7 +1879,7 @@
                 "debug": true,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "s1 = \"Depending on the version of Docker installed on your system, you may have duplicate ports in the docker-compose export: \"\ns2 = \"this is not a bug, but a \\\"features\\\" introduced in the latests version of Docker (>= 20.10.6).\"\ns3 = \"But, if you run this docker-compose, you will NOT have any problems! For more informations, read here: https://github.com/moby/moby/issues/42313 \"\n\nreturn s1 + s2 + s3\n"
+                "code": "s1 = \"Depending on the version of Docker installed on your system, you may have duplicate ports in the exported docker-compose file: \"\ns2 = \"this is not a bug, but a \\\"features\\\" introduced in the latests version of Docker (>= 20.10.6). Docker now supports Ipv4 and Ipv6 protocols for port mapping.\"\ns3 = \"But, if you run this docker-compose, you will NOT have any problems! For more informations, read here: https://github.com/moby/moby/issues/42313 \"\n\nreturn s1 + s2 + s3\n"
               }
             },
             "locked": null
@@ -1924,8 +1924,8 @@
         {
           "id": "d5c59240-88b5-4cf0-b1ba-3c552849f87d",
           "position": {
-            "x": 333,
-            "y": 307.1012535095215
+            "x": 340,
+            "y": 278.1012535095215
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -1945,16 +1945,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 333,
-            "y": 307.1012535095215
+            "x": 340,
+            "y": 278.1012535095215
           },
           "__class__": "Node"
         },
         {
           "id": "4e484a65-54db-48c2-81a1-57618d576ca3",
           "position": {
-            "x": 366,
-            "y": 355.1142997741699
+            "x": 362,
+            "y": 325.1142997741699
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2039,16 +2039,138 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 366,
-            "y": 355.1142997741699
+            "x": 362,
+            "y": 325.1142997741699
           },
           "__class__": "Node"
         },
         {
-          "id": "741f5f3b-bc4a-4b45-9ca4-bf35694c537f",
+          "id": "58c9ce43-82ce-4648-b534-f4910b33457a",
           "position": {
-            "x": 571,
-            "y": 149.00580978393555
+            "x": 959,
+            "y": 329
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 959,
+            "y": 329
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f5927ee0-56a6-4b07-a46a-e4fe2c09b94c",
+          "position": {
+            "x": 908,
+            "y": 280
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 531,
+          "height": 186,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Run a single container",
+            "fill": "#F74B65",
+            "height": 186,
+            "width": 531
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 908,
+            "y": 280
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "784b137e-06d3-4f00-a5a2-37d89652bc43",
+          "position": {
+            "x": 580,
+            "y": 156.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2066,7 +2188,7 @@
               {
                 "id": "input",
                 "label": "Input",
-                "service": "export",
+                "service": "export_stack",
                 "to": "output"
               }
             ],
@@ -2078,7 +2200,7 @@
             ],
             "configured": true,
             "options": {
-              "group": null,
+              "group": "Docker-Utils Import/Export",
               "args": [
                 {
                   "name": "comment",
@@ -2105,16 +2227,17 @@
                   "helper": "Your stack's id",
                   "group": "",
                   "value": "",
-                  "description": ""
+                  "description": "",
+                  "validation": null
                 }
               ],
               "click": null,
-              "icon": null,
+              "icon": "RiCheckboxBlankCircleFill",
               "values": {
                 "comment": "",
                 "alias": "",
                 "debug": false,
-                "stack_id": "8f2d55a80b63d0b59832f911689fad881160ac0c79640d0824a3c128f3db592e"
+                "stack_id": "a4aaef7b10b69d2ee91ad3c4a075c32c86674207dec4e309dc98ac590c2dc135"
               }
             },
             "locked": null
@@ -2122,16 +2245,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 571,
-            "y": 149.00580978393555
+            "x": 580,
+            "y": 156.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "7893dab2-3659-40d7-aae6-ac5819785c0f",
+          "id": "2bbd6f4d-055d-4e3b-b8d6-90f1a8a0b2ad",
           "position": {
-            "x": 572,
-            "y": 383.00580978393555
+            "x": 586,
+            "y": 364.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2161,7 +2284,7 @@
             ],
             "configured": true,
             "options": {
-              "group": null,
+              "group": "Docker-Utils Import/Export",
               "args": [
                 {
                   "name": "comment",
@@ -2188,7 +2311,8 @@
                   "helper": "Give a name to your new stack",
                   "group": "",
                   "value": "",
-                  "description": ""
+                  "description": "",
+                  "validation": null
                 },
                 {
                   "name": "file_import",
@@ -2197,11 +2321,12 @@
                   "helper": "Import your .yml file",
                   "group": "",
                   "value": "",
-                  "description": ""
+                  "description": "",
+                  "validation": null
                 }
               ],
               "click": null,
-              "icon": null,
+              "icon": "RiCheckboxBlankCircleFill",
               "values": {
                 "comment": "",
                 "alias": "",
@@ -2221,8 +2346,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 572,
-            "y": 383.00580978393555
+            "x": 586,
+            "y": 364.00580978393555
           },
           "__class__": "Node"
         }
@@ -2257,10 +2382,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-4b8b87f2-719b-4d38-ac89-16d4a4aa2306output-741f5f3b-bc4a-4b45-9ca4-bf35694c537finput",
+          "id": "reactflow__edge-4b8b87f2-719b-4d38-ac89-16d4a4aa2306output-784b137e-06d3-4f00-a5a2-37d89652bc43input",
           "source": "4b8b87f2-719b-4d38-ac89-16d4a4aa2306",
           "sourceHandle": "output",
-          "target": "741f5f3b-bc4a-4b45-9ca4-bf35694c537f",
+          "target": "784b137e-06d3-4f00-a5a2-37d89652bc43",
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
@@ -2271,8 +2396,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-741f5f3b-bc4a-4b45-9ca4-bf35694c537foutput-d6535c83-d479-4b69-aea5-b68481863058input",
-          "source": "741f5f3b-bc4a-4b45-9ca4-bf35694c537f",
+          "id": "reactflow__edge-784b137e-06d3-4f00-a5a2-37d89652bc43output-d6535c83-d479-4b69-aea5-b68481863058input",
+          "source": "784b137e-06d3-4f00-a5a2-37d89652bc43",
           "sourceHandle": "output",
           "target": "d6535c83-d479-4b69-aea5-b68481863058",
           "targetHandle": "input",
@@ -2285,430 +2410,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-4e484a65-54db-48c2-81a1-57618d576ca3output-7893dab2-3659-40d7-aae6-ac5819785c0finput",
+          "id": "reactflow__edge-4e484a65-54db-48c2-81a1-57618d576ca3output-2bbd6f4d-055d-4e3b-b8d6-90f1a8a0b2adinput",
           "source": "4e484a65-54db-48c2-81a1-57618d576ca3",
           "sourceHandle": "output",
-          "target": "7893dab2-3659-40d7-aae6-ac5819785c0f",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        }
-      ],
-      "__class__": "Graph"
-    },
-    "Your Hosts Info": {
-      "nodes": [
-        {
-          "id": "f29b861e-0eb8-4193-8a9b-f1b7a78453db",
-          "position": {
-            "x": 601.3858156526554,
-            "y": 119.69181190390339
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Registries List",
-            "events": null,
-            "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "registries",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": null,
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                }
-              ],
-              "click": null,
-              "icon": null,
-              "values": {
-                "debug": true
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 601.3858156526554,
-            "y": 119.69181190390339
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "9134450b-6868-4b05-8308-1aaf586873c7",
-          "position": {
-            "x": 388.35520010722894,
-            "y": 99.10962391592034
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 388.35520010722894,
-            "y": 99.10962391592034
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "68a520c1-d163-4ca5-9a7e-611d4b5eee61",
-          "position": {
-            "x": 608,
-            "y": 305.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Volumes List",
-            "events": null,
-            "description": "\n### Volumes List\n\nWith this extension you can view all the volumes created on your host.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "volumes",
-                "to": "output",
-                "closed": false
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": null,
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                }
-              ],
-              "click": null,
-              "icon": null,
-              "values": {
-                "debug": true
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 608,
-            "y": 305.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "004ef36f-22ff-4406-97b2-632e43dd5cf1",
-          "position": {
-            "x": 373.0000000000001,
-            "y": 281.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 373.0000000000001,
-            "y": 281.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "348e8bd6-2a38-4549-adb2-24ac819a398f",
-          "position": {
-            "x": 336.35520010722894,
-            "y": 57.691811903903385
-          },
-          "type": "comment",
-          "dragHandle": "#commentHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 532.0306155454265,
-          "height": 136,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "comment": "Registry Saved on your Host",
-            "fill": "#F74B65",
-            "height": 136,
-            "width": 532.0306155454265
-          },
-          "zIndex": -1,
-          "selectable": false,
-          "connectable": false,
-          "positionAbsolute": {
-            "x": 336.35520010722894,
-            "y": 57.691811903903385
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "12edf62a-994a-4332-bc82-205705f79416",
-          "position": {
-            "x": 341,
-            "y": 244.00580978393555
-          },
-          "type": "comment",
-          "dragHandle": "#commentHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 481,
-          "height": 136,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "comment": "Docker Volumes mounted on your Host",
-            "fill": "#F9C74F",
-            "height": 136,
-            "width": 481
-          },
-          "zIndex": -1,
-          "selectable": false,
-          "connectable": false,
-          "positionAbsolute": {
-            "x": 341,
-            "y": 244.00580978393555
-          },
-          "__class__": "Node"
-        }
-      ],
-      "edges": [
-        {
-          "id": "reactflow__edge-9134450b-6868-4b05-8308-1aaf586873c7output-f29b861e-0eb8-4193-8a9b-f1b7a78453dbinput",
-          "source": "9134450b-6868-4b05-8308-1aaf586873c7",
-          "sourceHandle": "output",
-          "target": "f29b861e-0eb8-4193-8a9b-f1b7a78453db",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#D770AD",
-            "stopColor": "#888"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
-          "id": "reactflow__edge-004ef36f-22ff-4406-97b2-632e43dd5cf1output-68a520c1-d163-4ca5-9a7e-611d4b5eee61input",
-          "source": "004ef36f-22ff-4406-97b2-632e43dd5cf1",
-          "sourceHandle": "output",
-          "target": "68a520c1-d163-4ca5-9a7e-611d4b5eee61",
+          "target": "2bbd6f4d-055d-4e3b-b8d6-90f1a8a0b2ad",
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
@@ -2968,21 +2673,21 @@
           "__class__": "Node"
         },
         {
-          "id": "65cb7661-6ec3-4100-ac65-8cf4c33db3b9",
+          "id": "1ae193ec-733e-4fd4-ad26-3f4628c63092",
           "position": {
-            "x": 573,
-            "y": 165.20539596676826
+            "x": 563,
+            "y": 167.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 331,
+          "width": 150,
           "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "List images in Livetech Registry",
+            "name": "Search images in Livetech Registry",
             "events": null,
             "description": "\n### List images in Livetech Docker Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
             "inputs": [
@@ -3001,7 +2706,7 @@
             ],
             "configured": true,
             "options": {
-              "group": "Custom",
+              "group": "Docker-Utils Registry/Pypiserver",
               "args": [
                 {
                   "name": "comment",
@@ -3060,27 +2765,27 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 573,
-            "y": 165.20539596676826
+            "x": 563,
+            "y": 167.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "e0140680-46c4-4100-b6d5-f081a3f93275",
+          "id": "56b7697d-508d-43c2-88f1-490900fa76e5",
           "position": {
-            "x": 568,
+            "x": 553,
             "y": 342.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 372,
+          "width": 389,
           "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "List libraries in Livetech Pypiserver",
+            "name": "Search libraries in Livetech Pypiserver",
             "events": null,
             "description": "\n### List python libraries in Livetech Pypiserver\nWith this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
             "inputs": [
@@ -3099,7 +2804,7 @@
             ],
             "configured": true,
             "options": {
-              "group": "Custom",
+              "group": "Docker-Utils Registry/Pypiserver",
               "args": [
                 {
                   "name": "comment",
@@ -3150,7 +2855,7 @@
                 "alias": "",
                 "debug": true,
                 "pypiserver": "distribution.livetech.site",
-                "python_lib": "ds4biz-storag"
+                "python_lib": "docker-utils"
               }
             },
             "locked": null
@@ -3158,7 +2863,7 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 568,
+            "x": 553,
             "y": 342.20974349975586
           },
           "__class__": "Node"
@@ -3166,10 +2871,10 @@
       ],
       "edges": [
         {
-          "id": "reactflow__edge-1cf953a7-aae7-44e2-ad8d-333556cf7826output-65cb7661-6ec3-4100-ac65-8cf4c33db3b9input",
+          "id": "reactflow__edge-1cf953a7-aae7-44e2-ad8d-333556cf7826output-1ae193ec-733e-4fd4-ad26-3f4628c63092input",
           "source": "1cf953a7-aae7-44e2-ad8d-333556cf7826",
           "sourceHandle": "output",
-          "target": "65cb7661-6ec3-4100-ac65-8cf4c33db3b9",
+          "target": "1ae193ec-733e-4fd4-ad26-3f4628c63092",
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
@@ -3180,10 +2885,10 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-e0b2a797-4afd-40eb-88d9-3e72d21b38c9output-e0140680-46c4-4100-b6d5-f081a3f93275input",
+          "id": "reactflow__edge-e0b2a797-4afd-40eb-88d9-3e72d21b38c9output-56b7697d-508d-43c2-88f1-490900fa76e5input",
           "source": "e0b2a797-4afd-40eb-88d9-3e72d21b38c9",
           "sourceHandle": "output",
-          "target": "e0140680-46c4-4100-b6d5-f081a3f93275",
+          "target": "56b7697d-508d-43c2-88f1-490900fa76e5",
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
@@ -3194,6 +2899,1354 @@
           "__class__": "Edge"
         }
       ],
+      "__class__": "Graph"
+    },
+    "Your Host Info": {
+      "nodes": [
+        {
+          "id": "9134450b-6868-4b05-8308-1aaf586873c7",
+          "position": {
+            "x": 388.35520010722894,
+            "y": 99.10962391592034
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 388.35520010722894,
+            "y": 99.10962391592034
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "004ef36f-22ff-4406-97b2-632e43dd5cf1",
+          "position": {
+            "x": 373.0000000000001,
+            "y": 281.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 373.0000000000001,
+            "y": 281.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "348e8bd6-2a38-4549-adb2-24ac819a398f",
+          "position": {
+            "x": 336.35520010722894,
+            "y": 57.691811903903385
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 532.0306155454265,
+          "height": 136,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Registry Saved on your Host",
+            "fill": "#F74B65",
+            "height": 136,
+            "width": 532.0306155454265
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 336.35520010722894,
+            "y": 57.691811903903385
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "12edf62a-994a-4332-bc82-205705f79416",
+          "position": {
+            "x": 341,
+            "y": 244.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 481,
+          "height": 136,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Docker Volumes mounted on your Host",
+            "fill": "#F9C74F",
+            "height": 136,
+            "width": 481
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 341,
+            "y": 244.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "3ed61338-e56c-4ad5-83f3-ea45566f5ae1",
+          "position": {
+            "x": 612,
+            "y": 134.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 189,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Registries List",
+            "events": null,
+            "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "registries",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Host info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                }
+              ],
+              "click": null,
+              "icon": "RiCheckboxBlankCircleFill",
+              "values": {
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 612,
+            "y": 134.20974349975586
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "de17048e-f17a-4e56-adf1-325abb9414d8",
+          "position": {
+            "x": 601,
+            "y": 317.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Volumes List",
+            "events": null,
+            "description": "\n### Volumes List\n\nWith this extension you can view all the volumes created on your host.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "volumes",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Host info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                }
+              ],
+              "click": null,
+              "icon": "RiCheckboxBlankCircleFill",
+              "values": {
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 601,
+            "y": 317.20974349975586
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-9134450b-6868-4b05-8308-1aaf586873c7output-3ed61338-e56c-4ad5-83f3-ea45566f5ae1input",
+          "source": "9134450b-6868-4b05-8308-1aaf586873c7",
+          "sourceHandle": "output",
+          "target": "3ed61338-e56c-4ad5-83f3-ea45566f5ae1",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-004ef36f-22ff-4406-97b2-632e43dd5cf1output-de17048e-f17a-4e56-adf1-325abb9414d8input",
+          "source": "004ef36f-22ff-4406-97b2-632e43dd5cf1",
+          "sourceHandle": "output",
+          "target": "de17048e-f17a-4e56-adf1-325abb9414d8",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "Pause/Unpause": {
+      "nodes": [
+        {
+          "id": "573229a8-215a-4302-b59b-f8dc43ba5989",
+          "position": {
+            "x": 366,
+            "y": 149.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 366,
+            "y": 149.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "0d6849f3-058a-4cd1-b7ac-31f6ddf7ecca",
+          "position": {
+            "x": 344,
+            "y": 108.20974349975586
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 466,
+          "height": 136,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Pause all the containers in a Stack",
+            "fill": "#90BE6D",
+            "height": 136,
+            "width": 466
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 344,
+            "y": 108.20974349975586
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "3320fe8e-649d-4311-af5a-3127b6172a56",
+          "position": {
+            "x": 362,
+            "y": 359.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 362,
+            "y": 359.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "88fd8df2-c3ce-4fdd-a242-5dd56dd8142b",
+          "position": {
+            "x": 347,
+            "y": 298.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 422,
+          "height": 224,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Unpause all the containers in a Stack",
+            "fill": "#43AA8B",
+            "height": 224,
+            "width": 422
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 347,
+            "y": 298.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "b96840a3-7d3c-40b9-9e21-e30d1f4e8e57",
+          "position": {
+            "x": 603,
+            "y": 170.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 156,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Pause",
+            "events": null,
+            "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_pause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_id_pause",
+                  "type": "text",
+                  "label": "Stack ID",
+                  "helper": "Stack ID to pause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCheckboxBlankCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_id_pause": "8f2d55a80b63d0b59832f911689fad881160ac0c79640d0824a3c128f3db592e"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 603,
+            "y": 170.20974349975586
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "3df3e10b-830c-41f0-9f66-891302c9f17e",
+          "position": {
+            "x": 570,
+            "y": 399.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Unpause",
+            "events": null,
+            "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_unpause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_id_unpause",
+                  "type": "text",
+                  "label": "Stack ID",
+                  "helper": "Stack ID to unpause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCheckboxBlankCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_id_unpause": "a1c43cd4817cef7a87e66acb2b45d9947541fa01d546de67eb24807468a41c53"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 570,
+            "y": 399.20974349975586
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "bef85614-f817-4afc-a824-91988751e7ca",
+          "position": {
+            "x": 996,
+            "y": 200.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 996,
+            "y": 200.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f292b8b3-a785-45ba-ab9b-b08bd74a0767",
+          "position": {
+            "x": 913,
+            "y": 142.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 230,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Pause a single container",
+            "fill": "#FC8930",
+            "height": 168,
+            "width": 230
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "__class__": "Node"
+        },
+        {
+          "id": "691df1f8-60a2-448e-98a9-f1c35316a7a7",
+          "position": {
+            "x": 1010,
+            "y": 392.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1010,
+            "y": 392.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "9138b5a8-880d-4767-80b1-eb6e222cf2ac",
+          "position": {
+            "x": 938,
+            "y": 345.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 277,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Unpause a single container",
+            "fill": "#F9C74F",
+            "height": 168,
+            "width": 230
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 938,
+            "y": 345.00580978393555
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [
+        {
+          "id": "reactflow__edge-573229a8-215a-4302-b59b-f8dc43ba5989output-b96840a3-7d3c-40b9-9e21-e30d1f4e8e57input",
+          "source": "573229a8-215a-4302-b59b-f8dc43ba5989",
+          "sourceHandle": "output",
+          "target": "b96840a3-7d3c-40b9-9e21-e30d1f4e8e57",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-3320fe8e-649d-4311-af5a-3127b6172a56output-3df3e10b-830c-41f0-9f66-891302c9f17einput",
+          "source": "3320fe8e-649d-4311-af5a-3127b6172a56",
+          "sourceHandle": "output",
+          "target": "3df3e10b-830c-41f0-9f66-891302c9f17e",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
+            "stopColor": "#888"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        }
+      ],
+      "__class__": "Graph"
+    },
+    "Delete": {
+      "nodes": [
+        {
+          "id": "c4c35201-86d0-4411-b19c-aa57bad8c35b",
+          "position": {
+            "x": 456,
+            "y": 196.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "__class__": "Node"
+        },
+        {
+          "id": "55cae2f0-d236-4fa4-b860-084ef1499bf5",
+          "position": {
+            "x": 416,
+            "y": 156.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 230,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Delete Stack",
+            "fill": "#F74B65",
+            "height": 168,
+            "width": 230
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "__class__": "Node"
+        },
+        {
+          "id": "3a05e746-84c6-4126-a733-8dc78cb17ee1",
+          "position": {
+            "x": 937,
+            "y": 287.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 937,
+            "y": 287.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f23b421c-113c-4148-8667-362e918e2d48",
+          "position": {
+            "x": 864,
+            "y": 233.00580978393555
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 277,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Delete Container",
+            "fill": "#F74B65",
+            "height": 168,
+            "width": 230
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 864,
+            "y": 233.00580978393555
+          },
+          "__class__": "Node"
+        }
+      ],
+      "edges": [],
       "__class__": "Graph"
     }
   },

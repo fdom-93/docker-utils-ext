@@ -22,7 +22,7 @@
         8080
       ],
       "gui": {
-        "name": "Docker Utils",
+        "name": "Docker Utils Dashboard",
         "path": "/",
         "gw": false
       }
