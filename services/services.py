@@ -32,15 +32,18 @@ async def f1(value, args):
     logger.debug(f'JSON: {value}')
     response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
     l = int(len(response))
+    # logger.debug(f'ELLEEEE: {l}')
     names = []
     if l == 1:
         count = (f'There is {l} stack on your system: ')
+        # logger.debug(f'COUNT: {count}')
         names.append(response[0]['name'])
     else:
         count = (f'There are {l} stacks on your system: ')
+        # logger.debug(f'COUNT: {count}')
         for n in range(0, l):
             names.append(response[n]['name'])
-    return sanic.json((f'{count} {names}'))
+    return sanic.json(f'{count} {names}')
 
 
 @bp.post('/stacks_info')

@@ -3,7 +3,7 @@
   "name": "Stacks Info",
   "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
   "group": "Docker-Utils Info",
-  "icon": "RiCheckboxBlankCircleFill",
+  "icon": "RiInformationFill",
   "click": null,
   "configured": true,
   "inputs": [
@@ -29,8 +29,8 @@
   "name": "Stacks Name",
   "description": "\n### Stacks Name\n\nWith this extension you can view all the stacks available on your host.\n",
   "group": "Docker-Utils Info",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiInformationFill",
+  "click": "Send message",
   "configured": true,
   "inputs": [
    {
@@ -55,8 +55,8 @@
   "name": "Stack Inspect",
   "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
   "group": "Docker-Utils Info",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiInformationFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -92,8 +92,8 @@
   "name": "Export Docker-Compose",
   "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
   "group": "Docker-Utils Import/Export",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiUploadFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -129,8 +129,8 @@
   "name": "Import Docker-Compose",
   "description": "\n### Import Docker-Compose\n\nWith this extension you can run a docker-compose.yml on your host.\n\nGive a name to the new stack and select .yml file to import.\n",
   "group": "Docker-Utils Import/Export",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiDownload2Fill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -176,8 +176,8 @@
   "name": "Registries List",
   "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
   "group": "Docker-Utils Host info",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiHomeFill",
+  "click": "Send message",
   "configured": true,
   "inputs": [
    {
@@ -202,8 +202,8 @@
   "name": "Volumes List",
   "description": "\n### Volumes List\n\nWith this extension you can view all the volumes created on your host.\n",
   "group": "Docker-Utils Host info",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiHomeFill",
+  "click": "Send message",
   "configured": true,
   "inputs": [
    {
@@ -228,8 +228,8 @@
   "name": "Search images in Livetech Registry",
   "description": "\n### List images in Livetech Docker Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "group": "Docker-Utils Registry/Pypiserver",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiFileSearchFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -278,8 +278,8 @@
   "name": "Search libraries in Livetech Pypiserver",
   "description": "\n### List python libraries in Livetech Pypiserver\nWith this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "group": "Docker-Utils Registry/Pypiserver",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiFileSearchFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -328,8 +328,8 @@
   "name": "Stack Pause",
   "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
   "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiPauseCircleFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {
@@ -365,8 +365,8 @@
   "name": "Stack Unpause",
   "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
   "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiCheckboxBlankCircleFill",
-  "click": null,
+  "icon": "RiPlayCircleFill",
+  "click": "Send message",
   "configured": false,
   "inputs": [
    {

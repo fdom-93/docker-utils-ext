@@ -9,7 +9,7 @@ doc_stacks_info = '''
 With this extension you can view all the info about your stacks.\n
 You can then use a function after this block to manipulate and filter all the data you need to use it.
 '''
-stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=[output_stacks_info], description=doc_stacks_info, group="Docker-Utils Info", configured=True)
+stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=[output_stacks_info], description=doc_stacks_info, group="Docker-Utils Info", configured=True, icon='RiInformationFill')
 
 
 ########################## componente stacks name
@@ -19,7 +19,7 @@ doc_stacks_name = '''
 ### Stacks Name\n
 With this extension you can view all the stacks available on your host.
 '''
-stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, group="Docker-Utils Info", configured=True)
+stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, group="Docker-Utils Info", configured=True, trigger=True, icon='RiInformationFill')
 
 
 ########################## componente stack inspect
@@ -31,7 +31,7 @@ doc_stack_inspect = '''
 With this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n
 You can use \"Stack Info\" extension to take stack's name.
 '''
-stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], inputs=[input_stack_inspect], outputs=[output_stack_inspect], description=doc_stack_inspect, group="Docker-Utils Info", configured=False)
+stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], inputs=[input_stack_inspect], outputs=[output_stack_inspect], description=doc_stack_inspect, group="Docker-Utils Info", configured=False, trigger=True, icon='RiInformationFill')
 
 
 ########################## componente export_stack
@@ -44,7 +44,7 @@ doc_export = '''
 With this extension you can export the docker-compose.yml of your stack.\n
 You need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).
 '''
-export_stack = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, group="Docker-Utils Import/Export", configured=False)
+export_stack = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, group="Docker-Utils Import/Export", configured=False, trigger=True, icon='RiUploadFill')
 
 
 ########################## componente import_stack
@@ -58,7 +58,7 @@ doc_import = '''
 With this extension you can run a docker-compose.yml on your host.\n
 Give a name to the new stack and select .yml file to import.
 '''
-import_stack = Component(name='Import Docker-Compose', args=[name_import, file_import], inputs=[input_import], outputs=[output_import], description=doc_import, group="Docker-Utils Import/Export", configured=False)
+import_stack = Component(name='Import Docker-Compose', args=[name_import, file_import], inputs=[input_import], outputs=[output_import], description=doc_import, group="Docker-Utils Import/Export", configured=False, trigger=True, icon='RiDownload2Fill')
 
 
 
@@ -69,7 +69,7 @@ doc_volumes = '''
 ### Volumes List\n
 With this extension you can view all the volumes created on your host.
 '''
-volumes = Component(name='Volumes List', inputs=[input_volumes], outputs=[output_volumes], description=doc_volumes, group="Docker-Utils Host info", configured=True)
+volumes = Component(name='Volumes List', inputs=[input_volumes], outputs=[output_volumes], description=doc_volumes, group="Docker-Utils Host info", configured=True, trigger=True, icon='RiHomeFill')
 
 
 ########################## componente Registries
@@ -79,7 +79,7 @@ doc_registries = '''
 ### Registries List\n
 With this extension you can view all the registries you are logged in on your host.
 '''
-registries = Component(name='Registries List', inputs=[input_registries], outputs=[output_registries], description=doc_registries, group="Docker-Utils Host info", configured=True)
+registries = Component(name='Registries List', inputs=[input_registries], outputs=[output_registries], description=doc_registries, group="Docker-Utils Host info", configured=True, trigger=True, icon='RiHomeFill')
 
 
 
@@ -96,7 +96,7 @@ You need to configure this block with the name of the image you want to search.\
 You don't need to insert the full name of the image, but you can use also search a part of it.\n
 *(for example, you can insert \"stor\" to searching \"storage\")*
 '''
-docker_images = Component(name='Search images in Livetech Registry', args=[select_docker_registry, search_docker_images], inputs=[input_docker_images], outputs=[output_docker_images], description=doc_docker_images, group="Docker-Utils Registry/Pypiserver", configured=False)
+docker_images = Component(name='Search images in Livetech Registry', args=[select_docker_registry, search_docker_images], inputs=[input_docker_images], outputs=[output_docker_images], description=doc_docker_images, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
 
 
 ########################## componente list-python-lib
@@ -112,7 +112,7 @@ You need to configure this block with the name of the python library you want to
 You don't need to insert the full name of the image, but you can use also search a part of it.\n
 *(for example, you can insert \"stor\" to searching \"storage\")*
 '''
-python_lib = Component(name='Search libraries in Livetech Pypiserver', args=[select_python_lib, search_python_lib], inputs=[input_python_lib], outputs=[output_python_lib], description=doc_python_lib, group="Docker-Utils Registry/Pypiserver", configured=False)
+python_lib = Component(name='Search libraries in Livetech Pypiserver', args=[select_python_lib, search_python_lib], inputs=[input_python_lib], outputs=[output_python_lib], description=doc_python_lib, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
 
 
 ########################## componente stack pause
@@ -124,7 +124,7 @@ doc_stack_pause = '''
 With this extension you can pause all the containers related to a Stack.\n
 You can use \"Stack Info\" extension to take stack's ID.
 '''
-stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False)
+stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
 
 
 ########################## componente stack unpause
@@ -136,7 +136,7 @@ doc_stack_unpause = '''
 With this extension you can unpause all the containers related to a Stack.\n
 You can use \"Stack Info\" extension to take stack's ID.
 '''
-stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], inputs=[input_stack_unpause], outputs=[output_stack_unpause], description=doc_stack_unpause, group="Docker-Utils Pause/Unpause", configured=False)
+stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], inputs=[input_stack_unpause], outputs=[output_stack_unpause], description=doc_stack_unpause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPlayCircleFill')
 
 
 
