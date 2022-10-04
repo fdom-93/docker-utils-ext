@@ -155,7 +155,6 @@ async def f9(value, args):
 async def f10(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-
     check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_pause')}").json()
     name = check['name']
     if name == "loko":
@@ -179,6 +178,82 @@ async def f11(value, args):
     output = (f"Stack \'{name}\' unpaused")
     return sanic.json(output)
 
+
+@bp.post('/container_pause')
+@extract_value_args()
+async def f12(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+
+    name_stack = {args.get('stack_cont_name_pause')}
+    # logger.debug(name_stack)
+    if name_stack == "loko":
+        output = (f"You can't pause \'{name}\' any container in this stack. In this stack run the fundamental containers for LokoAI!")
+    else:
+        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}/pause"
+        requests.put(url).json()
+        check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}").json()
+        name_cont = check_name_cont['name']
+        output = (f"Container \'{name_cont}\' paused")
+    return sanic.json(output)
+
+
+@bp.post('/container_unpause')
+@extract_value_args()
+async def f13(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_unpause')}/{args.get('container_id_unpause')}/unpause"
+    requests.put(url).json()
+    check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_unpause')}/{args.get('container_id_unpause')}").json()
+    name_cont = check_name_cont['name']
+    output = (f"Container \'{name_cont}\' unpaused")
+    return sanic.json(output)
+
+
+
+@bp.post('/stack_delete')
+@extract_value_args()
+async def f14(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_delete')}").json()
+    name = check['name']
+    if name == "INTERNAL SERVER ERROR":
+        output = (f"{check['description']}")
+    else:
+        if name == "loko":
+            output = (f"You can't delete \'{name}\' stack. In this stack run the fundamental containers for LokoAI!")
+        else:
+            url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_delete')}"
+            requests.delete(url).json()
+            output = (f"Stack \'{name}\' deleted")
+    return sanic.json(output)
+
+
+@bp.post('/container_delete')
+@extract_value_args()
+async def f14(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    res = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/loko/containers").json()
+    count = len(res)
+    check = True
+    for n in range(0, count):
+        if f"{res[n]['id']}" == f"{args.get('container_id_delete')}":
+            check = False
+    if check == False:
+        output = (f"You can't delete any container in \'loko\' stack. In this stack run the fundamental containers for LokoAI!")
+    else:
+        check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_delete')}/{args.get('container_id_delete')}").json()
+        name_cont = check_name_cont['name']
+        if name_cont == "INTERNAL SERVER ERROR":
+            output = check_name_cont['description']
+        else:
+            url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_delete')}/{args.get('container_id_delete')}"
+            requests.delete(url).json()
+            output = (f"Container \'{name_cont}\' deleted")
+    return sanic.json(output)
 
 
 @app.exception(Exception)

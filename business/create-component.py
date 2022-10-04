@@ -140,5 +140,60 @@ stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], input
 
 
 
+
+
+########################## componente container pause
+name_stack_cont_pause = Arg(name='stack_cont_name_pause', label='Stack Name', type='text', helper='The Stack Name of the containe to pause', value="")
+name_container_pause = Arg(name='container_id_pause', label='Container ID', type='text', helper='Container ID to pause', value="")
+input_container_pause = Input(id='input', label='Input', service='container_pause', to='output')
+output_container_pause = Output(id='output', label='Output')
+doc_container_pause = '''
+### Container Pause\n
+With this extension you can pause a specific container in a Stack.\n
+You can use \"Stack Inspect\" extension to take container's ID.
+'''
+container_pause = Component(name='Container Pause', args=[name_stack_cont_pause, name_container_pause], inputs=[input_container_pause], outputs=[output_container_pause], description=doc_container_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
+
+
+########################## componente container unpause
+name_stack_cont_unpause = Arg(name='stack_cont_name_unpause', label='Stack Name', type='text', helper='The Stack Name of the containe to unpause', value="")
+name_container_unpause = Arg(name='container_id_unpause', label='Container ID', type='text', helper='Container ID to unpause', value="")
+input_container_unpause = Input(id='input', label='Input', service='container_unpause', to='output')
+output_container_unpause = Output(id='output', label='Output')
+doc_container_unpause = '''
+### Container Unpause\n
+With this extension you can unpause a specific container in a Stack.\n
+You can use \"Stack Info\" extension to take container's ID.
+'''
+container_unpause = Component(name='Container Unpause', args=[name_stack_cont_unpause, name_container_unpause], inputs=[input_container_unpause], outputs=[output_container_unpause], description=doc_container_unpause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPlayCircleFill')
+
+
+########################## componente stack delete
+name_stack_delete = Arg(name='stack_id_delete', label='Stack ID', type='text', helper='Stack ID to delete', value="")
+input_stack_delete = Input(id='input', label='Input', service='stack_delete', to='output')
+output_stack_delete = Output(id='output', label='Output')
+doc_stack_delete = '''
+### Stack Delete\n
+With this extension you can delete all the containers in a Stack.\n
+You can use \"Stack Inspect\" extension to take container's ID.
+'''
+stack_delete = Component(name='Stack Delete', args=[name_stack_delete], inputs=[input_stack_delete], outputs=[output_stack_delete], description=doc_stack_delete, group="Docker-Utils Delete", configured=False, trigger=True, icon='RiDeleteBin2Fill')
+
+
+
+########################## componente container delete
+name_stack_cont_delete = Arg(name='stack_cont_name_delete', label='Stack Name', type='text', helper='The Stack Name of the containe to delete', value="")
+name_container_delete = Arg(name='container_id_delete', label='Container ID', type='text', helper='Container ID to delete', value="")
+input_container_delete = Input(id='input', label='Input', service='container_delete', to='output')
+output_container_delete = Output(id='output', label='Output')
+doc_container_delete = '''
+### Container Delete\n
+With this extension you can delete a specific container in a Stack.\n
+You can use \"Stack Inspect\" extension to take container's ID.
+'''
+container_delete = Component(name='Container Delete', args=[name_stack_cont_delete, name_container_delete], inputs=[input_container_delete], outputs=[output_container_delete], description=doc_container_delete, group="Docker-Utils Delete", configured=False, trigger=True, icon='RiDeleteBin2Fill')
+
+
+
 ########################## crea extensions
-save_extensions([stacks_info, stacks_name, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause])
+save_extensions([stacks_info, stacks_name, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause, container_pause, container_unpause, stack_delete, container_delete])

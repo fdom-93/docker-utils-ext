@@ -397,5 +397,183 @@
     }
    ]
   }
+ },
+ {
+  "name": "Container Pause",
+  "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPauseCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_pause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_pause",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the containe to pause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "container_id_pause",
+     "type": "text",
+     "label": "Container ID",
+     "helper": "Container ID to pause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "Container Unpause",
+  "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Info\" extension to take container's ID.\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPlayCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_unpause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_unpause",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the containe to unpause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "container_id_unpause",
+     "type": "text",
+     "label": "Container ID",
+     "helper": "Container ID to unpause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "Stack Delete",
+  "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "group": "Docker-Utils Delete",
+  "icon": "RiDeleteBin2Fill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_delete",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_id_delete",
+     "type": "text",
+     "label": "Stack ID",
+     "helper": "Stack ID to delete",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
+  "name": "Container Delete",
+  "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "group": "Docker-Utils Delete",
+  "icon": "RiDeleteBin2Fill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_delete",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_delete",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the containe to delete",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "container_id_delete",
+     "type": "text",
+     "label": "Container ID",
+     "helper": "Container ID to delete",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
  }
 ]
