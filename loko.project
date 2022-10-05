@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "04/10/2022, 16:41:22",
+  "last_modify": "05/10/2022, 16:33:06",
   "graphs": {
     "test": {
       "nodes": [
@@ -542,7 +542,8 @@
             "inputs": [
               {
                 "id": "input",
-                "label": "input"
+                "label": "input",
+                "closed": false
               }
             ],
             "outputs": [
@@ -897,8 +898,8 @@
         {
           "id": "29da357c-c401-4a39-8d5a-60eb44ed74cf",
           "position": {
-            "x": 1038,
-            "y": 327.00580978393555
+            "x": 1026,
+            "y": 323.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -965,7 +966,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "name_stack": "loko"
+                "name_stack": "fede-import"
               }
             },
             "locked": null
@@ -973,15 +974,15 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1038,
-            "y": 327.00580978393555
+            "x": 1026,
+            "y": 323.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "8429cbdf-6a9c-4c20-bfe0-7c7795677724",
           "position": {
-            "x": 551,
+            "x": 548,
             "y": 170.00580978393555
           },
           "type": "custom",
@@ -1035,14 +1036,16 @@
               ],
               "click": null,
               "icon": "RiInformationFill",
-              "values": {}
+              "values": {
+                "debug": true
+              }
             },
             "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 551,
+            "x": 548,
             "y": 170.00580978393555
           },
           "__class__": "Node"
@@ -1105,7 +1108,8 @@
               "click": null,
               "icon": "RiInformationFill",
               "values": {}
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
@@ -1118,8 +1122,8 @@
         {
           "id": "a3e28480-6e2e-4e18-ba7f-97af06d83e5c",
           "position": {
-            "x": 1423,
-            "y": 149.00580978393555
+            "x": 1424,
+            "y": 148.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1181,8 +1185,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1423,
-            "y": 149.00580978393555
+            "x": 1424,
+            "y": 148.00580978393555
           },
           "__class__": "Node"
         }
@@ -1280,8 +1284,8 @@
         {
           "id": "e128d5b8-ef0e-4d9e-9b5d-855609fb74be",
           "position": {
-            "x": 927.3789573075737,
-            "y": 154.1614876607921
+            "x": 1193.3789573075737,
+            "y": 164.1614876607921
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1382,16 +1386,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 927.3789573075737,
-            "y": 154.1614876607921
+            "x": 1193.3789573075737,
+            "y": 164.1614876607921
           },
           "__class__": "Node"
         },
         {
           "id": "d6535c83-d479-4b69-aea5-b68481863058",
           "position": {
-            "x": 705.0249266746467,
-            "y": 139.6392408844065
+            "x": 960.0249266746467,
+            "y": 104.63924088440649
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1479,16 +1483,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 705.0249266746467,
-            "y": 139.6392408844065
+            "x": 960.0249266746467,
+            "y": 104.63924088440649
           },
           "__class__": "Node"
         },
         {
           "id": "96b2f7b0-ab2b-4071-a182-b06fe423ad9b",
           "position": {
-            "x": 1148,
-            "y": 129
+            "x": 1403,
+            "y": 140
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1576,8 +1580,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1148,
-            "y": 129
+            "x": 1403,
+            "y": 140
           },
           "__class__": "Node"
         },
@@ -1591,7 +1595,7 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 1033.10286712836,
+          "width": 1258.10286712836,
           "height": 168,
           "selected": false,
           "dragging": false,
@@ -1599,7 +1603,7 @@
             "comment": "Generate docker-compose.yml from your stack ",
             "fill": "#F9C74F",
             "height": 168,
-            "width": 1033.10286712836
+            "width": 1258.10286712836
           },
           "zIndex": -1,
           "selectable": false,
@@ -1742,15 +1746,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 531,
+          "width": 376,
           "height": 186,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Run a single container",
+            "comment": "Run a single container (TO DO)",
             "fill": "#F74B65",
             "height": 186,
-            "width": 531
+            "width": 376
           },
           "zIndex": -1,
           "selectable": false,
@@ -1842,7 +1846,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "name_new_stack": "fede-import",
+                "name_new_stack": "fede-import-test",
                 "file_import": {
                   "name": "docker-compose-mongo.yml",
                   "path": "data/data/docker-compose-mongo.yml",
@@ -1863,9 +1867,9 @@
           "__class__": "Node"
         },
         {
-          "id": "e7fd617d-dffa-451d-b354-00bc36451647",
+          "id": "102bbd9e-e71b-4bf5-9459-6035992e80ad",
           "position": {
-            "x": 386,
+            "x": 380,
             "y": 136.00580978393555
           },
           "type": "custom",
@@ -1879,7 +1883,7 @@
           "data": {
             "name": "Export Docker-Compose",
             "events": null,
-            "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
+            "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the name of your stack\n\nYou can use \"Stacks Name\" extension to take it).\n",
             "inputs": [
               {
                 "id": "input",
@@ -1917,10 +1921,10 @@
                   "divider": true
                 },
                 {
-                  "name": "stack_id",
+                  "name": "stack_name",
                   "type": "text",
-                  "label": "Stack ID",
-                  "helper": "Your stack's id",
+                  "label": "Stack Name",
+                  "helper": "Your stack's name",
                   "group": "",
                   "value": "",
                   "description": "",
@@ -1933,7 +1937,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": false,
-                "stack_id": "8f2d55a80b63d0b59832f911689fad881160ac0c79640d0824a3c128f3db592e"
+                "stack_name": "lok"
               }
             },
             "locked": null
@@ -1941,8 +1945,200 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 386,
+            "x": 380,
             "y": 136.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "f34309bc-9522-46e1-866f-24871c89339b",
+          "position": {
+            "x": 670,
+            "y": 145.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Filter",
+            "events": null,
+            "description": "### Description\nThe FILTER component is used to filter the input data. To configure this component, you need to define Python code that returns a boolean (true / false) that depends on the input received. The input can be retrieved using the variable **data**.\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThere are two outputs: **output** and **discarded**. Through the first output are returned the inputs that verify the condition defined inside the component, in the second those that do not verify it.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              },
+              {
+                "id": "discarded",
+                "label": "discarded"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "Python code that return a boolean (True,False). Incoming messages that evaluates to True are sent to the first output while the others are redirected to the second one",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiFilter2Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "notify_warnings": true,
+                "code": "if data == \"Stack not found\":\n  return False\nelse:\n  return True"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 670,
+            "y": 145.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "445d7b2e-70b5-4506-a8be-5f289d677d54",
+          "position": {
+            "x": 891,
+            "y": 170
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Function",
+            "events": null,
+            "description": "### Description\nThe FUNCTION component is used to apply Python code to the input component's. The input can be retrieved using the variable *data*.\n\nTo be able to use data from components of type FUNCTION that are not linked together, the object is set repository.\n\n```python\nrepository.set('value', 5) - this sets the variable value to 5.\nrepository.get('value') - in this way the variable is called value and the value 5 is returned.\n```\n\n### Input\nThe input is used by the component using the variable **data**.\n\n### Output\nThe output coincides with the return of the code defined when the component was created.",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "input"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "propagate",
+                  "type": "boolean",
+                  "label": "Flush at the end"
+                },
+                {
+                  "name": "notify_warnings",
+                  "type": "boolean",
+                  "label": "Notify warnings"
+                },
+                {
+                  "name": "code",
+                  "type": "code",
+                  "description": "A python function that processes the incoming message. \nVariables available are:\n- **data**: the incoming message\n",
+                  "label": "Code",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": null,
+                  "value": null
+                }
+              ],
+              "click": null,
+              "icon": "RiCodeSSlashFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "propagate": true,
+                "notify_warnings": true,
+                "code": "return \"Stack not found. Check the name in \\\"Export Docker-Compose\\\" block\""
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 891,
+            "y": 170
           },
           "__class__": "Node"
         }
@@ -1977,13 +2173,41 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-e7fd617d-dffa-451d-b354-00bc36451647output-d6535c83-d479-4b69-aea5-b68481863058input",
-          "source": "e7fd617d-dffa-451d-b354-00bc36451647",
+          "id": "reactflow__edge-102bbd9e-e71b-4bf5-9459-6035992e80adoutput-f34309bc-9522-46e1-866f-24871c89339binput",
+          "source": "102bbd9e-e71b-4bf5-9459-6035992e80ad",
+          "sourceHandle": "output",
+          "target": "f34309bc-9522-46e1-866f-24871c89339b",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-f34309bc-9522-46e1-866f-24871c89339boutput-d6535c83-d479-4b69-aea5-b68481863058input",
+          "source": "f34309bc-9522-46e1-866f-24871c89339b",
           "sourceHandle": "output",
           "target": "d6535c83-d479-4b69-aea5-b68481863058",
           "targetHandle": "input",
           "data": {
-            "startColor": "#888",
+            "startColor": "#D770AD",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-f34309bc-9522-46e1-866f-24871c89339bdiscarded-445d7b2e-70b5-4506-a8be-5f289d677d54input",
+          "source": "f34309bc-9522-46e1-866f-24871c89339b",
+          "sourceHandle": "discarded",
+          "target": "445d7b2e-70b5-4506-a8be-5f289d677d54",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#D770AD",
             "stopColor": "#D770AD"
           },
           "selected": false,
@@ -2056,8 +2280,8 @@
         {
           "id": "fe625ac4-8ea4-427a-99be-5d03610fd8b0",
           "position": {
-            "x": 407,
-            "y": 139.06440258026123
+            "x": 401,
+            "y": 141.06440258026123
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2138,7 +2362,7 @@
                 "alias": "",
                 "debug": true,
                 "registry_name": "registry.livetech.site",
-                "image_name": "ds4biz-storage"
+                "image_name": "stor"
               }
             },
             "locked": null
@@ -2146,8 +2370,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 407,
-            "y": 139.06440258026123
+            "x": 401,
+            "y": 141.06440258026123
           },
           "__class__": "Node"
         },
@@ -2498,15 +2722,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 422,
-          "height": 201,
+          "width": 420,
+          "height": 195,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Unpause all the containers in a Stack",
+            "comment": "Unpause all the containers in a Stack (ignora se stack Loko)",
             "fill": "#43AA8B",
-            "height": 201,
-            "width": 422
+            "height": 195,
+            "width": 420
           },
           "zIndex": -1,
           "selectable": false,
@@ -2527,15 +2751,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 319,
+          "width": 644,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Pause a single container",
+            "comment": "Pause a single container (fix name invece di id)",
             "fill": "#FC8930",
             "height": 168,
-            "width": 319
+            "width": 644
           },
           "zIndex": -1,
           "selectable": false,
@@ -2549,197 +2773,29 @@
         {
           "id": "9138b5a8-880d-4767-80b1-eb6e222cf2ac",
           "position": {
-            "x": 846,
-            "y": 306.00580978393555
+            "x": 848,
+            "y": 307.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 332,
+          "width": 622,
           "height": 182,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Unpause a single container",
+            "comment": "Unpause a single container (fix name invece di id) (ignora se stack Loko)",
             "fill": "#F9C74F",
             "height": 182,
-            "width": 332
+            "width": 622
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 846,
-            "y": 306.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "716e0594-866c-401e-ac64-e6e64155f316",
-          "position": {
-            "x": 441,
-            "y": 151.11429977416992
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 156,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Pause",
-            "events": null,
-            "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_pause",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Pause/Unpause",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_id_pause",
-                  "type": "text",
-                  "label": "Stack ID",
-                  "helper": "Stack ID to pause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPauseCircleFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "stack_id_pause": "9333046e270075573878fc8f7a1a0a0d251d58cd894f65af33a03a2a82b333bf"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 441,
-            "y": 151.11429977416992
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "38e5b03a-1870-4440-98b5-51e2fcadf664",
-          "position": {
-            "x": 435,
-            "y": 367.1142997741699
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 172,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Unpause",
-            "events": null,
-            "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_unpause",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Pause/Unpause",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_id_unpause",
-                  "type": "text",
-                  "label": "Stack ID",
-                  "helper": "Stack ID to unpause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayCircleFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "stack_id_unpause": "9333046e270075573878fc8f7a1a0a0d251d58cd894f65af33a03a2a82b333bf"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 435,
-            "y": 367.1142997741699
+            "x": 848,
+            "y": 307.00580978393555
           },
           "__class__": "Node"
         },
@@ -2825,7 +2881,7 @@
                 "alias": "",
                 "debug": true,
                 "stack_cont_name_pause": "fede-import",
-                "container_id_pause": "2353cc8a326d018163ace67a936e48afdc24a8fb90e2d95fd069a2588c0e6692"
+                "container_id_pause": "d4c5c817cf53d44f78606b2b4b6a73c88128616a9fa732dab13c14cba72f914c"
               }
             },
             "locked": null
@@ -2920,7 +2976,7 @@
                 "alias": "",
                 "debug": true,
                 "stack_cont_name_unpause": "fede-import",
-                "container_id_unpause": "2353cc8a326d018163ace67a936e48afdc24a8fb90e2d95fd069a2588c0e6692"
+                "container_id_unpause": "d4c5c817cf53d44f78606b2b4b6a73c88128616a9fa732dab13c14cba72f914c"
               }
             },
             "locked": null
@@ -2930,6 +2986,174 @@
           "positionAbsolute": {
             "x": 909,
             "y": 357.1142997741699
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "4fc77f14-e8b2-459c-b39b-86da72f6f06a",
+          "position": {
+            "x": 444,
+            "y": 150.80000114440918
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Pause",
+            "events": null,
+            "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_pause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name_pause",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack Name to pause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPauseCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_name_pause": "fede-import"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 444,
+            "y": 150.80000114440918
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "44e49edd-b5bb-4528-bd36-762d02375476",
+          "position": {
+            "x": 438,
+            "y": 364.8000011444092
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Unpause",
+            "events": null,
+            "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_unpause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name_unpause",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack Name to unpause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_name_unpause": "fede-import"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 438,
+            "y": 364.8000011444092
           },
           "__class__": "Node"
         }
@@ -2949,15 +3173,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 230,
+          "width": 472,
           "height": 184,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Delete Stack",
+            "comment": "Delete Stack (fix name invece di id)",
             "fill": "#F74B65",
             "height": 184,
-            "width": 230
+            "width": 472
           },
           "zIndex": -1,
           "selectable": false,
@@ -2978,15 +3202,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 358,
+          "width": 582,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Delete Container (to fix)",
+            "comment": "Delete Container (fix name invece di id)",
             "fill": "#F74B65",
             "height": 168,
-            "width": 358
+            "width": 582
           },
           "zIndex": -1,
           "selectable": false,

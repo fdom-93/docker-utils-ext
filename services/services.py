@@ -19,10 +19,24 @@ def get_app(name):
     app.blueprint(swagger_blueprint)
     return app
 
-name = "first_project"
+name = "docker-utils-ext"
 app = get_app(name)
 bp = Blueprint("default", url_prefix=f"/")
 app.config["API_TITLE"] = name
+
+
+##### funzione che implemente la conversione il "nome stack" a "id stack"...non essendo implementato direttamente in Docker-Utils
+def f_stack_name_to_id(name:str):
+    url_check = requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json()
+    matching = (f"Stack not found")
+    stack_test = name
+    stack_count_check = int(len(url_check))
+    for n in range(0, stack_count_check):
+        stack_check = url_check[n]['name']
+        if stack_check == stack_test:
+            matching = f"{url_check[n]['id']}"
+            # matching = (f"L'id dello stack \'{stack_test}\' è ---> {matching_id} <---")
+    return matching
 
 
 @bp.post('/stacks_name')
@@ -67,10 +81,14 @@ async def f3(value, args):
 async def f4(value, args):
     # logger.debug(f'ARGS: {args}')
     # logger.debug(f'JSON: {value}')
-    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}/export"
-    content = requests.get(url).content.decode()
-    stack_name = (requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id')}").json())['name']
-    logger.debug((f"Stack \'{stack_name}\' Exported Successfully"))
+    stack_id = f_stack_name_to_id(f"{args.get('stack_name')}")
+    if stack_id == "Stack not found":
+        content = f"{stack_id}"
+    else:
+        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{stack_id}/export"
+        content = requests.get(url).content.decode()
+        stack_name = (requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{stack_id}").json())['name']
+        logger.debug((f"Stack \'{stack_name}\' Exported Successfully"))
     return sanic.json(content)
 
 ###### import stack using file reader
@@ -155,14 +173,18 @@ async def f9(value, args):
 async def f10(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_pause')}").json()
-    name = check['name']
-    if name == "loko":
-        output = (f"You can't pause \'{name}\' stack. In this stack run the fundamental containers for LokoAI!")
+    stack_id = f_stack_name_to_id(f"{args.get('stack_name_pause')}")
+    if stack_id == "Stack not found":
+        output = f"{stack_id}"
     else:
-        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_pause')}/pause"
-        requests.put(url).json()
-        output = (f"Stack \'{name}\' paused")
+        check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_name_pause')}").json()
+        name = check['name']
+        if name == "loko":
+            output = (f"You can't pause \'{name}\' stack. In this stack run the fundamental containers for LokoAI!")
+        else:
+            url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_name_pause')}/pause"
+            requests.put(url).json()
+            output = (f"Stack \'{name}\' paused")
     return sanic.json(output)
 
 
@@ -171,31 +193,65 @@ async def f10(value, args):
 async def f11(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
-    check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_unpause')}").json()
-    name = check['name']
-    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_id_unpause')}/unpause"
-    requests.put(url).json()
-    output = (f"Stack \'{name}\' unpaused")
+    stack_id = f_stack_name_to_id(f"{args.get('stack_name_unpause')}")
+    if stack_id == "Stack not found":
+        output = f"{stack_id}"
+    else:
+        check = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_name_unpause')}").json()
+        name = check['name']
+        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('stack_name_unpause')}/unpause"
+        requests.put(url).json()
+        output = (f"Stack \'{name}\' unpaused")
     return sanic.json(output)
 
+
+# @bp.post('/container_pause')
+# @extract_value_args()
+# async def f12(value, args):
+#     logger.debug(f'ARGS: {args}')
+#     logger.debug(f'JSON: {value}')
+#
+#     name_stack = {args.get('stack_cont_name_pause')}
+#     # logger.debug(name_stack)
+#     if name_stack == "loko":
+#         output = (f"You can't pause \'{name}\' any container in this stack. In this stack run the fundamental containers for LokoAI!")
+#     else:
+#         url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}/pause"
+#         requests.put(url).json()
+#         check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}").json()
+#         name_cont = check_name_cont['name']
+#         output = (f"Container \'{name_cont}\' paused")
+#     return sanic.json(output)
 
 @bp.post('/container_pause')
 @extract_value_args()
 async def f12(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
+    url_check = requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json()
+    stack_count_check = int(len(url_check))
+    matching = (f"Container not found in this stack")
+    for n in range(0, stack_count_check):
+        stack_check = f"{url_check[n]['name']}"
+        containers_check = int(len(url_check[n]['children']))
+        # logger.debug(f"Nome Stack: {stack_check} ---> Container in stack: {containers_check}")
+        for m in range(0, containers_check):
+            checking = f"{url_check[n]['children'][m]['id']}"
+            if checking == f"{args.get('container_id_pause')}":
+                if stack_check != f"{args.get('stack_cont_name_pause')}":
+                    matching = (f"Stack and container NOT match. Fix it!")
+                elif stack_check == "loko":
+                    matching = (f"You can't pause this container because it's in {stack_check} stack!")
+                else:
+                    url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}/pause"
+                    requests.put(url).json()
+                    check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}").json()
+                    name_cont = check_name_cont['name']
+                    matching = (f"Container \'{name_cont}\' paused")
+    return sanic.json(matching)
 
-    name_stack = {args.get('stack_cont_name_pause')}
-    # logger.debug(name_stack)
-    if name_stack == "loko":
-        output = (f"You can't pause \'{name}\' any container in this stack. In this stack run the fundamental containers for LokoAI!")
-    else:
-        url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}/pause"
-        requests.put(url).json()
-        check_name_cont = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers/{args.get('stack_cont_name_pause')}/{args.get('container_id_pause')}").json()
-        name_cont = check_name_cont['name']
-        output = (f"Container \'{name_cont}\' paused")
-    return sanic.json(output)
+
+
 
 
 @bp.post('/container_unpause')

@@ -90,7 +90,7 @@
  },
  {
   "name": "Export Docker-Compose",
-  "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).\n",
+  "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the name of your stack\n\nYou can use \"Stacks Name\" extension to take it).\n",
   "group": "Docker-Utils Import/Export",
   "icon": "RiUploadFill",
   "click": "Send message",
@@ -113,10 +113,10 @@
    "values": {},
    "args": [
     {
-     "name": "stack_id",
+     "name": "stack_name",
      "type": "text",
-     "label": "Stack ID",
-     "helper": "Your stack's id",
+     "label": "Stack Name",
+     "helper": "Your stack's name",
      "group": "",
      "value": "",
      "description": "",
@@ -326,7 +326,7 @@
  },
  {
   "name": "Stack Pause",
-  "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
+  "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
   "group": "Docker-Utils Pause/Unpause",
   "icon": "RiPauseCircleFill",
   "click": "Send message",
@@ -349,10 +349,10 @@
    "values": {},
    "args": [
     {
-     "name": "stack_id_pause",
+     "name": "stack_name_pause",
      "type": "text",
-     "label": "Stack ID",
-     "helper": "Stack ID to pause",
+     "label": "Stack Name",
+     "helper": "Stack Name to pause",
      "group": "",
      "value": "",
      "description": "",
@@ -363,7 +363,7 @@
  },
  {
   "name": "Stack Unpause",
-  "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Info\" extension to take stack's ID.\n",
+  "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
   "group": "Docker-Utils Pause/Unpause",
   "icon": "RiPlayCircleFill",
   "click": "Send message",
@@ -386,10 +386,10 @@
    "values": {},
    "args": [
     {
-     "name": "stack_id_unpause",
+     "name": "stack_name_unpause",
      "type": "text",
-     "label": "Stack ID",
-     "helper": "Stack ID to unpause",
+     "label": "Stack Name",
+     "helper": "Stack Name to unpause",
      "group": "",
      "value": "",
      "description": "",

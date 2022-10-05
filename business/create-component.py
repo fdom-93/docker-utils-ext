@@ -35,16 +35,29 @@ stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], input
 
 
 ########################## componente export_stack
-id_export = Arg(name='stack_id', label='Stack ID', type='text', helper='Your stack\'s id', value="")
+name_export = Arg(name='stack_name', label='Stack Name', type='text', helper='Your stack\'s name', value="")
 
 input_export = Input(id='input', label='Input', service='export_stack', to='output')
 output_export = Output(id='output', label='Output')
 doc_export = '''
 ### Export Docker-Compose\n
 With this extension you can export the docker-compose.yml of your stack.\n
-You need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).
+You need to configure this block with the name of your stack\n
+You can use \"Stacks Name\" extension to take it).
 '''
-export_stack = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, group="Docker-Utils Import/Export", configured=False, trigger=True, icon='RiUploadFill')
+export_stack = Component(name='Export Docker-Compose', args=[name_export], inputs=[input_export], outputs=[output_export], description=doc_export, group="Docker-Utils Import/Export", configured=False, trigger=True, icon='RiUploadFill')
+
+# ########################## componente export_stack using stack ID
+# id_export = Arg(name='stack_id', label='Stack ID', type='text', helper='Your stack\'s id', value="")
+#
+# input_export = Input(id='input', label='Input', service='export_stack', to='output')
+# output_export = Output(id='output', label='Output')
+# doc_export = '''
+# ### Export Docker-Compose\n
+# With this extension you can export the docker-compose.yml of your stack.\n
+# You need to configure this block with the id of your stack (you can use \"Stack Info\" extension to take it).
+# '''
+# export_stack = Component(name='Export Docker-Compose', args=[id_export], inputs=[input_export], outputs=[output_export], description=doc_export, group="Docker-Utils Import/Export", configured=False, trigger=True, icon='RiUploadFill')
 
 
 ########################## componente import_stack
@@ -116,25 +129,36 @@ python_lib = Component(name='Search libraries in Livetech Pypiserver', args=[sel
 
 
 ########################## componente stack pause
-name_stack_pause = Arg(name='stack_id_pause', label='Stack ID', type='text', helper='Stack ID to pause', value="")
+name_stack_pause = Arg(name='stack_name_pause', label='Stack Name', type='text', helper='Stack Name to pause', value="")
 input_stack_pause = Input(id='input', label='Input', service='stack_pause', to='output')
 output_stack_pause = Output(id='output', label='Output')
 doc_stack_pause = '''
 ### Stack Pause\n
 With this extension you can pause all the containers related to a Stack.\n
-You can use \"Stack Info\" extension to take stack's ID.
+You can use \"Stack Name\" extension to take stack's Name.
 '''
 stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
 
+# ########################## componente stack pause with stack ID
+# name_stack_pause = Arg(name='stack_id_pause', label='Stack ID', type='text', helper='Stack ID to pause', value="")
+# input_stack_pause = Input(id='input', label='Input', service='stack_pause', to='output')
+# output_stack_pause = Output(id='output', label='Output')
+# doc_stack_pause = '''
+# ### Stack Pause\n
+# With this extension you can pause all the containers related to a Stack.\n
+# You can use \"Stack Info\" extension to take stack's ID.
+# '''
+# stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
+
 
 ########################## componente stack unpause
-name_stack_unpause = Arg(name='stack_id_unpause', label='Stack ID', type='text', helper='Stack ID to unpause', value="")
+name_stack_unpause = Arg(name='stack_name_unpause', label='Stack Name', type='text', helper='Stack Name to unpause', value="")
 input_stack_unpause = Input(id='input', label='Input', service='stack_unpause', to='output')
 output_stack_unpause = Output(id='output', label='Output')
 doc_stack_unpause = '''
 ### Stack Unpause\n
 With this extension you can unpause all the containers related to a Stack.\n
-You can use \"Stack Info\" extension to take stack's ID.
+You can use \"Stack Name\" extension to take stack's Name.
 '''
 stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], inputs=[input_stack_unpause], outputs=[output_stack_unpause], description=doc_stack_unpause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPlayCircleFill')
 
