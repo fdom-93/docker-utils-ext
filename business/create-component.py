@@ -103,8 +103,8 @@ search_docker_images = Arg(name='image_name', label='Docker Image Name', type='t
 input_docker_images = Input(id='input', label='Input', service='list-docker-images', to='output')
 output_docker_images = Output(id='output', label='Output')
 doc_docker_images = '''
-### List images in Livetech Docker Registry
-With this extension you can see all Docker images pushed on Private Livetech Registry.\n
+### Search images in Livetech Docker Registry
+With this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n
 You need to configure this block with the name of the image you want to search.\n
 You don't need to insert the full name of the image, but you can use also search a part of it.\n
 *(for example, you can insert \"stor\" to searching \"storage\")*
@@ -119,11 +119,10 @@ search_python_lib = Arg(name='python_lib', label='Python Library Name', type='te
 input_python_lib = Input(id='input', label='Input', service='list-python-lib', to='output')
 output_python_lib = Output(id='output', label='Output')
 doc_python_lib = '''
-### List python libraries in Livetech Pypiserver
-With this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n
+### Search python libraries in Livetech Pypiserver
+With this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n
 You need to configure this block with the name of the python library you want to search.\n
-You don't need to insert the full name of the image, but you can use also search a part of it.\n
-*(for example, you can insert \"stor\" to searching \"storage\")*
+You MUST insert the full name of the python library!
 '''
 python_lib = Component(name='Search libraries in Livetech Pypiserver', args=[select_python_lib, search_python_lib], inputs=[input_python_lib], outputs=[output_python_lib], description=doc_python_lib, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
 
@@ -139,17 +138,6 @@ You can use \"Stack Name\" extension to take stack's Name.
 '''
 stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
 
-# ########################## componente stack pause with stack ID
-# name_stack_pause = Arg(name='stack_id_pause', label='Stack ID', type='text', helper='Stack ID to pause', value="")
-# input_stack_pause = Input(id='input', label='Input', service='stack_pause', to='output')
-# output_stack_pause = Output(id='output', label='Output')
-# doc_stack_pause = '''
-# ### Stack Pause\n
-# With this extension you can pause all the containers related to a Stack.\n
-# You can use \"Stack Info\" extension to take stack's ID.
-# '''
-# stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[input_stack_pause], outputs=[output_stack_pause], description=doc_stack_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
-
 
 ########################## componente stack unpause
 name_stack_unpause = Arg(name='stack_name_unpause', label='Stack Name', type='text', helper='Stack Name to unpause', value="")
@@ -164,42 +152,40 @@ stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], input
 
 
 
-
-
 ########################## componente container pause
 name_stack_cont_pause = Arg(name='stack_cont_name_pause', label='Stack Name', type='text', helper='The Stack Name of the containe to pause', value="")
-name_container_pause = Arg(name='container_id_pause', label='Container ID', type='text', helper='Container ID to pause', value="")
+name_container_pause = Arg(name='container_name_pause', label='Container Name', type='text', helper='Container Name to pause', value="")
 input_container_pause = Input(id='input', label='Input', service='container_pause', to='output')
 output_container_pause = Output(id='output', label='Output')
 doc_container_pause = '''
 ### Container Pause\n
 With this extension you can pause a specific container in a Stack.\n
-You can use \"Stack Inspect\" extension to take container's ID.
+You can use \"Stack Inspect\" extension to take container's Name.
 '''
 container_pause = Component(name='Container Pause', args=[name_stack_cont_pause, name_container_pause], inputs=[input_container_pause], outputs=[output_container_pause], description=doc_container_pause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPauseCircleFill')
 
 
 ########################## componente container unpause
 name_stack_cont_unpause = Arg(name='stack_cont_name_unpause', label='Stack Name', type='text', helper='The Stack Name of the containe to unpause', value="")
-name_container_unpause = Arg(name='container_id_unpause', label='Container ID', type='text', helper='Container ID to unpause', value="")
+name_container_unpause = Arg(name='container_name_unpause', label='Container Name', type='text', helper='Container Name to unpause', value="")
 input_container_unpause = Input(id='input', label='Input', service='container_unpause', to='output')
 output_container_unpause = Output(id='output', label='Output')
 doc_container_unpause = '''
 ### Container Unpause\n
 With this extension you can unpause a specific container in a Stack.\n
-You can use \"Stack Info\" extension to take container's ID.
+You can use \"Stack Inspect\" extension to take container's Name.
 '''
 container_unpause = Component(name='Container Unpause', args=[name_stack_cont_unpause, name_container_unpause], inputs=[input_container_unpause], outputs=[output_container_unpause], description=doc_container_unpause, group="Docker-Utils Pause/Unpause", configured=False, trigger=True, icon='RiPlayCircleFill')
 
 
 ########################## componente stack delete
-name_stack_delete = Arg(name='stack_id_delete', label='Stack ID', type='text', helper='Stack ID to delete', value="")
+name_stack_delete = Arg(name='stack_name_delete', label='Stack Name', type='text', helper='Stack Name to delete', value="")
 input_stack_delete = Input(id='input', label='Input', service='stack_delete', to='output')
 output_stack_delete = Output(id='output', label='Output')
 doc_stack_delete = '''
 ### Stack Delete\n
 With this extension you can delete all the containers in a Stack.\n
-You can use \"Stack Inspect\" extension to take container's ID.
+You can use \"Stack Name\" extension to take container's Name.
 '''
 stack_delete = Component(name='Stack Delete', args=[name_stack_delete], inputs=[input_stack_delete], outputs=[output_stack_delete], description=doc_stack_delete, group="Docker-Utils Delete", configured=False, trigger=True, icon='RiDeleteBin2Fill')
 
@@ -207,13 +193,13 @@ stack_delete = Component(name='Stack Delete', args=[name_stack_delete], inputs=[
 
 ########################## componente container delete
 name_stack_cont_delete = Arg(name='stack_cont_name_delete', label='Stack Name', type='text', helper='The Stack Name of the containe to delete', value="")
-name_container_delete = Arg(name='container_id_delete', label='Container ID', type='text', helper='Container ID to delete', value="")
+name_container_delete = Arg(name='container_name_delete', label='Container Name', type='text', helper='Container Name to delete', value="")
 input_container_delete = Input(id='input', label='Input', service='container_delete', to='output')
 output_container_delete = Output(id='output', label='Output')
 doc_container_delete = '''
 ### Container Delete\n
 With this extension you can delete a specific container in a Stack.\n
-You can use \"Stack Inspect\" extension to take container's ID.
+You can use \"Stack Inspect\" extension to take container's Name.
 '''
 container_delete = Component(name='Container Delete', args=[name_stack_cont_delete, name_container_delete], inputs=[input_container_delete], outputs=[output_container_delete], description=doc_container_delete, group="Docker-Utils Delete", configured=False, trigger=True, icon='RiDeleteBin2Fill')
 

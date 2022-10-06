@@ -226,7 +226,7 @@
  },
  {
   "name": "Search images in Livetech Registry",
-  "description": "\n### List images in Livetech Docker Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+  "description": "\n### Search images in Livetech Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
   "click": "Send message",
@@ -276,7 +276,7 @@
  },
  {
   "name": "Search libraries in Livetech Pypiserver",
-  "description": "\n### List python libraries in Livetech Pypiserver\nWith this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+  "description": "\n### Search python libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
   "click": "Send message",
@@ -400,7 +400,7 @@
  },
  {
   "name": "Container Pause",
-  "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
   "group": "Docker-Utils Pause/Unpause",
   "icon": "RiPauseCircleFill",
   "click": "Send message",
@@ -433,10 +433,10 @@
      "validation": null
     },
     {
-     "name": "container_id_pause",
+     "name": "container_name_pause",
      "type": "text",
-     "label": "Container ID",
-     "helper": "Container ID to pause",
+     "label": "Container Name",
+     "helper": "Container Name to pause",
      "group": "",
      "value": "",
      "description": "",
@@ -447,7 +447,7 @@
  },
  {
   "name": "Container Unpause",
-  "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Info\" extension to take container's ID.\n",
+  "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
   "group": "Docker-Utils Pause/Unpause",
   "icon": "RiPlayCircleFill",
   "click": "Send message",
@@ -480,10 +480,10 @@
      "validation": null
     },
     {
-     "name": "container_id_unpause",
+     "name": "container_name_unpause",
      "type": "text",
-     "label": "Container ID",
-     "helper": "Container ID to unpause",
+     "label": "Container Name",
+     "helper": "Container Name to unpause",
      "group": "",
      "value": "",
      "description": "",
@@ -494,7 +494,7 @@
  },
  {
   "name": "Stack Delete",
-  "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Name\" extension to take container's Name.\n",
   "group": "Docker-Utils Delete",
   "icon": "RiDeleteBin2Fill",
   "click": "Send message",
@@ -517,10 +517,10 @@
    "values": {},
    "args": [
     {
-     "name": "stack_id_delete",
+     "name": "stack_name_delete",
      "type": "text",
-     "label": "Stack ID",
-     "helper": "Stack ID to delete",
+     "label": "Stack Name",
+     "helper": "Stack Name to delete",
      "group": "",
      "value": "",
      "description": "",
@@ -531,7 +531,7 @@
  },
  {
   "name": "Container Delete",
-  "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+  "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
   "group": "Docker-Utils Delete",
   "icon": "RiDeleteBin2Fill",
   "click": "Send message",
@@ -564,10 +564,10 @@
      "validation": null
     },
     {
-     "name": "container_id_delete",
+     "name": "container_name_delete",
      "type": "text",
-     "label": "Container ID",
-     "helper": "Container ID to delete",
+     "label": "Container Name",
+     "helper": "Container Name to delete",
      "group": "",
      "value": "",
      "description": "",

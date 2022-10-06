@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "05/10/2022, 16:33:06",
+  "last_modify": "06/10/2022, 15:45:50",
   "graphs": {
     "test": {
       "nodes": [
@@ -473,7 +473,7 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 436.5267786746997,
+          "width": 455.5267786746997,
           "height": 168,
           "selected": false,
           "dragging": false,
@@ -481,7 +481,7 @@
             "comment": "Print running container in a single Stack",
             "fill": "#90BE6D",
             "height": 168,
-            "width": 436.5267786746997
+            "width": 455.5267786746997
           },
           "zIndex": -1,
           "selectable": false,
@@ -896,90 +896,6 @@
           "__class__": "Node"
         },
         {
-          "id": "29da357c-c401-4a39-8d5a-60eb44ed74cf",
-          "position": {
-            "x": 1026,
-            "y": 323.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 172,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Inspect",
-            "events": null,
-            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_inspect",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Info",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "name_stack",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "Stack name to inspect",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiFileSearchFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "name_stack": "fede-import"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 1026,
-            "y": 323.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "8429cbdf-6a9c-4c20-bfe0-7c7795677724",
           "position": {
             "x": 548,
@@ -1187,6 +1103,213 @@
           "positionAbsolute": {
             "x": 1424,
             "y": 148.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "09a794a2-9b53-4a04-9837-eef027fe64fd",
+          "position": {
+            "x": 463,
+            "y": 538
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 56,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Trigger",
+            "events": null,
+            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
+            "inputs": [],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Common",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "type",
+                  "type": "select",
+                  "description": "The type of data",
+                  "label": "Type",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "fragment": null,
+                  "advanced": false,
+                  "options": [
+                    "String",
+                    "Object"
+                  ],
+                  "value": null
+                },
+                {
+                  "name": "value",
+                  "type": "dynamic",
+                  "dynamicType": {
+                    "String": "area",
+                    "Object": "code"
+                  },
+                  "parent": "type",
+                  "label": "Value",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayFill",
+              "values": {
+                "type": "String",
+                "value": "Hello world!"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 463,
+            "y": 538
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "86e430a8-2de1-4555-99e0-7b69e44da3d8",
+          "position": {
+            "x": 392,
+            "y": 481
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 277,
+          "height": 168,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Return ID from name Stack or Container",
+            "fill": "#F74B65",
+            "height": 136,
+            "width": 230
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 392,
+            "y": 481
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "9e7eb73a-bfb1-4c03-b630-ffb84e47e464",
+          "position": {
+            "x": 1045,
+            "y": 328
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Inspect",
+            "events": null,
+            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_inspect",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "name_stack",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack name to inspect",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "name_stack": "lokoAA"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1045,
+            "y": 328
           },
           "__class__": "Node"
         }
@@ -2048,7 +2171,7 @@
         {
           "id": "445d7b2e-70b5-4506-a8be-5f289d677d54",
           "position": {
-            "x": 891,
+            "x": 889,
             "y": 170
           },
           "type": "custom",
@@ -2129,7 +2252,7 @@
                 "debug": true,
                 "propagate": true,
                 "notify_warnings": true,
-                "code": "return \"Stack not found. Check the name in \\\"Export Docker-Compose\\\" block\""
+                "code": "return \"Stack not found. Check the name in \\\"Export Docker-Compose\\\" extension\""
               }
             },
             "locked": null
@@ -2137,7 +2260,7 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 891,
+            "x": 889,
             "y": 170
           },
           "__class__": "Node"
@@ -2229,15 +2352,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 521.0141493526568,
+          "width": 808.0141493526568,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Search Images on Livetech Private Docker Registry",
+            "comment": "Search Images on Livetech Private Docker Registry (add \"container not found\")",
             "fill": "#277DA1",
             "height": 168,
-            "width": 521.0141493526568
+            "width": 808.0141493526568
           },
           "zIndex": -1,
           "selectable": false,
@@ -2278,23 +2401,23 @@
           "__class__": "Node"
         },
         {
-          "id": "fe625ac4-8ea4-427a-99be-5d03610fd8b0",
+          "id": "edbd9666-3f39-4bd9-8e21-21cd99471230",
           "position": {
-            "x": 401,
-            "y": 141.06440258026123
+            "x": 495,
+            "y": 144
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 347,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
             "name": "Search images in Livetech Registry",
             "events": null,
-            "description": "\n### List images in Livetech Docker Registry\nWith this extension you can see all Docker images pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+            "description": "\n### Search images in Livetech Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
             "inputs": [
               {
                 "id": "input",
@@ -2362,7 +2485,7 @@
                 "alias": "",
                 "debug": true,
                 "registry_name": "registry.livetech.site",
-                "image_name": "stor"
+                "image_name": "utils"
               }
             },
             "locked": null
@@ -2370,29 +2493,29 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 401,
-            "y": 141.06440258026123
+            "x": 495,
+            "y": 144
           },
           "__class__": "Node"
         },
         {
-          "id": "be223119-1d76-4beb-bf87-d7a276142742",
+          "id": "c426f0dc-5f88-47fc-8811-749d483d88d6",
           "position": {
-            "x": 378,
-            "y": 326.06440258026123
+            "x": 415,
+            "y": 330
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 389,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
             "name": "Search libraries in Livetech Pypiserver",
             "events": null,
-            "description": "\n### List python libraries in Livetech Pypiserver\nWith this extension you can see all Python libraries pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+            "description": "\n### Search python libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
             "inputs": [
               {
                 "id": "input",
@@ -2468,8 +2591,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 378,
-            "y": 326.06440258026123
+            "x": 415,
+            "y": 330
           },
           "__class__": "Node"
         }
@@ -2597,7 +2720,8 @@
               "values": {
                 "debug": true
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
@@ -2667,7 +2791,8 @@
               "values": {
                 "debug": true
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
@@ -2722,15 +2847,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 420,
+          "width": 415,
           "height": 195,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Unpause all the containers in a Stack (ignora se stack Loko)",
+            "comment": "Unpause all the containers in a Stack",
             "fill": "#43AA8B",
             "height": 195,
-            "width": 420
+            "width": 415
           },
           "zIndex": -1,
           "selectable": false,
@@ -2751,15 +2876,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 644,
+          "width": 328,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Pause a single container (fix name invece di id)",
+            "comment": "Pause a single container",
             "fill": "#FC8930",
             "height": 168,
-            "width": 644
+            "width": 328
           },
           "zIndex": -1,
           "selectable": false,
@@ -2780,15 +2905,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 622,
+          "width": 332,
           "height": 182,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Unpause a single container (fix name invece di id) (ignora se stack Loko)",
+            "comment": "Unpause a single container",
             "fill": "#F9C74F",
             "height": 182,
-            "width": 622
+            "width": 332
           },
           "zIndex": -1,
           "selectable": false,
@@ -2796,196 +2921,6 @@
           "positionAbsolute": {
             "x": 848,
             "y": 307.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "fe0b9670-d8c9-49e3-a3e3-54983511c89f",
-          "position": {
-            "x": 911,
-            "y": 159.11429977416992
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Container Pause",
-            "events": null,
-            "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "container_pause",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Pause/Unpause",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_cont_name_pause",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "The Stack Name of the containe to pause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "container_id_pause",
-                  "type": "text",
-                  "label": "Container ID",
-                  "helper": "Container ID to pause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPauseCircleFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "stack_cont_name_pause": "fede-import",
-                "container_id_pause": "d4c5c817cf53d44f78606b2b4b6a73c88128616a9fa732dab13c14cba72f914c"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 911,
-            "y": 159.11429977416992
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "3092d182-e7d3-4a8c-9597-d2c40cb73773",
-          "position": {
-            "x": 909,
-            "y": 357.1142997741699
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 206,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Container Unpause",
-            "events": null,
-            "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "container_unpause",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Pause/Unpause",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_cont_name_unpause",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "The Stack Name of the containe to unpause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "container_id_unpause",
-                  "type": "text",
-                  "label": "Container ID",
-                  "helper": "Container ID to unpause",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayCircleFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "stack_cont_name_unpause": "fede-import",
-                "container_id_unpause": "d4c5c817cf53d44f78606b2b4b6a73c88128616a9fa732dab13c14cba72f914c"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 909,
-            "y": 357.1142997741699
           },
           "__class__": "Node"
         },
@@ -3060,7 +2995,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_pause": "fede-import"
+                "stack_name_pause": "loko"
               }
             },
             "locked": null
@@ -3076,8 +3011,8 @@
         {
           "id": "44e49edd-b5bb-4528-bd36-762d02375476",
           "position": {
-            "x": 438,
-            "y": 364.8000011444092
+            "x": 448,
+            "y": 353.8000011444092
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3144,7 +3079,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_unpause": "fede-import"
+                "stack_name_unpause": "loko"
               }
             },
             "locked": null
@@ -3152,8 +3087,198 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 438,
-            "y": 364.8000011444092
+            "x": 448,
+            "y": 353.8000011444092
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "ea1d3d34-bc88-4b35-8331-4095e13edb97",
+          "position": {
+            "x": 919,
+            "y": 158
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 189,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Container Pause",
+            "events": null,
+            "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "container_pause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_cont_name_pause",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "The Stack Name of the containe to pause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "container_name_pause",
+                  "type": "text",
+                  "label": "Container Name",
+                  "helper": "Container Name to pause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPauseCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_cont_name_pause": "loko",
+                "container_name_pause": "predictor"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 919,
+            "y": 158
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "4205b9c7-f5a5-4ccd-bcbc-32470edec509",
+          "position": {
+            "x": 915,
+            "y": 355.8000011444092
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 206,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Container Unpause",
+            "events": null,
+            "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "container_unpause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_cont_name_unpause",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "The Stack Name of the containe to unpause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "container_name_unpause",
+                  "type": "text",
+                  "label": "Container Name",
+                  "helper": "Container Name to unpause",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_cont_name_unpause": "loko",
+                "container_name_unpause": "predictor"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 915,
+            "y": 355.8000011444092
           },
           "__class__": "Node"
         }
@@ -3178,7 +3303,7 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Delete Stack (fix name invece di id)",
+            "comment": "Delete Stack",
             "fill": "#F74B65",
             "height": 184,
             "width": 472
@@ -3195,37 +3320,37 @@
         {
           "id": "f23b421c-113c-4148-8667-362e918e2d48",
           "position": {
-            "x": 408,
-            "y": 331.00580978393555
+            "x": 374,
+            "y": 326.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 582,
+          "width": 474,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Delete Container (fix name invece di id)",
+            "comment": "Delete Container",
             "fill": "#F74B65",
             "height": 168,
-            "width": 582
+            "width": 474
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 408,
-            "y": 331.00580978393555
+            "x": 374,
+            "y": 326.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "c3ed9fb9-0213-4f3e-8dd1-756056c9c73f",
+          "id": "8dc9faea-76eb-4dad-a961-c055f1ebac98",
           "position": {
-            "x": 434,
-            "y": 158.11429977416992
+            "x": 490,
+            "y": 157.80000114440918
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3238,7 +3363,7 @@
           "data": {
             "name": "Stack Delete",
             "events": null,
-            "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+            "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Name\" extension to take container's Name.\n",
             "inputs": [
               {
                 "id": "input",
@@ -3276,10 +3401,10 @@
                   "divider": true
                 },
                 {
-                  "name": "stack_id_delete",
+                  "name": "stack_name_delete",
                   "type": "text",
-                  "label": "Stack ID",
-                  "helper": "Stack ID to delete",
+                  "label": "Stack Name",
+                  "helper": "Stack Name to delete",
                   "group": "",
                   "value": "",
                   "description": "",
@@ -3292,7 +3417,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_id_delete": "462e317c814e4b3c565f8bb4f747d80455bd5bb01c0466fb9242e968ae6600e7"
+                "stack_name_delete": "loko"
               }
             },
             "locked": null
@@ -3300,16 +3425,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 434,
-            "y": 158.11429977416992
+            "x": 490,
+            "y": 157.80000114440918
           },
           "__class__": "Node"
         },
         {
-          "id": "75d22d64-064f-4f91-9bd2-8377ffaa4c2d",
+          "id": "a52f3c0e-00a4-48e0-b369-9bd8177fa10c",
           "position": {
-            "x": 506,
-            "y": 377.1142997741699
+            "x": 497,
+            "y": 372.8000011444092
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3322,7 +3447,7 @@
           "data": {
             "name": "Container Delete",
             "events": null,
-            "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's ID.\n",
+            "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
             "inputs": [
               {
                 "id": "input",
@@ -3370,10 +3495,10 @@
                   "validation": null
                 },
                 {
-                  "name": "container_id_delete",
+                  "name": "container_name_delete",
                   "type": "text",
-                  "label": "Container ID",
-                  "helper": "Container ID to delete",
+                  "label": "Container Name",
+                  "helper": "Container Name to delete",
                   "group": "",
                   "value": "",
                   "description": "",
@@ -3386,8 +3511,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_cont_name_delete": "fede-import",
-                "container_id_delete": "e4d256ae79a37296841f4dfec17e9e43dd6a1cdfe3a78c3b4d3ae6944eb8c10d"
+                "stack_cont_name_delete": "loko",
+                "container_name_delete": "predictor"
               }
             },
             "locked": null
@@ -3395,8 +3520,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 506,
-            "y": 377.1142997741699
+            "x": 497,
+            "y": 372.8000011444092
           },
           "__class__": "Node"
         }
