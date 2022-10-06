@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "06/10/2022, 16:37:32",
+  "last_modify": "06/10/2022, 20:07:18",
   "graphs": {
     "test": {
       "nodes": [
@@ -466,7 +466,7 @@
         {
           "id": "18f997d1-c3aa-4f33-8f21-be38233cdf3e",
           "position": {
-            "x": 327.3325211720032,
+            "x": 335.3325211720032,
             "y": 474.1104013365296
           },
           "type": "comment",
@@ -487,7 +487,7 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 327.3325211720032,
+            "x": 335.3325211720032,
             "y": 474.1104013365296
           },
           "__class__": "Node"
@@ -1109,29 +1109,29 @@
         {
           "id": "86e430a8-2de1-4555-99e0-7b69e44da3d8",
           "position": {
-            "x": 868,
-            "y": 478
+            "x": 833,
+            "y": 477
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 480,
-          "height": 136,
+          "width": 539,
+          "height": 142,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Return ID from name Stack or Container",
             "fill": "#F74B65",
-            "height": 136,
-            "width": 480
+            "height": 142,
+            "width": 539
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 868,
-            "y": 478
+            "x": 833,
+            "y": 477
           },
           "__class__": "Node"
         },
@@ -1308,7 +1308,8 @@
               "values": {
                 "debug": true
               }
-            }
+            },
+            "locked": null
           },
           "selectable": true,
           "draggable": true,
@@ -1319,10 +1320,10 @@
           "__class__": "Node"
         },
         {
-          "id": "027c7527-cb88-46c6-a562-bc8673b66fa9",
+          "id": "8fe2fead-9ec7-4a31-9a39-43d29f63720d",
           "position": {
-            "x": 1003,
-            "y": 521
+            "x": 892,
+            "y": 523
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1335,7 +1336,7 @@
           "data": {
             "name": "Stacks ID",
             "events": null,
-            "description": "\n### Stacks ID\n\nWith this extension you view the ID of your Stack.\n",
+            "description": "\n### Stacks ID\n\nWith this extension you can view the ID of your Stack.\n",
             "inputs": [
               {
                 "id": "input",
@@ -1376,7 +1377,7 @@
                   "name": "stack_name",
                   "type": "text",
                   "label": "Stack Name",
-                  "helper": "Stack name to convert into its ID",
+                  "helper": "Name of the stack to be convert to its ID",
                   "group": "",
                   "value": "",
                   "description": "",
@@ -1397,8 +1398,103 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1003,
-            "y": 521
+            "x": 892,
+            "y": 523
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "988c0f81-ea9b-45fe-a030-c62e1bfd45fc",
+          "position": {
+            "x": 1081,
+            "y": 524
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 164,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Container ID",
+            "events": null,
+            "description": "\n### Container ID\n\nWith this extension you can view the ID of your Container.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "container_id",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack name of your container",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                },
+                {
+                  "name": "container_name",
+                  "type": "text",
+                  "label": "Container Name",
+                  "helper": "Name of the container to be converted to its ID",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_name": "loko",
+                "container_name": "gateway"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1081,
+            "y": 524
           },
           "__class__": "Node"
         }

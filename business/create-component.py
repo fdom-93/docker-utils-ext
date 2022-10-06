@@ -11,12 +11,12 @@ With this extension you can view all the stacks available on your host.
 stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, group="Docker-Utils Info", configured=True, trigger=True, icon='RiInformationFill')
 
 ########################## componente stack_id
-name_stack_id = Arg(name='stack_name', label='Stack Name', type='text', helper='Stack name to convert into its ID', value="")
+name_stack_id = Arg(name='stack_name', label='Stack Name', type='text', helper='Name of the stack to be convert to its ID', value="")
 input_stack_id = Input(id='input', label='Input', service='stack_id', to='output')
 output_stack_id = Output(id='output', label='Output')
 doc_stack_id = '''
 ### Stacks ID\n
-With this extension you view the ID of your Stack.
+With this extension you can view the ID of your Stack.
 '''
 stack_id = Component(name='Stacks ID', args=[name_stack_id], inputs=[input_stack_id], outputs=[output_stack_id], description=doc_stack_id, group="Docker-Utils Info", configured=False, trigger=True, icon='RiInformationFill')
 
@@ -31,6 +31,20 @@ With this extension you can view all the info about your stacks.\n
 You can then use a function after this block to manipulate and filter all the data you need to use it.
 '''
 stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=[output_stacks_info], description=doc_stacks_info, group="Docker-Utils Info", configured=True, icon='RiInformationFill')
+
+
+########################## componente container_id
+name_stack_cont_id = Arg(name='stack_name', label='Stack Name', type='text', helper='Stack name of your container', value="")
+name_container_id = Arg(name='container_name', label='Container Name', type='text', helper='Name of the container to be converted to its ID', value="")
+
+input_container_id = Input(id='input', label='Input', service='container_id', to='output')
+output_container_id = Output(id='output', label='Output')
+doc_container_id = '''
+### Container ID\n
+With this extension you can view the ID of your Container.
+'''
+container_id = Component(name='Container ID', args=[name_stack_cont_id, name_container_id], inputs=[input_container_id], outputs=[output_container_id], description=doc_container_id, group="Docker-Utils Info", configured=False, trigger=True, icon='RiInformationFill')
+
 
 
 ########################## componente containers_info
@@ -230,4 +244,4 @@ container_delete = Component(name='Container Delete', args=[name_stack_cont_dele
 
 
 ########################## crea extensions
-save_extensions([stacks_name, stack_id, stacks_info, containers_info, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause, container_pause, container_unpause, stack_delete, container_delete])
+save_extensions([stacks_name, stack_id, stacks_info, container_id, containers_info, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause, container_pause, container_unpause, stack_delete, container_delete])

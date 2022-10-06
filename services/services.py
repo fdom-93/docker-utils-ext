@@ -90,6 +90,16 @@ async def f_stack_info(value, args):
     logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json())
 
+
+@bp.post('/container_id')
+@extract_value_args()
+async def f_container_id(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    output = f_container_name_to_id(f"{args.get('stack_name')}", f"{args.get('container_name')}")
+    return sanic.json(output)
+
+
 @bp.post('/containers_info')
 @extract_value_args()
 async def f_containers_info(value, args):

@@ -27,7 +27,7 @@
  },
  {
   "name": "Stacks ID",
-  "description": "\n### Stacks ID\n\nWith this extension you view the ID of your Stack.\n",
+  "description": "\n### Stacks ID\n\nWith this extension you can view the ID of your Stack.\n",
   "group": "Docker-Utils Info",
   "icon": "RiInformationFill",
   "click": "Send message",
@@ -53,7 +53,7 @@
      "name": "stack_name",
      "type": "text",
      "label": "Stack Name",
-     "helper": "Stack name to convert into its ID",
+     "helper": "Name of the stack to be convert to its ID",
      "group": "",
      "value": "",
      "description": "",
@@ -86,6 +86,53 @@
   "options": {
    "values": {},
    "args": []
+  }
+ },
+ {
+  "name": "Container ID",
+  "description": "\n### Container ID\n\nWith this extension you can view the ID of your Container.\n",
+  "group": "Docker-Utils Info",
+  "icon": "RiInformationFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_id",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_name",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "Stack name of your container",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    },
+    {
+     "name": "container_name",
+     "type": "text",
+     "label": "Container Name",
+     "helper": "Name of the container to be converted to its ID",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
   }
  },
  {
