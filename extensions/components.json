@@ -1,5 +1,68 @@
 [
  {
+  "name": "Stacks Name",
+  "description": "\n### Stacks Name\n\nWith this extension you can view all the stacks available on your host.\n",
+  "group": "Docker-Utils Info",
+  "icon": "RiInformationFill",
+  "click": "Send message",
+  "configured": true,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stacks_name",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": []
+  }
+ },
+ {
+  "name": "Stacks ID",
+  "description": "\n### Stacks ID\n\nWith this extension you view the ID of your Stack.\n",
+  "group": "Docker-Utils Info",
+  "icon": "RiInformationFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_id",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_name",
+     "type": "text",
+     "label": "Stack Name",
+     "helper": "Stack name to convert into its ID",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": null
+    }
+   ]
+  }
+ },
+ {
   "name": "Stacks Info",
   "description": "\n### Stacks Info\n\nWith this extension you can view all the info about your stacks.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
   "group": "Docker-Utils Info",
@@ -26,8 +89,8 @@
   }
  },
  {
-  "name": "Stacks Name",
-  "description": "\n### Stacks Name\n\nWith this extension you can view all the stacks available on your host.\n",
+  "name": "Containers Info",
+  "description": "\n### Containers Info\n\nWith this extension you can view all the containers on the host.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
   "group": "Docker-Utils Info",
   "icon": "RiInformationFill",
   "click": "Send message",
@@ -36,7 +99,7 @@
    {
     "id": "input",
     "label": "Input",
-    "service": "stacks_name",
+    "service": "containers_info",
     "to": "output"
    }
   ],
@@ -225,7 +288,7 @@
   }
  },
  {
-  "name": "Search images in Livetech Registry",
+  "name": "Search in Livetech Docker Registry",
   "description": "\n### Search images in Livetech Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
@@ -235,7 +298,7 @@
    {
     "id": "input",
     "label": "Input",
-    "service": "list-docker-images",
+    "service": "search_docker_images",
     "to": "output"
    }
   ],
@@ -275,8 +338,8 @@
   }
  },
  {
-  "name": "Search libraries in Livetech Pypiserver",
-  "description": "\n### Search python libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
+  "name": "Search in Livetech Pypiserver",
+  "description": "\n### Search libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
   "click": "Send message",
@@ -285,7 +348,7 @@
    {
     "id": "input",
     "label": "Input",
-    "service": "list-python-lib",
+    "service": "search_python_lib",
     "to": "output"
    }
   ],

@@ -1,7 +1,28 @@
 from loko_extensions.model.components import Arg, Component, save_extensions, Input, Output, Select, Dynamic
 
 
-########################## componente stacks info
+########################## componente stacks name
+input_stacks_name = Input(id='input', label='Input', service='stacks_name', to='output')
+output_stacks_name = Output(id='output', label='Output')
+doc_stacks_name = '''
+### Stacks Name\n
+With this extension you can view all the stacks available on your host.
+'''
+stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, group="Docker-Utils Info", configured=True, trigger=True, icon='RiInformationFill')
+
+########################## componente stack_id
+name_stack_id = Arg(name='stack_name', label='Stack Name', type='text', helper='Stack name to convert into its ID', value="")
+input_stack_id = Input(id='input', label='Input', service='stack_id', to='output')
+output_stack_id = Output(id='output', label='Output')
+doc_stack_id = '''
+### Stacks ID\n
+With this extension you view the ID of your Stack.
+'''
+stack_id = Component(name='Stacks ID', args=[name_stack_id], inputs=[input_stack_id], outputs=[output_stack_id], description=doc_stack_id, group="Docker-Utils Info", configured=False, trigger=True, icon='RiInformationFill')
+
+
+
+########################## componente stacks_info
 input_stacks_info = Input(id='input', label='Input', service='stacks_info', to='output')
 output_stacks_info = Output(id='output', label='Output')
 doc_stacks_info = '''
@@ -12,14 +33,17 @@ You can then use a function after this block to manipulate and filter all the da
 stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=[output_stacks_info], description=doc_stacks_info, group="Docker-Utils Info", configured=True, icon='RiInformationFill')
 
 
-########################## componente stacks name
-input_stacks_name = Input(id='input', label='Input', service='stacks_name', to='output')
-output_stacks_name = Output(id='output', label='Output')
-doc_stacks_name = '''
-### Stacks Name\n
-With this extension you can view all the stacks available on your host.
+########################## componente containers_info
+input_containers_info = Input(id='input', label='Input', service='containers_info', to='output')
+output_containers_info = Output(id='output', label='Output')
+doc_containers_info = '''
+### Containers Info\n
+With this extension you can view all the containers on the host.\n
+You can then use a function after this block to manipulate and filter all the data you need to use it.
 '''
-stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=[output_stacks_name], description=doc_stacks_name, group="Docker-Utils Info", configured=True, trigger=True, icon='RiInformationFill')
+containers_info = Component(name='Containers Info', inputs=[input_containers_info], outputs=[output_containers_info], description=doc_containers_info, group="Docker-Utils Info", configured=True, trigger=True, icon='RiInformationFill')
+
+
 
 
 ########################## componente stack inspect
@@ -96,11 +120,11 @@ registries = Component(name='Registries List', inputs=[input_registries], output
 
 
 
-########################## componente list-docker-images
+########################## componente search_docker_images
 select_docker_registry = Select(name="registry_name", label="Registry name", options=[ "registry.livetech.site" ])
 search_docker_images = Arg(name='image_name', label='Docker Image Name', type='text', helper='Docker Image name to search', value="")
 
-input_docker_images = Input(id='input', label='Input', service='list-docker-images', to='output')
+input_docker_images = Input(id='input', label='Input', service='search_docker_images', to='output')
 output_docker_images = Output(id='output', label='Output')
 doc_docker_images = '''
 ### Search images in Livetech Docker Registry
@@ -109,22 +133,22 @@ You need to configure this block with the name of the image you want to search.\
 You don't need to insert the full name of the image, but you can use also search a part of it.\n
 *(for example, you can insert \"stor\" to searching \"storage\")*
 '''
-docker_images = Component(name='Search images in Livetech Registry', args=[select_docker_registry, search_docker_images], inputs=[input_docker_images], outputs=[output_docker_images], description=doc_docker_images, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
+docker_images = Component(name='Search in Livetech Docker Registry', args=[select_docker_registry, search_docker_images], inputs=[input_docker_images], outputs=[output_docker_images], description=doc_docker_images, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
 
 
-########################## componente list-python-lib
+########################## componente search_python_lib
 select_python_lib = Select(name="pypiserver", label="Pypiserver name", options=[ "distribution.livetech.site" ])
 search_python_lib = Arg(name='python_lib', label='Python Library Name', type='text', helper='Image name to search. IMPORTANT: insert the EXACT name of the library', value="")
 
-input_python_lib = Input(id='input', label='Input', service='list-python-lib', to='output')
+input_python_lib = Input(id='input', label='Input', service='search_python_lib', to='output')
 output_python_lib = Output(id='output', label='Output')
 doc_python_lib = '''
-### Search python libraries in Livetech Pypiserver
+### Search libraries in Livetech Pypiserver
 With this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n
 You need to configure this block with the name of the python library you want to search.\n
 You MUST insert the full name of the python library!
 '''
-python_lib = Component(name='Search libraries in Livetech Pypiserver', args=[select_python_lib, search_python_lib], inputs=[input_python_lib], outputs=[output_python_lib], description=doc_python_lib, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
+python_lib = Component(name='Search in Livetech Pypiserver', args=[select_python_lib, search_python_lib], inputs=[input_python_lib], outputs=[output_python_lib], description=doc_python_lib, group="Docker-Utils Registry/Pypiserver", configured=False, trigger=True, icon='RiFileSearchFill')
 
 
 ########################## componente stack pause
@@ -206,4 +230,4 @@ container_delete = Component(name='Container Delete', args=[name_stack_cont_dele
 
 
 ########################## crea extensions
-save_extensions([stacks_info, stacks_name, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause, container_pause, container_unpause, stack_delete, container_delete])
+save_extensions([stacks_name, stack_id, stacks_info, containers_info, stack_inspect, export_stack, import_stack, registries, volumes, docker_images, python_lib, stack_pause, stack_unpause, container_pause, container_unpause, stack_delete, container_delete])

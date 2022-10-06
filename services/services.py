@@ -56,6 +56,7 @@ def f_container_name_to_id(stack:str, container:str):
 
 
 
+
 @bp.post('/stacks_name')
 @extract_value_args()
 async def f1(value, args):
@@ -63,31 +64,43 @@ async def f1(value, args):
     logger.debug(f'JSON: {value}')
     response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
     l = int(len(response))
-    # logger.debug(f'ELLEEEE: {l}')
     names = []
     if l == 1:
         count = (f'There is {l} stack on your system: ')
-        # logger.debug(f'COUNT: {count}')
         names.append(response[0]['name'])
     else:
         count = (f'There are {l} stacks on your system: ')
-        # logger.debug(f'COUNT: {count}')
         for n in range(0, l):
             names.append(response[n]['name'])
     return sanic.json(f'{count} {names}')
 
 
+@bp.post('/stack_id')
+@extract_value_args()
+async def f_stack_id(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    output = f_stack_name_to_id(f"{args.get('stack_name')}")
+    return sanic.json(output)
+
 @bp.post('/stacks_info')
 @extract_value_args()
-async def f2(value, args):
+async def f_stack_info(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json())
 
+@bp.post('/containers_info')
+@extract_value_args()
+async def f_containers_info(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    return sanic.json(requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/containers").json())
+
 
 @bp.post('/stack_inspect')
 @extract_value_args()
-async def f3(value, args):
+async def f_stack_inspect(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     check = f_stack_name_to_id(f"{args.get('name_stack')}")
@@ -99,7 +112,7 @@ async def f3(value, args):
 
 @bp.post('/export_stack')
 @extract_value_args()
-async def f4(value, args):
+async def f_export_stack(value, args):
     # logger.debug(f'ARGS: {args}')
     # logger.debug(f'JSON: {value}')
     stack_id = f_stack_name_to_id(f"{args.get('stack_name')}")
@@ -115,7 +128,7 @@ async def f4(value, args):
 ###### import stack using file reader
 # @bp.post('/import_stack')
 # @extract_value_args(file=True)
-# async def f5(file, args):
+# async def f_import_stack(file, args):
 #     logger.debug(f'ARGS: {args}')
 #     logger.debug(f'File Name: {file[0].name}')
 #     # args = json.loads(args)
@@ -128,7 +141,7 @@ async def f4(value, args):
 
 @bp.post('/import_stack')
 @extract_value_args()
-async def f5(value, args):
+async def f_import_stack(value, args):
     # logger.debug(f'ARGS: {args}')
     # logger.debug(f'File Name: {value}')
     url = f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks/{args.get('name_new_stack')}/upload"
@@ -147,7 +160,7 @@ async def f5(value, args):
 
 @bp.post('/volumes')
 @extract_value_args()
-async def f6(value, args):
+async def f_volumes(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     output = requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/volumes").json()
@@ -162,7 +175,7 @@ async def f6(value, args):
 
 @bp.post('/registries')
 @extract_value_args()
-async def f7(value, args):
+async def f_registries(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     try:
@@ -172,9 +185,9 @@ async def f7(value, args):
     return sanic.json(output)
 
 
-@bp.post('/list-docker-images')
+@bp.post('/search_docker_images')
 @extract_value_args()
-async def f8(value, args):
+async def f_search_docker_images(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     output = requests.get(f"http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/registries/{args.get('registry_name')}/images?search={args.get('image_name')}").json()
@@ -183,9 +196,9 @@ async def f8(value, args):
     return sanic.json(output)
 
 
-@bp.post('/list-python-lib')
+@bp.post('/search_python_lib')
 @extract_value_args()
-async def f9(value, args):
+async def f_search_python_lib(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     url = f"https://{args.get('pypiserver')}/{args.get('python_lib')}"
@@ -205,7 +218,7 @@ async def f9(value, args):
 
 @bp.post('/stack_pause')
 @extract_value_args()
-async def f10(value, args):
+async def f_stack_pause(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     stack_id = f_stack_name_to_id(f"{args.get('stack_name_pause')}")
@@ -222,7 +235,7 @@ async def f10(value, args):
 
 @bp.post('/stack_unpause')
 @extract_value_args()
-async def f11(value, args):
+async def f_stack_unpause(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     stack_id = f_stack_name_to_id(f"{args.get('stack_name_unpause')}")
@@ -239,7 +252,7 @@ async def f11(value, args):
 
 @bp.post('/container_pause')
 @extract_value_args()
-async def f12(value, args):
+async def f_container_pause(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     container_id = f_container_name_to_id(f"{args.get('stack_cont_name_pause')}", f"{args.get('container_name_pause')}")
@@ -256,7 +269,7 @@ async def f12(value, args):
 
 @bp.post('/container_unpause')
 @extract_value_args()
-async def f13(value, args):
+async def f_container_unpause(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     container_id = f_container_name_to_id(f"{args.get('stack_cont_name_unpause')}", f"{args.get('container_name_unpause')}")
@@ -273,7 +286,7 @@ async def f13(value, args):
 
 @bp.post('/stack_delete')
 @extract_value_args()
-async def f14(value, args):
+async def f_stack_delete(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     stack_id = f_stack_name_to_id(f"{args.get('stack_name_delete')}")
@@ -290,7 +303,7 @@ async def f14(value, args):
 
 @bp.post('/container_delete')
 @extract_value_args()
-async def f14(value, args):
+async def f_container_delete(value, args):
     logger.debug(f'ARGS: {args}')
     logger.debug(f'JSON: {value}')
     container_id = f_container_name_to_id(f"{args.get('stack_cont_name_delete')}", f"{args.get('container_name_delete')}")

@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "06/10/2022, 15:45:50",
+  "last_modify": "06/10/2022, 16:37:32",
   "graphs": {
     "test": {
       "nodes": [
@@ -224,7 +224,7 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "List and count stacks on your system (using Stack Info extension and function)",
+            "comment": "List and count stacks on the host (using Stack Info)",
             "fill": "#FC8930",
             "height": 168,
             "width": 973
@@ -466,8 +466,8 @@
         {
           "id": "18f997d1-c3aa-4f33-8f21-be38233cdf3e",
           "position": {
-            "x": 964.3325211720032,
-            "y": 287.1104013365296
+            "x": 327.3325211720032,
+            "y": 474.1104013365296
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -487,8 +487,8 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 964.3325211720032,
-            "y": 287.1104013365296
+            "x": 327.3325211720032,
+            "y": 474.1104013365296
           },
           "__class__": "Node"
         },
@@ -507,9 +507,9 @@
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "List and count stacks on your system",
+            "comment": "List and count stacks on the host",
             "fill": "#FC8930",
-            "height": 136,
+            "height": 168,
             "width": 437
           },
           "zIndex": -1,
@@ -953,7 +953,7 @@
               "click": null,
               "icon": "RiInformationFill",
               "values": {
-                "debug": true
+                "debug": false
               }
             },
             "locked": null
@@ -1107,133 +1107,39 @@
           "__class__": "Node"
         },
         {
-          "id": "09a794a2-9b53-4a04-9837-eef027fe64fd",
-          "position": {
-            "x": 463,
-            "y": 538
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 463,
-            "y": 538
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "86e430a8-2de1-4555-99e0-7b69e44da3d8",
           "position": {
-            "x": 392,
-            "y": 481
+            "x": 868,
+            "y": 478
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 277,
-          "height": 168,
+          "width": 480,
+          "height": 136,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Return ID from name Stack or Container",
             "fill": "#F74B65",
             "height": 136,
-            "width": 230
+            "width": 480
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 392,
-            "y": 481
+            "x": 868,
+            "y": 478
           },
           "__class__": "Node"
         },
         {
           "id": "9e7eb73a-bfb1-4c03-b630-ffb84e47e464",
           "position": {
-            "x": 1045,
-            "y": 328
+            "x": 405,
+            "y": 521
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1300,7 +1206,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "name_stack": "lokoAA"
+                "name_stack": "loko"
               }
             },
             "locked": null
@@ -1308,8 +1214,191 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1045,
-            "y": 328
+            "x": 405,
+            "y": 521
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "505da2f1-5e89-4eb7-b869-03197e0e1f59",
+          "position": {
+            "x": 1009,
+            "y": 283
+          },
+          "type": "comment",
+          "dragHandle": "#commentHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 459,
+          "height": 136,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "comment": "Print all the info about all containers",
+            "fill": "#F74B65",
+            "height": 136,
+            "width": 459
+          },
+          "zIndex": -1,
+          "selectable": false,
+          "connectable": false,
+          "positionAbsolute": {
+            "x": 1009,
+            "y": 283
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "895b6cac-1c1a-4bb9-aed7-4af87913a844",
+          "position": {
+            "x": 1091,
+            "y": 326
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 189,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Containers Info",
+            "events": null,
+            "description": "\n### Containers Info\n\nWith this extension you can view all the containers on the host.\n\nYou can then use a function after this block to manipulate and filter all the data you need to use it.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "containers_info",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {
+                "debug": true
+              }
+            }
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1091,
+            "y": 326
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "027c7527-cb88-46c6-a562-bc8673b66fa9",
+          "position": {
+            "x": 1003,
+            "y": 521
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 150,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stacks ID",
+            "events": null,
+            "description": "\n### Stacks ID\n\nWith this extension you view the ID of your Stack.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_id",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack name to convert into its ID",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_name": "fede-import-test"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 1003,
+            "y": 521
           },
           "__class__": "Node"
         }
@@ -2352,15 +2441,15 @@
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 808.0141493526568,
+          "width": 483.0141493526568,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Search Images on Livetech Private Docker Registry (add \"container not found\")",
+            "comment": "Search images in Livetech Docker Registry",
             "fill": "#277DA1",
             "height": 168,
-            "width": 808.0141493526568
+            "width": 483.0141493526568
           },
           "zIndex": -1,
           "selectable": false,
@@ -2374,55 +2463,55 @@
         {
           "id": "25138537-e006-47e9-82b1-0089210e19ad",
           "position": {
-            "x": 331,
-            "y": 284
+            "x": 330,
+            "y": 323
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 537,
+          "width": 712,
           "height": 168,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Search Library on Livetech Private Pypiserver",
+            "comment": "Search libraries in Livetech Pypiserver (prova a gestire meglio gli errori)",
             "fill": "#43AA8B",
             "height": 168,
-            "width": 537
+            "width": 712
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 331,
-            "y": 284
+            "x": 330,
+            "y": 323
           },
           "__class__": "Node"
         },
         {
-          "id": "edbd9666-3f39-4bd9-8e21-21cd99471230",
+          "id": "1240a034-e7eb-4420-acd6-8052727a8218",
           "position": {
-            "x": 495,
-            "y": 144
+            "x": 399,
+            "y": 139
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 347,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "Search images in Livetech Registry",
+            "name": "Search in Livetech Docker Registry",
             "events": null,
             "description": "\n### Search images in Livetech Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
             "inputs": [
               {
                 "id": "input",
                 "label": "Input",
-                "service": "list-docker-images",
+                "service": "search_docker_images",
                 "to": "output"
               }
             ],
@@ -2485,7 +2574,7 @@
                 "alias": "",
                 "debug": true,
                 "registry_name": "registry.livetech.site",
-                "image_name": "utils"
+                "image_name": "fede"
               }
             },
             "locked": null
@@ -2493,34 +2582,34 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 495,
-            "y": 144
+            "x": 399,
+            "y": 139
           },
           "__class__": "Node"
         },
         {
-          "id": "c426f0dc-5f88-47fc-8811-749d483d88d6",
+          "id": "5721cc70-e8f6-4eef-9eda-912e0e41c1bc",
           "position": {
-            "x": 415,
-            "y": 330
+            "x": 416,
+            "y": 370
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 389,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
-            "name": "Search libraries in Livetech Pypiserver",
+            "name": "Search in Livetech Pypiserver",
             "events": null,
-            "description": "\n### Search python libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
+            "description": "\n### Search libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
             "inputs": [
               {
                 "id": "input",
                 "label": "Input",
-                "service": "list-python-lib",
+                "service": "search_python_lib",
                 "to": "output"
               }
             ],
@@ -2583,7 +2672,7 @@
                 "alias": "",
                 "debug": true,
                 "pypiserver": "distribution.livetech.site",
-                "python_lib": "docker-utils"
+                "python_lib": "fede"
               }
             },
             "locked": null
@@ -2591,8 +2680,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 415,
-            "y": 330
+            "x": 416,
+            "y": 370
           },
           "__class__": "Node"
         }
