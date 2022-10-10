@@ -1,5 +1,4 @@
-from loko_extensions.model.components import Arg, Component, save_extensions, Input, Output, Select, Dynamic
-
+from loko_extensions.model.components import Arg, Component, save_extensions, Input, Output, Select, Dynamic, AsyncSelect
 
 ########################## componente stacks name
 input_stacks_name = Input(id='input', label='Input', service='stacks_name', to='output')
@@ -62,6 +61,7 @@ containers_info = Component(name='Containers Info', inputs=[input_containers_inf
 
 ########################## componente stack inspect
 name_stack_inspect = Arg(name='name_stack', label='Stack Name', type='text', helper='Stack name to inspect', value="")
+# name_stack_inspect = AsyncSelect(name='name_stack', label='Stack Name', url='http://docker_utils_ext:8080/stacks_name_list')
 input_stack_inspect = Input(id='input', label='Input', service='stack_inspect', to='output')
 output_stack_inspect = Output(id='output', label='Output')
 doc_stack_inspect = '''

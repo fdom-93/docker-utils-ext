@@ -25,7 +25,8 @@ bp = Blueprint("default", url_prefix=f"/")
 app.config["API_TITLE"] = name
 
 
-##### funzione che implemente la conversione da "nome stack" a "id stack"...non essendo implementato direttamente in Docker-Utils
+
+##### funzione che implementa la conversione da "nome stack" a "id stack"...non essendo implementato direttamente in Docker-Utils
 def f_stack_name_to_id(name:str):
     url_check = requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json()
     matching = (f"Stack not found")
@@ -39,7 +40,7 @@ def f_stack_name_to_id(name:str):
     return matching
 
 
-##### funzione che implemente la conversione da "nome container" a "id container"...non essendo implementato direttamente in Docker-Utils
+##### funzione che implementa la conversione da "nome container" a "id container"...non essendo implementato direttamente in Docker-Utils
 def f_container_name_to_id(stack:str, container:str):
     check_stack_if_exist = f_stack_name_to_id(stack)
     if check_stack_if_exist == "Stack not found":
@@ -56,23 +57,40 @@ def f_container_name_to_id(stack:str, container:str):
 
 
 
-
-@bp.post('/stacks_name')
-@extract_value_args()
-async def f1(value, args):
-    logger.debug(f'ARGS: {args}')
-    logger.debug(f'JSON: {value}')
-    response = requests.get('http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks').json()
+## funzione che ritorna una lista dei soli nomi degli stacks.
+def f_list_stacks():
+    response = requests.get("http://docker-utils-ext_docker-utils:8080/ds4biz/ds4biz-docker/0.2/stacks").json()
     l = int(len(response))
     names = []
     if l == 1:
-        count = (f'There is {l} stack on your system: ')
         names.append(response[0]['name'])
     else:
-        count = (f'There are {l} stacks on your system: ')
         for n in range(0, l):
             names.append(response[n]['name'])
-    return sanic.json(f'{count} {names}')
+    return names
+
+
+@bp.post('/stacks_name_list')
+@extract_value_args()
+async def f_stacks_name_list(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    response = f_list_stacks()
+    return sanic.json(f'{response}')
+
+
+@bp.post('/stacks_name')
+@extract_value_args()
+async def f_stacks_name(value, args):
+    logger.debug(f'ARGS: {args}')
+    logger.debug(f'JSON: {value}')
+    response = f_list_stacks()
+    l = int(len(response))
+    if l == 1:
+        count = (f'There is {l} stack on your system: ')
+    else:
+        count = (f'There are {l} stacks on your system: ')
+    return sanic.json(f'{count} {response}')
 
 
 @bp.post('/stack_id')

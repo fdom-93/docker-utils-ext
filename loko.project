@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "10/10/2022, 11:12:05",
+  "last_modify": "10/10/2022, 17:26:30",
   "graphs": {
     "1) Info": {
       "nodes": [
@@ -934,90 +934,6 @@
           "__class__": "Node"
         },
         {
-          "id": "9e7eb73a-bfb1-4c03-b630-ffb84e47e464",
-          "position": {
-            "x": 405,
-            "y": 521
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 172,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Inspect",
-            "events": null,
-            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_inspect",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Info",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "name_stack",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "Stack name to inspect",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiInformationFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "name_stack": "loko"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 405,
-            "y": 521
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "505da2f1-5e89-4eb7-b869-03197e0e1f59",
           "position": {
             "x": 1009,
@@ -1293,6 +1209,90 @@
           "positionAbsolute": {
             "x": 1081,
             "y": 524
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "782c5c00-cdbd-4ac8-bf1e-b24f43af1d2e",
+          "position": {
+            "x": 469,
+            "y": 524.0058097839355
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Inspect",
+            "events": null,
+            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_inspect",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "name_stack",
+                  "type": "text",
+                  "label": "Stack Name",
+                  "helper": "Stack name to inspect",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": null
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "name_stack": "loko"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 469,
+            "y": 524.0058097839355
           },
           "__class__": "Node"
         }
