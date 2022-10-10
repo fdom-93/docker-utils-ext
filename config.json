@@ -1,10 +1,10 @@
 {
   "side_containers": {
     "hermes": {
-      "image": "hermes:0.0.1"
+      "image": "fdom93/hermes:0.0.1"
     },
     "docker-utils": {
-      "image": "docker-utils:0.0.1",
+      "image": "fdom93/docker-utils:0.0.1",
       "volumes": [
         "/var/run/docker.sock:/var/run/docker.sock",
         "/home/federico/.docker/config.json:/root/.docker/config.json",
