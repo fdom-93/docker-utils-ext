@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "10/10/2022, 17:26:30",
+  "last_modify": "11/10/2022, 16:43:07",
   "graphs": {
     "1) Info": {
       "nodes": [
@@ -1034,17 +1034,97 @@
           "__class__": "Node"
         },
         {
-          "id": "8fe2fead-9ec7-4a31-9a39-43d29f63720d",
+          "id": "85025c6b-9594-48fd-bf5e-2cb65c7cf25a",
           "position": {
-            "x": 892,
-            "y": 523
+            "x": 479,
+            "y": 529.0058097839355
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Inspect",
+            "events": null,
+            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_inspect",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": false,
+            "options": {
+              "group": "Docker-Utils Info",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "name_stack",
+                  "type": "asyncSelect",
+                  "label": "Stack Name",
+                  "helper": "Stack name to inspect",
+                  "group": "",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiInformationFill",
+              "values": {}
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 479,
+            "y": 529.0058097839355
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "d6700f85-9019-42c6-906f-a217effee9e8",
+          "position": {
+            "x": 893,
+            "y": 522.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 88,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1089,13 +1169,14 @@
                 },
                 {
                   "name": "stack_name",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
                   "helper": "Name of the stack to be convert to its ID",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
               "click": "Send message",
@@ -1104,7 +1185,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name": "fede-import-test"
+                "stack_name": "loko"
               }
             },
             "locked": null
@@ -1112,23 +1193,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 892,
-            "y": 523
+            "x": 893,
+            "y": 522.0058097839355
           },
           "__class__": "Node"
         },
         {
-          "id": "988c0f81-ea9b-45fe-a030-c62e1bfd45fc",
+          "id": "93798bcb-13a0-4d87-8756-3746a5239418",
           "position": {
-            "x": 1081,
-            "y": 524
+            "x": 1110,
+            "y": 517.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 164,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1173,13 +1254,14 @@
                 },
                 {
                   "name": "stack_name",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
                   "helper": "Stack name of your container",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
                   "name": "container_name",
@@ -1198,8 +1280,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name": "loko",
-                "container_name": "gateway"
+                "container_name": "gateway",
+                "stack_name": "loko"
               }
             },
             "locked": null
@@ -1207,92 +1289,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1081,
-            "y": 524
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "782c5c00-cdbd-4ac8-bf1e-b24f43af1d2e",
-          "position": {
-            "x": 469,
-            "y": 524.0058097839355
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 172,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Inspect",
-            "events": null,
-            "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_inspect",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Info",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "name_stack",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "Stack name to inspect",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiInformationFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "name_stack": "loko"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 469,
-            "y": 524.0058097839355
+            "x": 1110,
+            "y": 517.0058097839355
           },
           "__class__": "Node"
         }
@@ -1875,7 +1873,7 @@
           "id": "47cf1fc6-24ec-4240-b768-4264f0382d1d",
           "position": {
             "x": 413,
-            "y": 335.00580978393555
+            "y": 336.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1968,91 +1966,7 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 413,
-            "y": 335.00580978393555
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "102bbd9e-e71b-4bf5-9459-6035992e80ad",
-          "position": {
-            "x": 380,
-            "y": 136.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 239,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Export Docker-Compose",
-            "events": null,
-            "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the name of your stack\n\nYou can use \"Stacks Name\" extension to take it).\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "export_stack",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Import/Export",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_name",
-                  "type": "text",
-                  "label": "Stack Name",
-                  "helper": "Your stack's name",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiUploadFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": false,
-                "stack_name": "lok"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 380,
-            "y": 136.00580978393555
+            "y": 336.00580978393555
           },
           "__class__": "Node"
         },
@@ -2247,6 +2161,91 @@
             "y": 170
           },
           "__class__": "Node"
+        },
+        {
+          "id": "412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936",
+          "position": {
+            "x": 385,
+            "y": 134.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 239,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Export Docker-Compose",
+            "events": null,
+            "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the name of your stack\n\nYou can use \"Stacks Name\" extension to take it).\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "export_stack",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Import/Export",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name",
+                  "type": "asyncSelect",
+                  "label": "Stack Name",
+                  "helper": "Stack's name to export",
+                  "group": "",
+                  "value": null,
+                  "description": "",
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiUploadFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": false,
+                "stack_name": "loko"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 385,
+            "y": 134.00580978393555
+          },
+          "__class__": "Node"
         }
       ],
       "edges": [
@@ -2279,20 +2278,6 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-102bbd9e-e71b-4bf5-9459-6035992e80adoutput-f34309bc-9522-46e1-866f-24871c89339binput",
-          "source": "102bbd9e-e71b-4bf5-9459-6035992e80ad",
-          "sourceHandle": "output",
-          "target": "f34309bc-9522-46e1-866f-24871c89339b",
-          "targetHandle": "input",
-          "data": {
-            "startColor": "#888",
-            "stopColor": "#D770AD"
-          },
-          "selected": false,
-          "dragging": false,
-          "__class__": "Edge"
-        },
-        {
           "id": "reactflow__edge-f34309bc-9522-46e1-866f-24871c89339boutput-d6535c83-d479-4b69-aea5-b68481863058input",
           "source": "f34309bc-9522-46e1-866f-24871c89339b",
           "sourceHandle": "output",
@@ -2314,6 +2299,20 @@
           "targetHandle": "input",
           "data": {
             "startColor": "#D770AD",
+            "stopColor": "#D770AD"
+          },
+          "selected": false,
+          "dragging": false,
+          "__class__": "Edge"
+        },
+        {
+          "id": "reactflow__edge-412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936output-f34309bc-9522-46e1-866f-24871c89339binput",
+          "source": "412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936",
+          "sourceHandle": "output",
+          "target": "f34309bc-9522-46e1-866f-24871c89339b",
+          "targetHandle": "input",
+          "data": {
+            "startColor": "#888",
             "stopColor": "#D770AD"
           },
           "selected": false,
@@ -2442,17 +2441,17 @@
           "__class__": "Node"
         },
         {
-          "id": "4fc77f14-e8b2-459c-b39b-86da72f6f06a",
+          "id": "8145c7f9-f56e-4d79-bfe1-1498916b5e07",
           "position": {
-            "x": 444,
-            "y": 150.80000114440918
+            "x": 465,
+            "y": 153.11429977416992
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 156,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2497,13 +2496,14 @@
                 },
                 {
                   "name": "stack_name_pause",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
                   "helper": "Stack Name to pause",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
               "click": "Send message",
@@ -2520,23 +2520,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 444,
-            "y": 150.80000114440918
+            "x": 465,
+            "y": 153.11429977416992
           },
           "__class__": "Node"
         },
         {
-          "id": "44e49edd-b5bb-4528-bd36-762d02375476",
+          "id": "46ba8bd4-7f5d-44d1-968d-3e624eb98c52",
           "position": {
-            "x": 448,
-            "y": 353.8000011444092
+            "x": 462,
+            "y": 363.1142997741699
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 172,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2581,13 +2581,14 @@
                 },
                 {
                   "name": "stack_name_unpause",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
                   "helper": "Stack Name to unpause",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
               "click": "Send message",
@@ -2596,7 +2597,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_unpause": "loko"
+                "stack_name_unpause": "fede-import-test"
               }
             },
             "locked": null
@@ -2604,23 +2605,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 448,
-            "y": 353.8000011444092
+            "x": 462,
+            "y": 363.1142997741699
           },
           "__class__": "Node"
         },
         {
-          "id": "ea1d3d34-bc88-4b35-8331-4095e13edb97",
+          "id": "5a65639d-d7e0-4e85-8c83-df7386c89a88",
           "position": {
-            "x": 919,
-            "y": 158
+            "x": 915,
+            "y": 154.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 189,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2665,13 +2666,14 @@
                 },
                 {
                   "name": "stack_cont_name_pause",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
-                  "helper": "The Stack Name of the containe to pause",
+                  "helper": "The Stack Name of the container to pause",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
                   "name": "container_name_pause",
@@ -2690,8 +2692,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_cont_name_pause": "loko",
-                "container_name_pause": "predictor"
+                "container_name_pause": "gateway",
+                "stack_cont_name_pause": "loko"
               }
             },
             "locked": null
@@ -2699,16 +2701,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 919,
-            "y": 158
+            "x": 915,
+            "y": 154.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "4205b9c7-f5a5-4ccd-bcbc-32470edec509",
+          "id": "43a23b0a-7740-4a5f-9b31-c6e1d2904187",
           "position": {
-            "x": 915,
-            "y": 355.8000011444092
+            "x": 917,
+            "y": 362.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2760,13 +2762,14 @@
                 },
                 {
                   "name": "stack_cont_name_unpause",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
-                  "helper": "The Stack Name of the containe to unpause",
+                  "helper": "The Stack Name of the container to unpause",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
                   "name": "container_name_unpause",
@@ -2785,8 +2788,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_cont_name_unpause": "loko",
-                "container_name_unpause": "predictor"
+                "container_name_unpause": "gateway",
+                "stack_cont_name_unpause": "loko"
               }
             },
             "locked": null
@@ -2794,8 +2797,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 915,
-            "y": 355.8000011444092
+            "x": 917,
+            "y": 362.00580978393555
           },
           "__class__": "Node"
         }
@@ -2864,10 +2867,10 @@
           "__class__": "Node"
         },
         {
-          "id": "8dc9faea-76eb-4dad-a961-c055f1ebac98",
+          "id": "895e5f9e-615d-43d7-b9d6-a537f797458a",
           "position": {
-            "x": 490,
-            "y": 157.80000114440918
+            "x": 527,
+            "y": 161.11429977416992
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2919,13 +2922,14 @@
                 },
                 {
                   "name": "stack_name_delete",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
                   "helper": "Stack Name to delete",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
               "click": "Send message",
@@ -2942,16 +2946,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 490,
-            "y": 157.80000114440918
+            "x": 527,
+            "y": 161.11429977416992
           },
           "__class__": "Node"
         },
         {
-          "id": "a52f3c0e-00a4-48e0-b369-9bd8177fa10c",
+          "id": "f3d5763d-0a21-40d7-8b74-9da9d5197140",
           "position": {
-            "x": 497,
-            "y": 372.8000011444092
+            "x": 524,
+            "y": 369.1142997741699
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3003,13 +3007,14 @@
                 },
                 {
                   "name": "stack_cont_name_delete",
-                  "type": "text",
+                  "type": "asyncSelect",
                   "label": "Stack Name",
-                  "helper": "The Stack Name of the containe to delete",
+                  "helper": "The Stack Name of the container to delete",
                   "group": "",
-                  "value": "",
+                  "value": null,
                   "description": "",
-                  "validation": null
+                  "validation": null,
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
                   "name": "container_name_delete",
@@ -3028,8 +3033,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_cont_name_delete": "loko",
-                "container_name_delete": "predictor"
+                "container_name_delete": "gateway",
+                "stack_cont_name_delete": "loko"
               }
             },
             "locked": null
@@ -3037,8 +3042,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 497,
-            "y": 372.8000011444092
+            "x": 524,
+            "y": 369.1142997741699
           },
           "__class__": "Node"
         }

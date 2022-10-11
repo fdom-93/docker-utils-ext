@@ -51,13 +51,14 @@
    "args": [
     {
      "name": "stack_name",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Name of the stack to be convert to its ID",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -114,13 +115,14 @@
    "args": [
     {
      "name": "stack_name",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Stack name of your container",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
      "name": "container_name",
@@ -187,13 +189,14 @@
    "args": [
     {
      "name": "name_stack",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Stack name to inspect",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -224,13 +227,14 @@
    "args": [
     {
      "name": "stack_name",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
-     "helper": "Your stack's name",
+     "helper": "Stack's name to export",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -460,13 +464,14 @@
    "args": [
     {
      "name": "stack_name_pause",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Stack Name to pause",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -497,13 +502,14 @@
    "args": [
     {
      "name": "stack_name_unpause",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Stack Name to unpause",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -534,13 +540,14 @@
    "args": [
     {
      "name": "stack_cont_name_pause",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
-     "helper": "The Stack Name of the containe to pause",
+     "helper": "The Stack Name of the container to pause",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
      "name": "container_name_pause",
@@ -581,13 +588,14 @@
    "args": [
     {
      "name": "stack_cont_name_unpause",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
-     "helper": "The Stack Name of the containe to unpause",
+     "helper": "The Stack Name of the container to unpause",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
      "name": "container_name_unpause",
@@ -628,13 +636,14 @@
    "args": [
     {
      "name": "stack_name_delete",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
      "helper": "Stack Name to delete",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
   }
@@ -665,13 +674,14 @@
    "args": [
     {
      "name": "stack_cont_name_delete",
-     "type": "text",
+     "type": "asyncSelect",
      "label": "Stack Name",
-     "helper": "The Stack Name of the containe to delete",
+     "helper": "The Stack Name of the container to delete",
      "group": "",
-     "value": "",
+     "value": null,
      "description": "",
-     "validation": null
+     "validation": null,
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
      "name": "container_name_delete",

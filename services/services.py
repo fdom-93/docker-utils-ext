@@ -70,13 +70,10 @@ def f_list_stacks():
     return names
 
 
-@bp.post('/stacks_name_list')
-@extract_value_args()
-async def f_stacks_name_list(value, args):
-    logger.debug(f'ARGS: {args}')
-    logger.debug(f'JSON: {value}')
+@bp.get('/stacks_name_list')
+async def f_stacks_name_list(request):
     response = f_list_stacks()
-    return sanic.json(f'{response}')
+    return sanic.json(response)
 
 
 @bp.post('/stacks_name')
