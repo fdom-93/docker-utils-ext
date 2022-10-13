@@ -5,6 +5,7 @@
 Docker-utils-ext is an extension for LokoAI. More info about LokoAI [HERE]
 
 With Docker-Utils-ext you can manage all docker stacks on your host easily, without even using a terminal docker command ! 🔥🔥
+
 You can:
 - View all the stacks created on your host and all their info
 - View all the containers running in any stacks, with their info
