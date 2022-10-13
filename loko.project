@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "11/10/2022, 16:43:07",
+  "last_modify": "13/10/2022, 10:03:44",
   "graphs": {
     "1) Info": {
       "nodes": [
@@ -11,7 +11,7 @@
           "id": "79ea9c22-b066-46df-8f9a-f62e560c93a2",
           "position": {
             "x": 332.35666008511566,
-            "y": 102.41314347932439
+            "y": 84.41314347932439
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -32,15 +32,15 @@
           "connectable": false,
           "positionAbsolute": {
             "x": 332.35666008511566,
-            "y": 102.41314347932439
+            "y": 84.41314347932439
           },
           "__class__": "Node"
         },
         {
           "id": "6529127c-36c6-4f80-b43b-63aa81127abe",
           "position": {
-            "x": 1135.1543995470452,
-            "y": 158.7420952386782
+            "x": 1133.1543995470452,
+            "y": 131.7420952386782
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -129,16 +129,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1135.1543995470452,
-            "y": 158.7420952386782
+            "x": 1133.1543995470452,
+            "y": 131.7420952386782
           },
           "__class__": "Node"
         },
         {
           "id": "fe542893-b6d2-4d5c-a84f-317fa7295524",
           "position": {
-            "x": 771.9947309008676,
-            "y": 346.40978075754356
+            "x": 770.9947309008676,
+            "y": 327.40978075754356
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -227,16 +227,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 771.9947309008676,
-            "y": 346.40978075754356
+            "x": 770.9947309008676,
+            "y": 327.40978075754356
           },
           "__class__": "Node"
         },
         {
           "id": "080a6891-a9c2-4000-9f43-cbcc2c46d3ea",
           "position": {
-            "x": 332.6185509640567,
-            "y": 284.02930300046467
+            "x": 334.6185509640567,
+            "y": 272.02930300046467
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -256,16 +256,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 332.6185509640567,
-            "y": 284.02930300046467
+            "x": 334.6185509640567,
+            "y": 272.02930300046467
           },
           "__class__": "Node"
         },
         {
           "id": "18f997d1-c3aa-4f33-8f21-be38233cdf3e",
           "position": {
-            "x": 335.3325211720032,
-            "y": 474.1104013365296
+            "x": 336.3325211720032,
+            "y": 462.1104013365296
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -285,16 +285,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 335.3325211720032,
-            "y": 474.1104013365296
+            "x": 336.3325211720032,
+            "y": 462.1104013365296
           },
           "__class__": "Node"
         },
         {
           "id": "657b0c69-fb81-4025-b9c8-c5ff46d4acdb",
           "position": {
-            "x": 1313,
-            "y": 103.00580978393555
+            "x": 1316,
+            "y": 83.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -314,16 +314,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 1313,
-            "y": 103.00580978393555
+            "x": 1316,
+            "y": 83.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "3cdb853b-cc71-4474-893a-fad97f7fcaaa",
           "position": {
-            "x": 743,
-            "y": 153.00580978393555
+            "x": 740,
+            "y": 138.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -424,16 +424,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 743,
-            "y": 153.00580978393555
+            "x": 740,
+            "y": 138.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "813fa659-1040-4bce-88fb-8d16ea26891d",
           "position": {
-            "x": 942,
-            "y": 177.00580978393555
+            "x": 943,
+            "y": 164.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -502,16 +502,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 942,
-            "y": 177.00580978393555
+            "x": 943,
+            "y": 164.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "2728ca44-a1a9-41bf-bf3c-4c2faeaf726a",
           "position": {
-            "x": 358,
-            "y": 139.00580978393555
+            "x": 360,
+            "y": 124.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -595,8 +595,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 358,
-            "y": 139.00580978393555
+            "x": 360,
+            "y": 124.00580978393555
           },
           "__class__": "Node"
         },
@@ -604,7 +604,7 @@
           "id": "e6fed702-a9c5-4d6a-a875-4de59704b305",
           "position": {
             "x": 366,
-            "y": 330.00580978393555
+            "y": 313.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -689,15 +689,15 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 366,
-            "y": 330.00580978393555
+            "y": 313.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "8429cbdf-6a9c-4c20-bfe0-7c7795677724",
           "position": {
-            "x": 548,
-            "y": 170.00580978393555
+            "x": 546,
+            "y": 162.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -759,16 +759,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 548,
-            "y": 170.00580978393555
+            "x": 546,
+            "y": 162.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "28fee378-7389-4e2d-9bbf-ba4832f174ca",
           "position": {
-            "x": 572,
-            "y": 356.00580978393555
+            "x": 566,
+            "y": 353.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -828,8 +828,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 572,
-            "y": 356.00580978393555
+            "x": 566,
+            "y": 353.00580978393555
           },
           "__class__": "Node"
         },
@@ -837,7 +837,7 @@
           "id": "a3e28480-6e2e-4e18-ba7f-97af06d83e5c",
           "position": {
             "x": 1424,
-            "y": 148.00580978393555
+            "y": 128.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -900,15 +900,15 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 1424,
-            "y": 148.00580978393555
+            "y": 128.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "86e430a8-2de1-4555-99e0-7b69e44da3d8",
           "position": {
-            "x": 833,
-            "y": 477
+            "x": 834,
+            "y": 463
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -928,16 +928,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 833,
-            "y": 477
+            "x": 834,
+            "y": 463
           },
           "__class__": "Node"
         },
         {
           "id": "505da2f1-5e89-4eb7-b869-03197e0e1f59",
           "position": {
-            "x": 1009,
-            "y": 283
+            "x": 1010,
+            "y": 273
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -957,16 +957,16 @@
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 1009,
-            "y": 283
+            "x": 1010,
+            "y": 273
           },
           "__class__": "Node"
         },
         {
           "id": "895b6cac-1c1a-4bb9-aed7-4af87913a844",
           "position": {
-            "x": 1091,
-            "y": 326
+            "x": 1099,
+            "y": 316
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1028,16 +1028,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1091,
-            "y": 326
+            "x": 1099,
+            "y": 316
           },
           "__class__": "Node"
         },
         {
           "id": "85025c6b-9594-48fd-bf5e-2cb65c7cf25a",
           "position": {
-            "x": 479,
-            "y": 529.0058097839355
+            "x": 471,
+            "y": 508.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1065,7 +1065,7 @@
                 "label": "Output"
               }
             ],
-            "configured": false,
+            "configured": true,
             "options": {
               "group": "Docker-Utils Info",
               "args": [
@@ -1101,23 +1101,28 @@
               ],
               "click": "Send message",
               "icon": "RiInformationFill",
-              "values": {}
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "name_stack": "loko"
+              }
             },
             "locked": null
           },
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 479,
-            "y": 529.0058097839355
+            "x": 471,
+            "y": 508.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "d6700f85-9019-42c6-906f-a217effee9e8",
           "position": {
-            "x": 893,
-            "y": 522.0058097839355
+            "x": 894,
+            "y": 507.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1193,16 +1198,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 893,
-            "y": 522.0058097839355
+            "x": 894,
+            "y": 507.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "93798bcb-13a0-4d87-8756-3746a5239418",
           "position": {
-            "x": 1110,
-            "y": 517.0058097839355
+            "x": 1119,
+            "y": 495.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1289,8 +1294,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1110,
-            "y": 517.0058097839355
+            "x": 1119,
+            "y": 495.00580978393555
           },
           "__class__": "Node"
         }
@@ -1748,128 +1753,6 @@
           "__class__": "Node"
         },
         {
-          "id": "58c9ce43-82ce-4648-b534-f4910b33457a",
-          "position": {
-            "x": 959,
-            "y": 329
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Trigger",
-            "events": null,
-            "description": "### Description\nThe TRIGGER component is used to start streams.\n\n### Output\nThe parameter Type can be set as a **String** or an **Object**. The parameter Value, on the other hand, defines the actual output of the component.",
-            "inputs": [],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Common",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "type",
-                  "type": "select",
-                  "description": "The type of data",
-                  "label": "Type",
-                  "validation": {
-                    "required": "Required field"
-                  },
-                  "fragment": null,
-                  "advanced": false,
-                  "options": [
-                    "String",
-                    "Object"
-                  ],
-                  "value": null
-                },
-                {
-                  "name": "value",
-                  "type": "dynamic",
-                  "dynamicType": {
-                    "String": "area",
-                    "Object": "code"
-                  },
-                  "parent": "type",
-                  "label": "Value",
-                  "validation": {
-                    "required": "Required field"
-                  }
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayFill",
-              "values": {
-                "type": "String",
-                "value": "Hello world!"
-              }
-            }
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 959,
-            "y": 329
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "f5927ee0-56a6-4b07-a46a-e4fe2c09b94c",
-          "position": {
-            "x": 908,
-            "y": 280
-          },
-          "type": "comment",
-          "dragHandle": "#commentHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 376,
-          "height": 186,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "comment": "Run a single container (TO DO)",
-            "fill": "#F74B65",
-            "height": 186,
-            "width": 376
-          },
-          "zIndex": -1,
-          "selectable": false,
-          "connectable": false,
-          "positionAbsolute": {
-            "x": 908,
-            "y": 280
-          },
-          "__class__": "Node"
-        },
-        {
           "id": "47cf1fc6-24ec-4240-b768-4264f0382d1d",
           "position": {
             "x": 413,
@@ -1973,7 +1856,7 @@
         {
           "id": "f34309bc-9522-46e1-866f-24871c89339b",
           "position": {
-            "x": 670,
+            "x": 671,
             "y": 145.00580978393555
           },
           "type": "custom",
@@ -2060,7 +1943,7 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 670,
+            "x": 671,
             "y": 145.00580978393555
           },
           "__class__": "Node"
@@ -2166,7 +2049,7 @@
           "id": "412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936",
           "position": {
             "x": 385,
-            "y": 134.00580978393555
+            "y": 135.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2243,7 +2126,7 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 385,
-            "y": 134.00580978393555
+            "y": 135.00580978393555
           },
           "__class__": "Node"
         }
@@ -2512,7 +2395,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_pause": "loko"
+                "stack_name_pause": "fede-import-test"
               }
             },
             "locked": null
@@ -2692,8 +2575,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_pause": "gateway",
-                "stack_cont_name_pause": "loko"
+                "container_name_pause": "fede-import-test_mongo",
+                "stack_cont_name_pause": "fede-import-test"
               }
             },
             "locked": null
@@ -2788,8 +2671,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_unpause": "gateway",
-                "stack_cont_name_unpause": "loko"
+                "container_name_unpause": "fede-import-test_mongo",
+                "stack_cont_name_unpause": "fede-import-test"
               }
             },
             "locked": null
@@ -2938,7 +2821,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_delete": "loko"
+                "stack_name_delete": "fede-import-test"
               }
             },
             "locked": null
@@ -3033,8 +2916,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_delete": "gateway",
-                "stack_cont_name_delete": "loko"
+                "container_name_delete": "fede-import-test_mongo",
+                "stack_cont_name_delete": "fede-import-test"
               }
             },
             "locked": null
