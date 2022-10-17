@@ -57,7 +57,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -121,7 +123,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
@@ -132,7 +136,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -195,7 +201,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -233,7 +241,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -271,7 +281,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     },
     {
      "name": "file_import",
@@ -281,7 +293,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -370,7 +384,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "options": [
       "registry.livetech.site"
      ]
@@ -383,7 +399,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -420,7 +438,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "options": [
       "distribution.livetech.site"
      ]
@@ -433,7 +453,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -470,7 +492,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -508,7 +532,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -546,7 +572,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
@@ -557,7 +585,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -594,7 +624,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
@@ -605,7 +637,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }
@@ -642,7 +676,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     }
    ]
@@ -680,7 +716,9 @@
      "group": "",
      "value": null,
      "description": "",
-     "validation": null,
+     "validation": {
+      "required": "Required field"
+     },
      "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
     },
     {
@@ -691,7 +729,9 @@
      "group": "",
      "value": "",
      "description": "",
-     "validation": null
+     "validation": {
+      "required": "Required field"
+     }
     }
    ]
   }

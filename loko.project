@@ -3,7 +3,7 @@
   "id": "docker-utils-ext",
   "description": "",
   "created_on": "19/09/2022, 08:55:08",
-  "last_modify": "13/10/2022, 10:03:44",
+  "last_modify": "17/10/2022, 15:25:54",
   "graphs": {
     "1) Info": {
       "nodes": [
@@ -18,13 +18,13 @@
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 973,
-          "height": 168,
+          "height": 182,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "List and count stacks on the host (using Stack Info)",
             "fill": "#FC8930",
-            "height": 168,
+            "height": 182,
             "width": 973
           },
           "zIndex": -1,
@@ -39,8 +39,8 @@
         {
           "id": "6529127c-36c6-4f80-b43b-63aa81127abe",
           "position": {
-            "x": 1133.1543995470452,
-            "y": 131.7420952386782
+            "x": 1119.1543995470452,
+            "y": 139.7420952386782
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -129,16 +129,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1133.1543995470452,
-            "y": 131.7420952386782
+            "x": 1119.1543995470452,
+            "y": 139.7420952386782
           },
           "__class__": "Node"
         },
         {
           "id": "fe542893-b6d2-4d5c-a84f-317fa7295524",
           "position": {
-            "x": 770.9947309008676,
-            "y": 327.40978075754356
+            "x": 763.9947309008676,
+            "y": 353.40978075754356
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -227,66 +227,66 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 770.9947309008676,
-            "y": 327.40978075754356
+            "x": 763.9947309008676,
+            "y": 353.40978075754356
           },
           "__class__": "Node"
         },
         {
           "id": "080a6891-a9c2-4000-9f43-cbcc2c46d3ea",
           "position": {
-            "x": 334.6185509640567,
-            "y": 272.02930300046467
+            "x": 330.6185509640567,
+            "y": 285.02930300046467
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 619.7080001890362,
-          "height": 172.3804777570789,
+          "height": 186.3804777570789,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Print running containers in every stack",
             "fill": "#43AA8B",
-            "height": 172.3804777570789,
+            "height": 186.3804777570789,
             "width": 619.7080001890362
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 334.6185509640567,
-            "y": 272.02930300046467
+            "x": 330.6185509640567,
+            "y": 285.02930300046467
           },
           "__class__": "Node"
         },
         {
           "id": "18f997d1-c3aa-4f33-8f21-be38233cdf3e",
           "position": {
-            "x": 336.3325211720032,
-            "y": 462.1104013365296
+            "x": 337.3325211720032,
+            "y": 500.1104013365296
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 455.5267786746997,
-          "height": 168,
+          "height": 189,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Print running container in a single Stack",
             "fill": "#90BE6D",
-            "height": 168,
+            "height": 189,
             "width": 455.5267786746997
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 336.3325211720032,
-            "y": 462.1104013365296
+            "x": 337.3325211720032,
+            "y": 500.1104013365296
           },
           "__class__": "Node"
         },
@@ -301,13 +301,13 @@
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 437,
-          "height": 168,
+          "height": 183,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "List and count stacks on the host",
             "fill": "#FC8930",
-            "height": 168,
+            "height": 183,
             "width": 437
           },
           "zIndex": -1,
@@ -322,8 +322,8 @@
         {
           "id": "3cdb853b-cc71-4474-893a-fad97f7fcaaa",
           "position": {
-            "x": 740,
-            "y": 138.00580978393555
+            "x": 732,
+            "y": 144.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -424,16 +424,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 740,
-            "y": 138.00580978393555
+            "x": 732,
+            "y": 144.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "813fa659-1040-4bce-88fb-8d16ea26891d",
           "position": {
-            "x": 943,
-            "y": 164.00580978393555
+            "x": 927,
+            "y": 178.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -502,8 +502,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 943,
-            "y": 164.00580978393555
+            "x": 927,
+            "y": 178.00580978393555
           },
           "__class__": "Node"
         },
@@ -511,7 +511,7 @@
           "id": "2728ca44-a1a9-41bf-bf3c-4c2faeaf726a",
           "position": {
             "x": 360,
-            "y": 124.00580978393555
+            "y": 130.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -596,15 +596,15 @@
           "draggable": true,
           "positionAbsolute": {
             "x": 360,
-            "y": 124.00580978393555
+            "y": 130.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "e6fed702-a9c5-4d6a-a875-4de59704b305",
           "position": {
-            "x": 366,
-            "y": 313.00580978393555
+            "x": 365,
+            "y": 332.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -688,16 +688,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 366,
-            "y": 313.00580978393555
+            "x": 365,
+            "y": 332.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "8429cbdf-6a9c-4c20-bfe0-7c7795677724",
           "position": {
-            "x": 546,
-            "y": 162.00580978393555
+            "x": 543,
+            "y": 183.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -759,16 +759,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 546,
-            "y": 162.00580978393555
+            "x": 543,
+            "y": 183.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "28fee378-7389-4e2d-9bbf-ba4832f174ca",
           "position": {
-            "x": 566,
-            "y": 353.00580978393555
+            "x": 556,
+            "y": 379.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -828,16 +828,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 566,
-            "y": 353.00580978393555
+            "x": 556,
+            "y": 379.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "a3e28480-6e2e-4e18-ba7f-97af06d83e5c",
           "position": {
-            "x": 1424,
-            "y": 128.00580978393555
+            "x": 1433,
+            "y": 138.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -899,74 +899,74 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1424,
-            "y": 128.00580978393555
+            "x": 1433,
+            "y": 138.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "86e430a8-2de1-4555-99e0-7b69e44da3d8",
           "position": {
-            "x": 834,
-            "y": 463
+            "x": 836,
+            "y": 498
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 539,
-          "height": 142,
+          "height": 192,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Return ID from name Stack or Container",
             "fill": "#F74B65",
-            "height": 142,
+            "height": 192,
             "width": 539
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 834,
-            "y": 463
+            "x": 836,
+            "y": 498
           },
           "__class__": "Node"
         },
         {
           "id": "505da2f1-5e89-4eb7-b869-03197e0e1f59",
           "position": {
-            "x": 1010,
-            "y": 273
+            "x": 1008,
+            "y": 286
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 459,
-          "height": 136,
+          "width": 533,
+          "height": 181,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Print all the info about all containers",
+            "comment": "Print all the info about running containers",
             "fill": "#F74B65",
-            "height": 136,
-            "width": 459
+            "height": 181,
+            "width": 533
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 1010,
-            "y": 273
+            "x": 1008,
+            "y": 286
           },
           "__class__": "Node"
         },
         {
           "id": "895b6cac-1c1a-4bb9-aed7-4af87913a844",
           "position": {
-            "x": 1099,
-            "y": 316
+            "x": 1150,
+            "y": 333
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1028,16 +1028,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1099,
-            "y": 316
+            "x": 1150,
+            "y": 333
           },
           "__class__": "Node"
         },
         {
-          "id": "85025c6b-9594-48fd-bf5e-2cb65c7cf25a",
+          "id": "fc915a50-f56b-4c94-bfb9-9640bb2f04e6",
           "position": {
-            "x": 471,
-            "y": 508.00580978393555
+            "x": 461,
+            "y": 558.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1095,7 +1095,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
@@ -1113,23 +1115,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 471,
-            "y": 508.00580978393555
+            "x": 461,
+            "y": 558.0058097839355
           },
           "__class__": "Node"
         },
         {
-          "id": "d6700f85-9019-42c6-906f-a217effee9e8",
+          "id": "c28ce410-ed07-4cec-a6e4-d348dccedd83",
           "position": {
-            "x": 894,
-            "y": 507.00580978393555
+            "x": 911,
+            "y": 553.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 150,
-          "height": 56,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1180,7 +1182,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
@@ -1198,23 +1202,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 894,
-            "y": 507.00580978393555
+            "x": 911,
+            "y": 553.0058097839355
           },
           "__class__": "Node"
         },
         {
-          "id": "93798bcb-13a0-4d87-8756-3746a5239418",
+          "id": "0b1bc97b-704d-4a07-b36f-b4ebbb95624a",
           "position": {
-            "x": 1119,
-            "y": 495.00580978393555
+            "x": 1128,
+            "y": 558.0058097839355
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 164,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -1265,7 +1269,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
@@ -1276,7 +1282,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -1294,8 +1302,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1119,
-            "y": 495.00580978393555
+            "x": 1128,
+            "y": 558.0058097839355
           },
           "__class__": "Node"
         }
@@ -1393,8 +1401,8 @@
         {
           "id": "e128d5b8-ef0e-4d9e-9b5d-855609fb74be",
           "position": {
-            "x": 1193.3789573075737,
-            "y": 164.1614876607921
+            "x": 1166.3789573075737,
+            "y": 187.1614876607921
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1495,16 +1503,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1193.3789573075737,
-            "y": 164.1614876607921
+            "x": 1166.3789573075737,
+            "y": 187.1614876607921
           },
           "__class__": "Node"
         },
         {
           "id": "d6535c83-d479-4b69-aea5-b68481863058",
           "position": {
-            "x": 960.0249266746467,
-            "y": 104.63924088440649
+            "x": 951.0249266746467,
+            "y": 119.63924088440649
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1592,16 +1600,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 960.0249266746467,
-            "y": 104.63924088440649
+            "x": 951.0249266746467,
+            "y": 119.63924088440649
           },
           "__class__": "Node"
         },
         {
           "id": "96b2f7b0-ab2b-4071-a182-b06fe423ad9b",
           "position": {
-            "x": 1403,
-            "y": 140
+            "x": 1383,
+            "y": 151
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1689,8 +1697,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 1403,
-            "y": 140
+            "x": 1383,
+            "y": 151
           },
           "__class__": "Node"
         },
@@ -1705,13 +1713,13 @@
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 1258.10286712836,
-          "height": 168,
+          "height": 234,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Generate docker-compose.yml from your stack ",
             "fill": "#F9C74F",
-            "height": 168,
+            "height": 234,
             "width": 1258.10286712836
           },
           "zIndex": -1,
@@ -1726,14 +1734,14 @@
         {
           "id": "d5c59240-88b5-4cf0-b1ba-3c552849f87d",
           "position": {
-            "x": 340,
-            "y": 278.1012535095215
+            "x": 336,
+            "y": 355.1012535095215
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 455,
+          "width": 491,
           "height": 193,
           "selected": false,
           "dragging": false,
@@ -1741,123 +1749,22 @@
             "comment": "Create Stack from a docker-compose.yml file",
             "fill": "#FC8930",
             "height": 193,
-            "width": 455
+            "width": 491
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 340,
-            "y": 278.1012535095215
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "47cf1fc6-24ec-4240-b768-4264f0382d1d",
-          "position": {
-            "x": 413,
-            "y": 336.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 239,
-          "height": 88,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Import Docker-Compose",
-            "events": null,
-            "description": "\n### Import Docker-Compose\n\nWith this extension you can run a docker-compose.yml on your host.\n\nGive a name to the new stack and select .yml file to import.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "import_stack",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Import/Export",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "name_new_stack",
-                  "type": "text",
-                  "label": "Stack name",
-                  "helper": "Give a name to your new stack",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                },
-                {
-                  "name": "file_import",
-                  "type": "files",
-                  "label": "File Import",
-                  "helper": "Import your .yml file",
-                  "group": "",
-                  "value": "",
-                  "description": "",
-                  "validation": null
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiDownload2Fill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "name_new_stack": "fede-import-test",
-                "file_import": {
-                  "name": "docker-compose-mongo.yml",
-                  "path": "data/data/docker-compose-mongo.yml",
-                  "parent": "data/data",
-                  "isDir": false,
-                  "hidden": false
-                }
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 413,
-            "y": 336.00580978393555
+            "x": 336,
+            "y": 355.1012535095215
           },
           "__class__": "Node"
         },
         {
           "id": "f34309bc-9522-46e1-866f-24871c89339b",
           "position": {
-            "x": 671,
-            "y": 145.00580978393555
+            "x": 678,
+            "y": 169.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -1943,16 +1850,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 671,
-            "y": 145.00580978393555
+            "x": 678,
+            "y": 169.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "445d7b2e-70b5-4506-a8be-5f289d677d54",
           "position": {
-            "x": 889,
-            "y": 170
+            "x": 915,
+            "y": 223
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2040,16 +1947,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 889,
-            "y": 170
+            "x": 915,
+            "y": 223
           },
           "__class__": "Node"
         },
         {
-          "id": "412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936",
+          "id": "964f52d7-129a-4ea4-adb6-246e4e49494e",
           "position": {
-            "x": 385,
-            "y": 135.00580978393555
+            "x": 384,
+            "y": 167.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2107,7 +2014,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
@@ -2125,8 +2034,113 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 385,
-            "y": 135.00580978393555
+            "x": 384,
+            "y": 167.00580978393555
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "c8da61d5-b946-417d-b403-29de36c9aca5",
+          "position": {
+            "x": 424,
+            "y": 418.00580978393555
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 239,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Import Docker-Compose",
+            "events": null,
+            "description": "\n### Import Docker-Compose\n\nWith this extension you can run a docker-compose.yml on your host.\n\nGive a name to the new stack and select .yml file to import.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "import_stack",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Import/Export",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "name_new_stack",
+                  "type": "text",
+                  "label": "Stack name",
+                  "helper": "Give a name to your new stack",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                },
+                {
+                  "name": "file_import",
+                  "type": "files",
+                  "label": "File Import",
+                  "helper": "Import your .yml file",
+                  "group": "",
+                  "value": "",
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  }
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiDownload2Fill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "name_new_stack": "fede-import-test",
+                "file_import": {
+                  "name": "docker-compose-mongo.yml",
+                  "path": "data/data/docker-compose-mongo.yml",
+                  "parent": "data/data",
+                  "isDir": false,
+                  "hidden": false
+                }
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 424,
+            "y": 418.00580978393555
           },
           "__class__": "Node"
         }
@@ -2189,8 +2203,8 @@
           "__class__": "Edge"
         },
         {
-          "id": "reactflow__edge-412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936output-f34309bc-9522-46e1-866f-24871c89339binput",
-          "source": "412ee2d4-4ffc-4f0a-bfa6-5fb9bbf98936",
+          "id": "reactflow__edge-964f52d7-129a-4ea4-adb6-246e4e49494eoutput-f34309bc-9522-46e1-866f-24871c89339binput",
+          "source": "964f52d7-129a-4ea4-adb6-246e4e49494e",
           "sourceHandle": "output",
           "target": "f34309bc-9522-46e1-866f-24871c89339b",
           "targetHandle": "input",
@@ -2218,13 +2232,13 @@
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 416,
-          "height": 136,
+          "height": 224,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Pause all the containers in a Stack",
             "fill": "#90BE6D",
-            "height": 136,
+            "height": 224,
             "width": 416
           },
           "zIndex": -1,
@@ -2240,7 +2254,7 @@
           "id": "88fd8df2-c3ce-4fdd-a242-5dd56dd8142b",
           "position": {
             "x": 347,
-            "y": 298.00580978393555
+            "y": 361.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
@@ -2261,80 +2275,80 @@
           "connectable": false,
           "positionAbsolute": {
             "x": 347,
-            "y": 298.00580978393555
+            "y": 361.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "f292b8b3-a785-45ba-ab9b-b08bd74a0767",
           "position": {
-            "x": 848,
-            "y": 113.00580978393555
+            "x": 805,
+            "y": 112.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 328,
-          "height": 168,
+          "width": 423,
+          "height": 227,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Pause a single container",
             "fill": "#FC8930",
-            "height": 168,
-            "width": 328
+            "height": 227,
+            "width": 423
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 848,
-            "y": 113.00580978393555
+            "x": 805,
+            "y": 112.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "9138b5a8-880d-4767-80b1-eb6e222cf2ac",
           "position": {
-            "x": 848,
-            "y": 307.00580978393555
+            "x": 804,
+            "y": 365.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 332,
-          "height": 182,
+          "width": 438,
+          "height": 192,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Unpause a single container",
             "fill": "#F9C74F",
-            "height": 182,
-            "width": 332
+            "height": 192,
+            "width": 438
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 848,
-            "y": 307.00580978393555
+            "x": 804,
+            "y": 365.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "8145c7f9-f56e-4d79-bfe1-1498916b5e07",
+          "id": "9c3cae6d-8d33-4779-9621-41a4e3fa0303",
           "position": {
-            "x": 465,
-            "y": 153.11429977416992
+            "x": 463,
+            "y": 187.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 156,
-          "height": 88,
+          "width": 150,
+          "height": 56,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2385,7 +2399,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
@@ -2395,7 +2411,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_pause": "fede-import-test"
+                "stack_name_pause": "loko"
               }
             },
             "locked": null
@@ -2403,108 +2419,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 465,
-            "y": 153.11429977416992
+            "x": 463,
+            "y": 187.20974349975586
           },
           "__class__": "Node"
         },
         {
-          "id": "46ba8bd4-7f5d-44d1-968d-3e624eb98c52",
+          "id": "e7bfb719-6098-4568-ae4c-4db0c210263d",
           "position": {
-            "x": 462,
-            "y": 363.1142997741699
+            "x": 924,
+            "y": 191.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
-          "selected": false,
-          "dragging": false,
-          "data": {
-            "name": "Stack Unpause",
-            "events": null,
-            "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
-            "inputs": [
-              {
-                "id": "input",
-                "label": "Input",
-                "service": "stack_unpause",
-                "to": "output"
-              }
-            ],
-            "outputs": [
-              {
-                "id": "output",
-                "label": "Output"
-              }
-            ],
-            "configured": true,
-            "options": {
-              "group": "Docker-Utils Pause/Unpause",
-              "args": [
-                {
-                  "name": "comment",
-                  "type": "area",
-                  "label": "Node comment",
-                  "helper": "Use it to explain the usage of this node"
-                },
-                {
-                  "name": "alias",
-                  "type": "text",
-                  "label": "Name",
-                  "helper": "Use this name as an alias"
-                },
-                {
-                  "name": "debug",
-                  "type": "boolean",
-                  "label": "Debug to Console",
-                  "divider": true
-                },
-                {
-                  "name": "stack_name_unpause",
-                  "type": "asyncSelect",
-                  "label": "Stack Name",
-                  "helper": "Stack Name to unpause",
-                  "group": "",
-                  "value": null,
-                  "description": "",
-                  "validation": null,
-                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-                }
-              ],
-              "click": "Send message",
-              "icon": "RiPlayCircleFill",
-              "values": {
-                "comment": "",
-                "alias": "",
-                "debug": true,
-                "stack_name_unpause": "fede-import-test"
-              }
-            },
-            "locked": null
-          },
-          "selectable": true,
-          "draggable": true,
-          "positionAbsolute": {
-            "x": 462,
-            "y": 363.1142997741699
-          },
-          "__class__": "Node"
-        },
-        {
-          "id": "5a65639d-d7e0-4e85-8c83-df7386c89a88",
-          "position": {
-            "x": 915,
-            "y": 154.00580978393555
-          },
-          "type": "custom",
-          "dragHandle": "#nodeHandle",
-          "sourcePosition": "right",
-          "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 189,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -2555,7 +2486,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
@@ -2566,7 +2499,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -2575,8 +2510,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_pause": "fede-import-test_mongo",
-                "stack_cont_name_pause": "fede-import-test"
+                "container_name_pause": "gateway",
+                "stack_cont_name_pause": "loko"
               }
             },
             "locked": null
@@ -2584,16 +2519,103 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 915,
-            "y": 154.00580978393555
+            "x": 924,
+            "y": 191.20974349975586
           },
           "__class__": "Node"
         },
         {
-          "id": "43a23b0a-7740-4a5f-9b31-c6e1d2904187",
+          "id": "0f9c3ad5-28e1-4deb-ae76-e8e8649a6396",
           "position": {
-            "x": 917,
-            "y": 362.00580978393555
+            "x": 456,
+            "y": 426.20974349975586
+          },
+          "type": "custom",
+          "dragHandle": "#nodeHandle",
+          "sourcePosition": "right",
+          "targetPosition": "left",
+          "width": 172,
+          "height": 88,
+          "selected": false,
+          "dragging": false,
+          "data": {
+            "name": "Stack Unpause",
+            "events": null,
+            "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
+            "inputs": [
+              {
+                "id": "input",
+                "label": "Input",
+                "service": "stack_unpause",
+                "to": "output"
+              }
+            ],
+            "outputs": [
+              {
+                "id": "output",
+                "label": "Output"
+              }
+            ],
+            "configured": true,
+            "options": {
+              "group": "Docker-Utils Pause/Unpause",
+              "args": [
+                {
+                  "name": "comment",
+                  "type": "area",
+                  "label": "Node comment",
+                  "helper": "Use it to explain the usage of this node"
+                },
+                {
+                  "name": "alias",
+                  "type": "text",
+                  "label": "Name",
+                  "helper": "Use this name as an alias"
+                },
+                {
+                  "name": "debug",
+                  "type": "boolean",
+                  "label": "Debug to Console",
+                  "divider": true
+                },
+                {
+                  "name": "stack_name_unpause",
+                  "type": "asyncSelect",
+                  "label": "Stack Name",
+                  "helper": "Stack Name to unpause",
+                  "group": "",
+                  "value": null,
+                  "description": "",
+                  "validation": {
+                    "required": "Required field"
+                  },
+                  "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+                }
+              ],
+              "click": "Send message",
+              "icon": "RiPlayCircleFill",
+              "values": {
+                "comment": "",
+                "alias": "",
+                "debug": true,
+                "stack_name_unpause": "loko"
+              }
+            },
+            "locked": null
+          },
+          "selectable": true,
+          "draggable": true,
+          "positionAbsolute": {
+            "x": 456,
+            "y": 426.20974349975586
+          },
+          "__class__": "Node"
+        },
+        {
+          "id": "9be21123-ba06-4eeb-8616-8a7a3543806e",
+          "position": {
+            "x": 914,
+            "y": 431.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2651,7 +2673,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
@@ -2662,7 +2686,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -2671,8 +2697,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_unpause": "fede-import-test_mongo",
-                "stack_cont_name_unpause": "fede-import-test"
+                "container_name_unpause": "gateway",
+                "stack_cont_name_unpause": "loko"
               }
             },
             "locked": null
@@ -2680,8 +2706,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 917,
-            "y": 362.00580978393555
+            "x": 914,
+            "y": 431.00580978393555
           },
           "__class__": "Node"
         }
@@ -2702,13 +2728,13 @@
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 472,
-          "height": 184,
+          "height": 202,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Delete Stack",
             "fill": "#F74B65",
-            "height": 184,
+            "height": 202,
             "width": 472
           },
           "zIndex": -1,
@@ -2724,20 +2750,20 @@
           "id": "f23b421c-113c-4148-8667-362e918e2d48",
           "position": {
             "x": 374,
-            "y": 326.00580978393555
+            "y": 336.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 474,
-          "height": 168,
+          "height": 196,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Delete Container",
             "fill": "#F74B65",
-            "height": 168,
+            "height": 196,
             "width": 474
           },
           "zIndex": -1,
@@ -2745,15 +2771,15 @@
           "connectable": false,
           "positionAbsolute": {
             "x": 374,
-            "y": 326.00580978393555
+            "y": 336.00580978393555
           },
           "__class__": "Node"
         },
         {
-          "id": "895e5f9e-615d-43d7-b9d6-a537f797458a",
+          "id": "8ecb549f-e6c1-4fd2-a2c6-f64c53279398",
           "position": {
-            "x": 527,
-            "y": 161.11429977416992
+            "x": 521,
+            "y": 177.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2811,7 +2837,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 }
               ],
@@ -2821,7 +2849,7 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "stack_name_delete": "fede-import-test"
+                "stack_name_delete": "loko"
               }
             },
             "locked": null
@@ -2829,16 +2857,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 527,
-            "y": 161.11429977416992
+            "x": 521,
+            "y": 177.20974349975586
           },
           "__class__": "Node"
         },
         {
-          "id": "f3d5763d-0a21-40d7-8b74-9da9d5197140",
+          "id": "151ca095-e6d1-4478-9ec2-df737a4f93a1",
           "position": {
-            "x": 524,
-            "y": 369.1142997741699
+            "x": 496,
+            "y": 401.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -2896,7 +2924,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
                 },
                 {
@@ -2907,7 +2937,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -2916,8 +2948,8 @@
                 "comment": "",
                 "alias": "",
                 "debug": true,
-                "container_name_delete": "fede-import-test_mongo",
-                "stack_cont_name_delete": "fede-import-test"
+                "container_name_delete": "gateway",
+                "stack_cont_name_delete": "loko"
               }
             },
             "locked": null
@@ -2925,8 +2957,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 524,
-            "y": 369.1142997741699
+            "x": 496,
+            "y": 401.20974349975586
           },
           "__class__": "Node"
         }
@@ -2939,66 +2971,66 @@
         {
           "id": "348e8bd6-2a38-4549-adb2-24ac819a398f",
           "position": {
-            "x": 340.35520010722894,
-            "y": 71.69181190390339
+            "x": 349.35520010722894,
+            "y": 95.69181190390339
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 406.0306155454265,
-          "height": 136,
+          "height": 197,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Docker Registry you are logged in",
             "fill": "#F74B65",
-            "height": 136,
+            "height": 197,
             "width": 406.0306155454265
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 340.35520010722894,
-            "y": 71.69181190390339
+            "x": 349.35520010722894,
+            "y": 95.69181190390339
           },
           "__class__": "Node"
         },
         {
           "id": "12edf62a-994a-4332-bc82-205705f79416",
           "position": {
-            "x": 348,
-            "y": 276.00580978393555
+            "x": 803,
+            "y": 98.00580978393555
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 416,
-          "height": 136,
+          "height": 198,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Docker Volumes mounted on your Host",
             "fill": "#F9C74F",
-            "height": 136,
+            "height": 198,
             "width": 416
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 348,
-            "y": 276.00580978393555
+            "x": 803,
+            "y": 98.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "1b1e03cf-40e6-4b99-ba3f-7259cfdd1d16",
           "position": {
-            "x": 432,
-            "y": 110.00580978393555
+            "x": 446,
+            "y": 152.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3060,16 +3092,16 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 432,
-            "y": 110.00580978393555
+            "x": 446,
+            "y": 152.00580978393555
           },
           "__class__": "Node"
         },
         {
           "id": "1046eaa3-c46d-44bb-a0c7-846d4a994972",
           "position": {
-            "x": 452,
-            "y": 324.00580978393555
+            "x": 910,
+            "y": 155.00580978393555
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
@@ -3123,6 +3155,8 @@
               "click": "Send message",
               "icon": "RiHomeFill",
               "values": {
+                "comment": "",
+                "alias": "",
                 "debug": true
               }
             },
@@ -3131,8 +3165,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 452,
-            "y": 324.00580978393555
+            "x": 910,
+            "y": 155.00580978393555
           },
           "__class__": "Node"
         }
@@ -3145,73 +3179,73 @@
         {
           "id": "aeb60cfd-2261-4302-addd-73399f8d0585",
           "position": {
-            "x": 332.83025044156614,
-            "y": 94.57567193251253
+            "x": 364.83025044156614,
+            "y": 97.57567193251253
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
           "width": 483.0141493526568,
-          "height": 168,
+          "height": 267,
           "selected": false,
           "dragging": false,
           "data": {
             "comment": "Search images in Livetech Docker Registry",
             "fill": "#277DA1",
-            "height": 168,
+            "height": 267,
             "width": 483.0141493526568
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 332.83025044156614,
-            "y": 94.57567193251253
+            "x": 364.83025044156614,
+            "y": 97.57567193251253
           },
           "__class__": "Node"
         },
         {
           "id": "25138537-e006-47e9-82b1-0089210e19ad",
           "position": {
-            "x": 330,
-            "y": 323
+            "x": 932,
+            "y": 95
           },
           "type": "comment",
           "dragHandle": "#commentHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 712,
-          "height": 168,
+          "width": 505,
+          "height": 266,
           "selected": false,
           "dragging": false,
           "data": {
-            "comment": "Search libraries in Livetech Pypiserver (prova a gestire meglio gli errori)",
-            "fill": "#43AA8B",
-            "height": 168,
-            "width": 712
+            "comment": "Search libraries in Livetech Pypiserver",
+            "fill": "#F9C74F",
+            "height": 266,
+            "width": 505
           },
           "zIndex": -1,
           "selectable": false,
           "connectable": false,
           "positionAbsolute": {
-            "x": 330,
-            "y": 323
+            "x": 932,
+            "y": 95
           },
           "__class__": "Node"
         },
         {
-          "id": "1240a034-e7eb-4420-acd6-8052727a8218",
+          "id": "1f57693f-3743-4dbe-ba86-1504883172ec",
           "position": {
-            "x": 399,
-            "y": 139
+            "x": 437,
+            "y": 187.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 347,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -3262,7 +3296,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "options": [
                     "registry.livetech.site"
                   ]
@@ -3275,7 +3311,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -3293,23 +3331,23 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 399,
-            "y": 139
+            "x": 437,
+            "y": 187.20974349975586
           },
           "__class__": "Node"
         },
         {
-          "id": "5721cc70-e8f6-4eef-9eda-912e0e41c1bc",
+          "id": "461fbfc6-8a96-4918-9d6b-058ba89b76ee",
           "position": {
-            "x": 416,
-            "y": 370
+            "x": 1030,
+            "y": 189.20974349975586
           },
           "type": "custom",
           "dragHandle": "#nodeHandle",
           "sourcePosition": "right",
           "targetPosition": "left",
-          "width": 150,
-          "height": 56,
+          "width": 306,
+          "height": 88,
           "selected": false,
           "dragging": false,
           "data": {
@@ -3360,7 +3398,9 @@
                   "group": "",
                   "value": null,
                   "description": "",
-                  "validation": null,
+                  "validation": {
+                    "required": "Required field"
+                  },
                   "options": [
                     "distribution.livetech.site"
                   ]
@@ -3373,7 +3413,9 @@
                   "group": "",
                   "value": "",
                   "description": "",
-                  "validation": null
+                  "validation": {
+                    "required": "Required field"
+                  }
                 }
               ],
               "click": "Send message",
@@ -3391,8 +3433,8 @@
           "selectable": true,
           "draggable": true,
           "positionAbsolute": {
-            "x": 416,
-            "y": 370
+            "x": 1030,
+            "y": 189.20974349975586
           },
           "__class__": "Node"
         }

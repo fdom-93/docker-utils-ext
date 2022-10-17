@@ -4,7 +4,7 @@
 
 Docker-utils-ext is an extension for LokoAI. More info about LokoAI [HERE]
 
-With Docker-Utils-ext you can manage all docker stacks on your host easily, without even using a terminal docker command ! 🔥🔥
+With Docker-Utils-ext you can manage all docker stacks on your host easily, without ever using a terminal Docker command! 🔥🔥
 
 You can:
 - View all the stacks created on your host and all their info
@@ -19,6 +19,14 @@ You can:
 - Search Python libs on Private Pypyserver
 
 Through LokoAI you can also open Docker Utils Dashboard, where you have a GUI that you can navigate to manually monitoring all the containers, show their logs, and much more..
+
+# INSTALLATION
+First of all, you need to copy your ~/.docker/config.json file inside loko folder, using this simple command as it is:
+'''sh
+sudo mkdir -p /var/opt/loko/docker-utils-ext && sudo cp /home/$USER/.docker/config.json /var/opt/loko/docker-utils-ext
+'''
+Than, you can import this project inside Loko and run it 😎
+
 
 For more info:
 - [Livetech Github]

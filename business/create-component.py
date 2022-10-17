@@ -15,7 +15,8 @@ stacks_name = Component(name='Stacks Name', inputs=[input_stacks_name], outputs=
 ########################## componente stack_id
 name_stack_id = AsyncSelect(name='stack_name', label='Stack Name',
                             url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                            helper='Name of the stack to be convert to its ID')
+                            helper='Name of the stack to be convert to its ID',
+                            required=True)
 input_stack_id = Input(id='input', label='Input', service='stack_id', to='output')
 output_stack_id = Output(id='output', label='Output')
 doc_stack_id = '''
@@ -44,9 +45,10 @@ stacks_info = Component(name='Stacks Info', inputs=[input_stacks_info], outputs=
 ########################## componente container_id
 name_stack_cont_id = AsyncSelect(name='stack_name', label='Stack Name',
                                  url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                 helper='Stack name of your container')
+                                 helper='Stack name of your container',
+                                 required=True)
 name_container_id = Arg(name='container_name', label='Container Name', type='text',
-                        helper='Name of the container to be converted to its ID', value="")
+                        helper='Name of the container to be converted to its ID', value="", required=True)
 
 input_container_id = Input(id='input', label='Input', service='container_id', to='output')
 output_container_id = Output(id='output', label='Output')
@@ -78,7 +80,7 @@ containers_info = Component(name='Containers Info', inputs=[input_containers_inf
 ########################## componente stack inspect
 name_stack_inspect = AsyncSelect(name='name_stack', label='Stack Name',
                                  url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                 helper='Stack name to inspect')
+                                 helper='Stack name to inspect', required=True)
 input_stack_inspect = Input(id='input', label='Input', service='stack_inspect', to='output')
 output_stack_inspect = Output(id='output', label='Output')
 doc_stack_inspect = '''
@@ -94,7 +96,7 @@ stack_inspect = Component(name='Stack Inspect', args=[name_stack_inspect], input
 ########################## componente export_stack
 name_export = AsyncSelect(name='stack_name', label='Stack Name',
                           url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                          helper='Stack\'s name to export')
+                          helper='Stack\'s name to export', required=True)
 input_export = Input(id='input', label='Input', service='export_stack', to='output')
 output_export = Output(id='output', label='Output')
 doc_export = '''
@@ -122,8 +124,10 @@ export_stack = Component(name='Export Docker-Compose', args=[name_export], input
 
 
 ########################## componente import_stack
-name_import = Arg(name='name_new_stack', label='Stack name', type='text', helper='Give a name to your new stack', value="")
-file_import = Arg(name='file_import', label='File Import', type='files', helper='Import your .yml file', value="")
+name_import = Arg(name='name_new_stack', label='Stack name', type='text', helper='Give a name to your new stack',
+                  value="", required=True)
+file_import = Arg(name='file_import', label='File Import', type='files', helper='Import your .yml file',
+                  value="", required=True)
 
 input_import = Input(id='input', label='Input', service='import_stack', to='output')
 output_import = Output(id='output', label='Output')
@@ -163,9 +167,10 @@ registries = Component(name='Registries List', inputs=[input_registries], output
 
 
 ########################## componente search_docker_images
-select_docker_registry = Select(name="registry_name", label="Registry name", options=[ "registry.livetech.site" ])
+select_docker_registry = Select(name="registry_name", label="Registry name", options=["registry.livetech.site"],
+                                required=True)
 search_docker_images = Arg(name='image_name', label='Docker Image Name', type='text',
-                           helper='Docker Image name to search', value="")
+                           helper='Docker Image name to search', value="", required=True)
 input_docker_images = Input(id='input', label='Input', service='search_docker_images', to='output')
 output_docker_images = Output(id='output', label='Output')
 doc_docker_images = '''
@@ -182,9 +187,11 @@ docker_images = Component(name='Search in Livetech Docker Registry', args=[selec
 
 
 ########################## componente search_python_lib
-select_python_lib = Select(name="pypiserver", label="Pypiserver name", options=[ "distribution.livetech.site" ])
+select_python_lib = Select(name="pypiserver", label="Pypiserver name", options=["distribution.livetech.site"],
+                           required=True)
 search_python_lib = Arg(name='python_lib', label='Python Library Name', type='text',
-                        helper='Image name to search. IMPORTANT: insert the EXACT name of the library', value="")
+                        helper='Image name to search. IMPORTANT: insert the EXACT name of the library',
+                        value="", required=True)
 input_python_lib = Input(id='input', label='Input', service='search_python_lib', to='output')
 output_python_lib = Output(id='output', label='Output')
 doc_python_lib = '''
@@ -201,7 +208,7 @@ python_lib = Component(name='Search in Livetech Pypiserver', args=[select_python
 ########################## componente stack pause
 name_stack_pause = AsyncSelect(name='stack_name_pause', label='Stack Name',
                                url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                               helper='Stack Name to pause')
+                               helper='Stack Name to pause', required=True)
 input_stack_pause = Input(id='input', label='Input', service='stack_pause', to='output')
 output_stack_pause = Output(id='output', label='Output')
 doc_stack_pause = '''
@@ -217,7 +224,7 @@ stack_pause = Component(name='Stack Pause', args=[name_stack_pause], inputs=[inp
 ########################## componente stack unpause
 name_stack_unpause = AsyncSelect(name='stack_name_unpause', label='Stack Name',
                                  url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                 helper='Stack Name to unpause')
+                                 helper='Stack Name to unpause', required=True)
 input_stack_unpause = Input(id='input', label='Input', service='stack_unpause', to='output')
 output_stack_unpause = Output(id='output', label='Output')
 doc_stack_unpause = '''
@@ -234,9 +241,9 @@ stack_unpause = Component(name='Stack Unpause', args=[name_stack_unpause], input
 ########################## componente container pause
 name_stack_cont_pause = AsyncSelect(name='stack_cont_name_pause', label='Stack Name',
                                     url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                    helper='The Stack Name of the container to pause')
+                                    helper='The Stack Name of the container to pause', required=True)
 name_container_pause = Arg(name='container_name_pause', label='Container Name', type='text',
-                           helper='Container Name to pause', value="")
+                           helper='Container Name to pause', value="", required=True)
 input_container_pause = Input(id='input', label='Input', service='container_pause', to='output')
 output_container_pause = Output(id='output', label='Output')
 doc_container_pause = '''
@@ -253,9 +260,9 @@ container_pause = Component(name='Container Pause', args=[name_stack_cont_pause,
 ########################## componente container unpause
 name_stack_cont_unpause = AsyncSelect(name='stack_cont_name_unpause', label='Stack Name',
                                       url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                      helper='The Stack Name of the container to unpause')
+                                      helper='The Stack Name of the container to unpause', required=True)
 name_container_unpause = Arg(name='container_name_unpause', label='Container Name', type='text',
-                             helper='Container Name to unpause', value="")
+                             helper='Container Name to unpause', value="", required=True)
 input_container_unpause = Input(id='input', label='Input', service='container_unpause', to='output')
 output_container_unpause = Output(id='output', label='Output')
 doc_container_unpause = '''
@@ -272,7 +279,7 @@ container_unpause = Component(name='Container Unpause', args=[name_stack_cont_un
 ########################## componente stack delete
 name_stack_delete = AsyncSelect(name='stack_name_delete', label='Stack Name',
                                 url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                helper='Stack Name to delete')
+                                helper='Stack Name to delete', required=True)
 input_stack_delete = Input(id='input', label='Input', service='stack_delete', to='output')
 output_stack_delete = Output(id='output', label='Output')
 doc_stack_delete = '''
@@ -289,9 +296,10 @@ stack_delete = Component(name='Stack Delete', args=[name_stack_delete], inputs=[
 ########################## componente container delete
 name_stack_cont_delete = AsyncSelect(name='stack_cont_name_delete', label='Stack Name',
                                      url='http://localhost:9999/routes/docker-utils-ext/stacks_name_list',
-                                     helper='The Stack Name of the container to delete')
+                                     helper='The Stack Name of the container to delete',
+                                     required=True)
 name_container_delete = Arg(name='container_name_delete', label='Container Name', type='text',
-                            helper='Container Name to delete', value="")
+                            helper='Container Name to delete', value="", required=True)
 input_container_delete = Input(id='input', label='Input', service='container_delete', to='output')
 output_container_delete = Output(id='output', label='Output')
 doc_container_delete = '''
