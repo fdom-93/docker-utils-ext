@@ -20,11 +20,13 @@ You can:
 
 Through LokoAI you can also open Docker Utils Dashboard, where you have a GUI that you can navigate to manually monitoring all the containers, show their logs, and much more..
 
-# INSTALLATION
-First of all, you need to copy your ~/.docker/config.json file inside loko folder, using this simple command as it is:
-'''sh
+# Installation
+First of all, you need to copy your _~/.docker/config.json_ file inside loko folder, using this simple command as it is:
+
+```sh
 sudo mkdir -p /var/opt/loko/docker-utils-ext && sudo cp /home/$USER/.docker/config.json /var/opt/loko/docker-utils-ext
-'''
+```
+
 Than, you can import this project inside Loko and run it 😎
 
 
