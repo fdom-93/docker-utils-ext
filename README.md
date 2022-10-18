@@ -1,6 +1,7 @@
 # Docker-Utils-ext
 ### _Full control Docker stacks with LokoAI_ 
 
+![Dockerutilsextpng](Docker-Utils-Ext.png "Docker-utils-ext")
 
 Docker-utils-ext is an extension for LokoAI. More info about LokoAI [HERE]
 
