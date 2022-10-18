@@ -1,5 +1,5 @@
 # Docker-Utils-ext
-### _Full control Docker stacks with LokoAI_ 
+### _Full control your Docker stacks with LokoAI_ 
 
 ![Dockerutilsextpng](Docker-Utils-Ext.png "Docker-utils-ext")
 
