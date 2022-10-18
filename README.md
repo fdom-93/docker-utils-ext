@@ -19,7 +19,7 @@ You can:
 - Search Docker Images on Private Docker Registry
 - Search Python libs on Private Pypyserver
 
-Through LokoAI you can also open <u>_**Docker Utils Dashboard**_</u>, where you have a GUI that you can navigate to manually monitoring all the containers, show their logs, and much more..
+Through LokoAI you can also open _**Docker Utils Dashboard**_, where you have a GUI that you can navigate to manually monitoring all the containers, show their logs, and much more..
 
 # Installation
 First of all, you need to copy your _~/.docker/config.json_ file inside loko folder, using this simple command as it is:
