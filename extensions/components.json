@@ -27,7 +27,7 @@
  },
  {
   "name": "Stacks ID",
-  "description": "\n### Stacks ID\n\nWith this extension you can view the ID of your Stack.\n",
+  "description": "\n### Stacks ID\n\nWith this extension you can view the ID of a Stack.\n",
   "group": "Docker-Utils Info",
   "icon": "RiInformationFill",
   "click": "Send message",
@@ -93,7 +93,7 @@
  },
  {
   "name": "Container ID",
-  "description": "\n### Container ID\n\nWith this extension you can view the ID of your Container.\n",
+  "description": "\n### Container ID\n\nWith this extension you can view the ID of a Container.\n",
   "group": "Docker-Utils Info",
   "icon": "RiInformationFill",
   "click": "Send message",
@@ -171,7 +171,7 @@
  },
  {
   "name": "Stack Inspect",
-  "description": "\n### Stack Inspect\n\nWith this extension you can view, giving the name of a stack, all the containers and their configurations related to it.\n\nYou can use \"Stack Info\" extension to take stack's name.\n",
+  "description": "\n### Stack Inspect\n\nWith this extension you can view all the containers and their configurations related to a Stack.\n\n",
   "group": "Docker-Utils Info",
   "icon": "RiInformationFill",
   "click": "Send message",
@@ -211,7 +211,7 @@
  },
  {
   "name": "Export Docker-Compose",
-  "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou need to configure this block with the name of your stack\n\nYou can use \"Stacks Name\" extension to take it).\n",
+  "description": "\n### Export Docker-Compose\n\nWith this extension you can export the docker-compose.yml of your stack.\n\nYou can then use a File Writer to save it on the host.\n",
   "group": "Docker-Utils Import/Export",
   "icon": "RiUploadFill",
   "click": "Send message",
@@ -301,6 +301,282 @@
   }
  },
  {
+  "name": "Stack Pause",
+  "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPauseCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_pause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_name_pause",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "Stack Name to pause",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    }
+   ]
+  }
+ },
+ {
+  "name": "Stack Unpause",
+  "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPlayCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_unpause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_name_unpause",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "Stack Name to unpause",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    }
+   ]
+  }
+ },
+ {
+  "name": "Container Pause",
+  "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" or \"Containers Info\" extensions to take container's Name.\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPauseCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_pause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_pause",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the container to pause",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    },
+    {
+     "name": "container_name_pause",
+     "type": "text",
+     "label": "Container Name",
+     "helper": "Container Name to pause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "name": "Container Unpause",
+  "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" or \"Containers Info\" extensions to take container's Name.\n",
+  "group": "Docker-Utils Pause/Unpause",
+  "icon": "RiPlayCircleFill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_unpause",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_unpause",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the container to unpause",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    },
+    {
+     "name": "container_name_unpause",
+     "type": "text",
+     "label": "Container Name",
+     "helper": "Container Name to unpause",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     }
+    }
+   ]
+  }
+ },
+ {
+  "name": "Stack Delete",
+  "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\n",
+  "group": "Docker-Utils Delete",
+  "icon": "RiDeleteBin2Fill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "stack_delete",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_name_delete",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "Stack Name to delete",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    }
+   ]
+  }
+ },
+ {
+  "name": "Container Delete",
+  "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" or \"Containers Info\" extensions to take container's Name.\n",
+  "group": "Docker-Utils Delete",
+  "icon": "RiDeleteBin2Fill",
+  "click": "Send message",
+  "configured": false,
+  "inputs": [
+   {
+    "id": "input",
+    "label": "Input",
+    "service": "container_delete",
+    "to": "output"
+   }
+  ],
+  "outputs": [
+   {
+    "id": "output",
+    "label": "Output"
+   }
+  ],
+  "options": {
+   "values": {},
+   "args": [
+    {
+     "name": "stack_cont_name_delete",
+     "type": "asyncSelect",
+     "label": "Stack Name",
+     "helper": "The Stack Name of the container to delete",
+     "group": "",
+     "value": null,
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     },
+     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
+    },
+    {
+     "name": "container_name_delete",
+     "type": "text",
+     "label": "Container Name",
+     "helper": "Container Name to delete",
+     "group": "",
+     "value": "",
+     "description": "",
+     "validation": {
+      "required": "Required field"
+     }
+    }
+   ]
+  }
+ },
+ {
   "name": "Registries List",
   "description": "\n### Registries List\n\nWith this extension you can view all the registries you are logged in on your host.\n",
   "group": "Docker-Utils Host info",
@@ -353,8 +629,8 @@
   }
  },
  {
-  "name": "Search in Livetech Docker Registry",
-  "description": "\n### Search images in Livetech Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Livetech Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
+  "name": "Search in Private Docker Registry",
+  "description": "\n### Search images in Private Docker Registry\nWith this extension you can see all Docker image's versions pushed on Private Registry.\n\nYou need to configure this block with the name of the image you want to search.\n\nYou don't need to insert the full name of the image, but you can use also search a part of it.\n\n*(for example, you can insert \"stor\" to searching \"storage\")*\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
   "click": "Send message",
@@ -407,8 +683,8 @@
   }
  },
  {
-  "name": "Search in Livetech Pypiserver",
-  "description": "\n### Search libraries in Livetech Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Livetech Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
+  "name": "Search in Private Pypiserver",
+  "description": "\n### Search libraries in Private Pypiserver\nWith this extension you can see all Python library's versions pushed on Private Pypiserver.\n\nYou need to configure this block with the name of the python library you want to search.\n\nYou MUST insert the full name of the python library!\n",
   "group": "Docker-Utils Registry/Pypiserver",
   "icon": "RiFileSearchFill",
   "click": "Send message",
@@ -450,282 +726,6 @@
      "type": "text",
      "label": "Python Library Name",
      "helper": "Image name to search. IMPORTANT: insert the EXACT name of the library",
-     "group": "",
-     "value": "",
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     }
-    }
-   ]
-  }
- },
- {
-  "name": "Stack Pause",
-  "description": "\n### Stack Pause\n\nWith this extension you can pause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
-  "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiPauseCircleFill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "stack_pause",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_name_pause",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "Stack Name to pause",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    }
-   ]
-  }
- },
- {
-  "name": "Stack Unpause",
-  "description": "\n### Stack Unpause\n\nWith this extension you can unpause all the containers related to a Stack.\n\nYou can use \"Stack Name\" extension to take stack's Name.\n",
-  "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiPlayCircleFill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "stack_unpause",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_name_unpause",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "Stack Name to unpause",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    }
-   ]
-  }
- },
- {
-  "name": "Container Pause",
-  "description": "\n### Container Pause\n\nWith this extension you can pause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
-  "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiPauseCircleFill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "container_pause",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_cont_name_pause",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "The Stack Name of the container to pause",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    },
-    {
-     "name": "container_name_pause",
-     "type": "text",
-     "label": "Container Name",
-     "helper": "Container Name to pause",
-     "group": "",
-     "value": "",
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     }
-    }
-   ]
-  }
- },
- {
-  "name": "Container Unpause",
-  "description": "\n### Container Unpause\n\nWith this extension you can unpause a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
-  "group": "Docker-Utils Pause/Unpause",
-  "icon": "RiPlayCircleFill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "container_unpause",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_cont_name_unpause",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "The Stack Name of the container to unpause",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    },
-    {
-     "name": "container_name_unpause",
-     "type": "text",
-     "label": "Container Name",
-     "helper": "Container Name to unpause",
-     "group": "",
-     "value": "",
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     }
-    }
-   ]
-  }
- },
- {
-  "name": "Stack Delete",
-  "description": "\n### Stack Delete\n\nWith this extension you can delete all the containers in a Stack.\n\nYou can use \"Stack Name\" extension to take container's Name.\n",
-  "group": "Docker-Utils Delete",
-  "icon": "RiDeleteBin2Fill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "stack_delete",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_name_delete",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "Stack Name to delete",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    }
-   ]
-  }
- },
- {
-  "name": "Container Delete",
-  "description": "\n### Container Delete\n\nWith this extension you can delete a specific container in a Stack.\n\nYou can use \"Stack Inspect\" extension to take container's Name.\n",
-  "group": "Docker-Utils Delete",
-  "icon": "RiDeleteBin2Fill",
-  "click": "Send message",
-  "configured": false,
-  "inputs": [
-   {
-    "id": "input",
-    "label": "Input",
-    "service": "container_delete",
-    "to": "output"
-   }
-  ],
-  "outputs": [
-   {
-    "id": "output",
-    "label": "Output"
-   }
-  ],
-  "options": {
-   "values": {},
-   "args": [
-    {
-     "name": "stack_cont_name_delete",
-     "type": "asyncSelect",
-     "label": "Stack Name",
-     "helper": "The Stack Name of the container to delete",
-     "group": "",
-     "value": null,
-     "description": "",
-     "validation": {
-      "required": "Required field"
-     },
-     "url": "http://localhost:9999/routes/docker-utils-ext/stacks_name_list"
-    },
-    {
-     "name": "container_name_delete",
-     "type": "text",
-     "label": "Container Name",
-     "helper": "Container Name to delete",
      "group": "",
      "value": "",
      "description": "",
